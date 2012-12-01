@@ -1,5 +1,17 @@
 #! /usr/bin/env node
 
 var edp = require( '../index' );
+var program = require( 'commander' );
 
+
+
+var context = {
+    mode      : 'cli',
+    commander : program
+};
+
+edp.init( context );
+program.version( edp.version );
+program.usage( '[--version] [--help] <command> [<args>]' );
+program.parse( process.argv );
 
