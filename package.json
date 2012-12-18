@@ -1,0 +1,16 @@
+{
+    "name": "edp",
+    "description": "ecomfe develop platform",
+    "version": "1.0.0",
+    "contributors": [
+        { "name": "errorrik", "email": "errorrik@gmail.com" }
+    ],
+    "dependencies": {
+    	"commander": "1.1.1"
+    },
+    "repository": "git://github.com/ecomfe/edp",
+    "main": "index",
+    "bin": {
+    	"edp": "./bin/edp"
+    }
+}
