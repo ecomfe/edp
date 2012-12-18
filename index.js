@@ -14,7 +14,8 @@ var edp = require( './lib/edp' );
  * @type {Array}
  */
 var BUILT_IN = [
-    'config'
+    'config',
+    'devServer'
 ];
 
 // 装载内建模块
