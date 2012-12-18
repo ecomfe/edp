@@ -3,7 +3,8 @@
     "description": "ecomfe develop platform",
     "version": "1.0.0",
     "contributors": [
-        { "name": "errorrik", "email": "errorrik@gmail.com" }
+        { "name": "errorrik", "email": "errorrik@gmail.com" },
+        { "name": "otakustay", "email" : "otakustay@live.com" }
     ],
     "dependencies": {
     	"commander": "1.1.1"
