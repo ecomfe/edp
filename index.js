@@ -47,7 +47,7 @@ var BUILT_IN = [
             } 
         );
     }
-} )()
+} )();
 
 
 module.exports = edp;
