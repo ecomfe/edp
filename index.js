@@ -15,7 +15,8 @@ var edp = require( './lib/edp' );
  */
 var BUILT_IN = [
     'config',
-    'devServer'
+    'devServer',
+    'jshint'
 ];
 
 // 装载内建模块
