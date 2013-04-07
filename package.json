@@ -13,7 +13,6 @@
         "mkdirp": "~0.3.3",
         "request": "~2.9",
         "semver": "~1.1",
-        "npm": "~1.2",
         "handlebars": "~1.0",
         "tar": "~0.1.17",
         "fstream": "~0.1.22",
