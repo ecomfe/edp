@@ -16,6 +16,8 @@
         "handlebars": "~1.0",
         "tar": "~0.1.17",
         "fstream": "~0.1.22",
+        "esprima": "~1.0.2",
+        "escodegen": "~0.0.21",
         "npm-registry-client": "~0.2.18"
     },
     "repository": "git://github.com/ecomfe/edp",
