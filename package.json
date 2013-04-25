@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "ecomfe develop platform",
-    "version": "1.0.0",
+    "version": "0.4.2",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
