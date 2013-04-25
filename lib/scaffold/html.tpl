@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{title}}</title>
-    {{#loader}}<script src="{{url}}"></script>{{/loader}} 
+    {{#loader}}<script src="{{{loaderUrl}}}"></script>{{/loader}} 
     {{#loaderConfig}}
     <script>
     require.config({
