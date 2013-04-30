@@ -35,4 +35,6 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
 - [项目管理](doc/project.md)
 - [包管理](doc/package-manager.md)
 - [调试服务器](doc/webserver.md)
+- [代码生成](doc/code-generate.md)
 - [代码检测](doc/code-detect.md)
+- [自定义扩展](doc/extension.md)
