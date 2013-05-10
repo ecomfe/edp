@@ -9,6 +9,7 @@
         { "name": "treelite", "email" : "c.xinle@gmail.com" }
     ],
     "dependencies": {
+        "read": "~1.0",
         "less": "~1.3",
         "jshint": "~1.1",
         "mkdirp": "~0.3.3",
