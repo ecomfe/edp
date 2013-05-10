@@ -5,7 +5,8 @@
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
-        { "name": "leeight", "email" : "leeight@gmail.com" }
+        { "name": "leeight", "email" : "leeight@gmail.com" },
+        { "name": "treelite", "email" : "c.xinle@gmail.com" }
     ],
     "dependencies": {
         "less": "~1.3",
