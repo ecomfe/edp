@@ -24,6 +24,10 @@
         "npm-registry-client": "~0.2.18",
         "uglify-js": "~2.3.0"
     },
+    "devDependencies": {
+        "mocha": "~1.9",
+        "should": "~1.2"
+    },
     "repository": "git://github.com/ecomfe/edp",
     "main": "index",
     "bin": {
