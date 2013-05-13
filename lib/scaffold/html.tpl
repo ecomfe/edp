@@ -8,9 +8,9 @@
     <script>
     require.config({
         baseUrl: '{{{loaderBaseUrl}}}',
-        paths: { {{#loaderPaths}}
-        {{/loaderPaths}}
-        },
+        paths: { {{#forEach loaderPaths}}
+            {{{key}}}: '{{{value}}}'{{^last}},{{/last}}
+        {{/forEach}} },
         packages: [ {{#loaderPackages}}
             {
                 name: '{{{name}}}',
