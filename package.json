@@ -26,7 +26,8 @@
         "weinre": "~2.0",
         "colors": "~0.6.0-1",
         "async": "~0.2.8",
-        "baidu-jn-less": "~0.1.0"
+        "baidu-jn-less": "~0.1.0",
+        "edp-ext": "~0.1.0"
     },
     "devDependencies": {
         "mocha": "~1.9",
