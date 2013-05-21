@@ -1,5 +1,5 @@
-exports.port = 80;
-
+exports.port = 8964;
+exports.directoryIndexes = true;
 exports.documentRoot = require( 'path' ).resolve( __dirname, '..' );
 exports.getLocations = function () {
     return [
@@ -32,7 +32,10 @@ exports.getLocations = function () {
         },
         { 
             location: /^.*$/, 
-            handler: file()
+            handler: [
+                file(),
+                proxyNoneExists()
+            ]
         }
     ];
 };
