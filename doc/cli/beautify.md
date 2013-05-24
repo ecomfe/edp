@@ -16,4 +16,5 @@ beautify
     edp beautify b.js 
     edp beautify c.json
 
+*注意*： 目前对`js`文件的格式化会保留文件注释，但不会保留空行。
 
