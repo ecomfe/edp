@@ -28,7 +28,8 @@
         "async": "~0.2.8",
         "cssbeautify": "~0.3.0",
         "baidu-jn-less": "~0.1.0",
-        "uglifycss": "~0.0.5"
+        "uglifycss": "~0.0.5",
+        "msee": "*"
     },
     "devDependencies": {
         "mocha": "~1.9",
