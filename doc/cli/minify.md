@@ -19,7 +19,6 @@ minify
 
 例如：
     
-    :::javascript
     edp minify a.css -o a.compiled.css
     edp minify a.css // 输出为a.compiled.css
     edp minify b.js // 输出为b.compiled.js
@@ -30,4 +29,9 @@ minify
 #### 默认压缩引擎
 + `JS`：使用[uglifyJS](https://github.com/mishoo/UglifyJS)
 + `CSS`：使用[uglifyCSS](https://github.com/fmarcia/UglifyCSS)
-+ `JSON`：使用JSON.stringify & JSON.parse 或许考虑[json-stringify-safe](https://github.com/isaacs/json-stringify-safe)？
++ `JSON`：使用JSON.stringify & JSON.parse
+
+#### 调研&升级
++ `JS`：支持自定义参数
++ `CSS`：支持自定义参数
++ `JSON`：或许考虑[json-stringify-safe](https://github.com/isaacs/json-stringify-safe)？
