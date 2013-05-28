@@ -28,6 +28,6 @@ minify
 
 
 #### 默认压缩引擎
-+ `JS`：使用uglifyJS
-+ `CSS`：使用uglifyCSS
-+ `JSON`：使用JSON.stringify
++ `JS`：使用[uglifyJS](https://github.com/mishoo/UglifyJS)
++ `CSS`：使用[uglifyCSS](https://github.com/fmarcia/UglifyCSS)
++ `JSON`：使用JSON.stringify & JSON.parse 或许考虑[json-stringify-safe](https://github.com/isaacs/json-stringify-safe)？
