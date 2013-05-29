@@ -30,8 +30,3 @@ minify
 + `JS`：使用[uglifyJS](https://github.com/mishoo/UglifyJS)
 + `CSS`：使用[uglifyCSS](https://github.com/fmarcia/UglifyCSS)
 + `JSON`：使用JSON.stringify & JSON.parse
-
-#### 调研&升级
-+ `JS`：支持自定义参数
-+ `CSS`：支持自定义参数
-+ `JSON`：或许考虑[json-stringify-safe](https://github.com/isaacs/json-stringify-safe)？
