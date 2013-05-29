@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "0.4.2",
+    "version": "0.4.5",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -27,8 +27,9 @@
         "colors": "~0.6.0-1",
         "async": "~0.2.8",
         "cssbeautify": "~0.3.0",
-        "baidu-jn-less": "~0.1.0",
-        "uglifycss": "~0.0.5"
+        "uglifycss": "~0.0.5",
+        "adm-zip": "~0.4.3",
+        "msee": "*"
     },
     "devDependencies": {
         "mocha": "~1.9",
