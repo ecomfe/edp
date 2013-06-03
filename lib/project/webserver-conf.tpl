@@ -24,6 +24,12 @@ exports.getLocations = function () {
             handler: empty() 
         },
         { 
+            location: /\.css$/, 
+            handler: [
+                autoless()
+            ]
+        },
+        { 
             location: /\.less$/, 
             handler: [
                 file(),
