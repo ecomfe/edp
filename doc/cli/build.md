@@ -3,7 +3,7 @@ build
 
 ### Usage
 
-    edp build [--output=outputDir] [--processors-conf=confFile] [--exclude=excludeFiles]
+    edp build [--config=confFile] [--output=outputDir] [--exclude=excludeFiles]
 
 ### Options
 
