@@ -6,14 +6,14 @@ webserver
     edp webserver start
     edp webserver start [--port=portNo]
     edp webserver start [--config=configFile]
-    edp webserver start [--documentRoot=documentRoot]
+    edp webserver start [--document-root=documentRoot]
 
 
 ### Options
 
 + --port - 启动的端口号，不指定则按照配置文件中配置的端口号启动，默认配置文件的端口配置为`8848`。
 + --config - 启动的配置文件，不指定则使用默认配置文件。
-+ --documentRoot - 文档根路径，不指定则使用配置文件中的文档根路径。
++ --document-root - 文档根路径，不指定则使用配置文件中的文档根路径。
 
 
 ### Description
