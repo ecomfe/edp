@@ -31,17 +31,30 @@ exports.getProcessors = function () {
 };
 
 exports.exclude = [
-    'tool',
-    'doc',
-    'test',
-    'module.conf',
-    'dep/packages.manifest',
-    'dep/*/*/test',
-    'dep/*/*/doc',
-    'dep/*/*/*.md',
-    'dep/*/*/package.json',
-    'edp-*',
-    '.edpproj'
+    '/tool',
+    '/doc',
+    '/test',
+    '/module.conf',
+    '/dep/packages.manifest',
+    '/dep/*/*/test',
+    '/dep/*/*/doc',
+    '/dep/*/*/demo',
+    '/dep/*/*/tool',
+    '/dep/*/*/*.md',
+    '/dep/*/*/package.json',
+    '/edp-*',
+    '/.edpproj',
+    '.svn',
+    '.git',
+    '.gitignore',
+    '.idea',
+    '.project',
+    'Desktop.ini',
+    'Thumbs.db',
+    '.DS_Store',
+    '*.tmp',
+    '*.bak',
+    '*.swp'
 ];
 
 exports.injectProcessor = function ( processors ) {
