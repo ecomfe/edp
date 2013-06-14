@@ -6,6 +6,7 @@
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
+        { "name": "firede", "email" : "firede@firede.us" },
         { "name": "treelite", "email" : "c.xinle@gmail.com" }
     ],
     "dependencies": {
@@ -13,7 +14,7 @@
         "less": "~1.3",
         "jshint": "~2.1",
         "mkdirp": "~0.3.3",
-        "request": "~2.9",
+        "request": "~2.21",
         "semver": "~1.1",
         "handlebars": "~1.0",
         "tar": "~0.1.17",
