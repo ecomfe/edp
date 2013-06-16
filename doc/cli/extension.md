@@ -8,7 +8,7 @@ extension
     
 ### Description
 
-自定义扩展，允许用户`加入/移除`自己定制的扩展。
+自定义扩展，允许用户`加入/移除`自己定制的扩展与edp命令。
 
 + edp extension add - 添加一个新的扩展目录，不指定`directory`则默认为`当前目录`。
 + edp extension remove - 移除扩展目录，不指定`directory`则默认为`当前目录`。
