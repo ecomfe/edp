@@ -7,7 +7,11 @@
         { "name": "otakustay", "email" : "otakustay@live.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
         { "name": "firede", "email" : "firede@firede.us" },
-        { "name": "treelite", "email" : "c.xinle@gmail.com" }
+        { "name": "treelite", "email" : "c.xinle@gmail.com" },
+        { "name": "ostream", "email" : "ostream.song@gmail.com" },
+        { "name": "virola", "email" : "virola.zhu@gmail.com" },
+        { "name": "Leo Wang", "email" : "leowang721@gmail.com" },
+        { "name": "fanxueliang", "email" : "fanxueliang.g@gmail.com" }
     ],
     "dependencies": {
         "read": "~1.0",
