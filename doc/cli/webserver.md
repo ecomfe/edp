@@ -5,13 +5,15 @@ webserver
 
     edp webserver start
     edp webserver start [--port=portNo]
-    edp webserver start [--conf=confFile]
+    edp webserver start [--config=configFile]
+    edp webserver start [--document-root=documentRoot]
 
 
 ### Options
 
 + --port - 启动的端口号，不指定则按照配置文件中配置的端口号启动，默认配置文件的端口配置为`8848`。
-+ --conf - 启动的配置文件，不指定则使用默认配置文件。
++ --config - 启动的配置文件，不指定则使用默认配置文件。
++ --document-root - 文档根路径，不指定则使用配置文件中的文档根路径。
 
 
 ### Description
@@ -20,7 +22,7 @@ webserver
 
 WebServer的配置是一个NodeJS风格的Javascript模块。WebServer运行时将向`配置模块`注入`资源处理方法`，并把`配置模块`嵌入运行环境中。
 
-如果`当前目录`位于`项目目录`下，默认的配置文件为`项目目录`下的`.edpproj/webserver-conf.js`。
+默认的`配置文件`查找方式为：从`当前目录`向上查找，发现目录下包含`edp-webserver-config.js`文件时，将其作为`配置文件`。如果找不到`配置文件`，则以`默认配置文件`启动。
 
 
 #### 配置WebServer

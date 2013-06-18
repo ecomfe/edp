@@ -1,19 +1,24 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "0.4.5",
+    "version": "0.4.7",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
-        { "name": "treelite", "email" : "c.xinle@gmail.com" }
+        { "name": "firede", "email" : "firede@firede.us" },
+        { "name": "treelite", "email" : "c.xinle@gmail.com" },
+        { "name": "ostream", "email" : "ostream.song@gmail.com" },
+        { "name": "virola", "email" : "virola.zhu@gmail.com" },
+        { "name": "Leo Wang", "email" : "leowang721@gmail.com" },
+        { "name": "fanxueliang", "email" : "fanxueliang.g@gmail.com" }
     ],
     "dependencies": {
         "read": "~1.0",
         "less": "~1.3",
-        "jshint": "~1.1",
+        "jshint": "~2.1",
         "mkdirp": "~0.3.3",
-        "request": "~2.9",
+        "request": "~2.21",
         "semver": "~1.1",
         "handlebars": "~1.0",
         "tar": "~0.1.17",
@@ -27,6 +32,7 @@
         "colors": "~0.6.0-1",
         "async": "~0.2.8",
         "cssbeautify": "~0.3.0",
+        "csslint": "~0.9",
         "uglifycss": "~0.0.5",
         "adm-zip": "~0.4.3",
         "msee": "*"

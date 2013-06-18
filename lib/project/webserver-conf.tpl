@@ -1,6 +1,6 @@
 exports.port = 8848;
 exports.directoryIndexes = true;
-exports.documentRoot = require( 'path' ).resolve( __dirname, '..' );
+exports.documentRoot = __dirname;
 exports.getLocations = function () {
     return [
         { 
@@ -22,6 +22,12 @@ exports.getLocations = function () {
         { 
             location: '/empty', 
             handler: empty() 
+        },
+        { 
+            location: /\.css$/, 
+            handler: [
+                autoless()
+            ]
         },
         { 
             location: /\.less$/, 
