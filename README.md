@@ -50,6 +50,12 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
     See "edp help <command>" for more information.
 
 
+`--version`将显示当前EDP的版本号。
+
+    $ edp --version
+    edp version 0.6.0
+
+
 命令手册
 ------
 
