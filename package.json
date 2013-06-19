@@ -42,7 +42,6 @@
         "should": "~1.2"
     },
     "repository": "git://github.com/ecomfe/edp",
-    "main": "index",
     "bin": {
         "edp": "./bin/edp-cli"
     }
