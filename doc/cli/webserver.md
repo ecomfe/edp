@@ -7,6 +7,9 @@ webserver
     edp webserver start [--port=portNo]
     edp webserver start [--config=configFile]
     edp webserver start [--document-root=documentRoot]
+    edp webserver start [--weinre-host=weinreHost]
+    edp webserver start [--weinre-port=weinrePort]
+    edp webserver start [--weinre-flag=weinreFlag]
 
 
 ### Options
@@ -14,6 +17,9 @@ webserver
 + --port - 启动的端口号，不指定则按照配置文件中配置的端口号启动，默认配置文件的端口配置为`8848`。
 + --config - 启动的配置文件，不指定则使用默认配置文件。
 + --document-root - 文档根路径，不指定则使用配置文件中的文档根路径。
++ --weinre-host - weinre服务的ip地址或域名，不指定则使用当前主机的ip。
++ --weinre-port - weinre服务的端口号，不指定则使用默认端口`8080`。
++ --weinre-flag - weinre服务的标记，用于区分不同的调试任务。
 
 
 ### Description
@@ -96,3 +102,21 @@ WebServer的配置是一个NodeJS风格的Javascript模块。WebServer运行时�
     };
 
 
+#### 启用 weinre 支持
+
+`weinre`主要用于移动端调试，需要单独启动，可通过`npm install -g weinre`安装。
+
+启动`weinre`时，通常需要添加`--boundHost -all-`参数，以支持所有ip。
+
+启动WebServer时，添加`--weinre-host`、`--weinre-port`、`--weinre-flag`任一参数均可启用`weinre`支持。
+
+例如：
+
+    edp webserver start --weinre-host 172.21.203.28 --weinre-port 8787 --weinre-flag project1
+
+启动后会有如下提示：
+
+    EDP WebServer start, root = [/opt/projects/project1], listen = [8848]
+    Inject Weinre script, debug client UI: http://172.21.203.28:8787/client/#project1
+
+通过`http://172.21.203.28:8787/client/#project1`即可调试当前WebServer下的页面。
