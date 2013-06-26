@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "0.6.3",
+    "version": "0.6.4",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -11,7 +11,8 @@
         { "name": "ostream", "email" : "ostream.song@gmail.com" },
         { "name": "virola", "email" : "virola.zhu@gmail.com" },
         { "name": "Leo Wang", "email" : "leowang721@gmail.com" },
-        { "name": "fanxueliang", "email" : "fanxueliang.g@gmail.com" }
+        { "name": "fanxueliang", "email" : "fanxueliang.g@gmail.com" },
+        { "name": "chris", "email" : "wfsr@foxmail.com" }
     ],
     "dependencies": {
         "read": "~1.0",
