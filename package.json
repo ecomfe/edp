@@ -16,6 +16,7 @@
     ],
     "dependencies": {
         "edp-config": "~0.4.2",
+        "edp-build": "~0.4.0",
         "read": "~1.0",
         "less": "~1.3",
         "jshint": "~2.1",
