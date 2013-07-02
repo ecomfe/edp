@@ -19,6 +19,7 @@
         "edp-build": "~0.4",
         "edp-package": "~0.4",
         "edp-project": "~0.4",
+        "edp-webserver": "~0.4",
         "read": "~1.0",
         "less": "~1.3",
         "jshint": "~2.1",
