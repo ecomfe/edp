@@ -30,8 +30,7 @@
         "cssbeautify": "~0.3.0",
         "csslint": "~0.9",
         "uglifycss": "~0.0.5",
-        "msee": "*",
-        "jsdom": "~0.5.0"
+        "msee": "*"
     },
     "devDependencies": {
         "mocha": "~1.9",
