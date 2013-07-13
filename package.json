@@ -30,6 +30,9 @@
         "cssbeautify": "~0.3.0",
         "csslint": "~0.9",
         "uglifycss": "~0.0.5",
+        "semver": "~1.1",
+        "npm-registry-client": "~0.2.18",
+        "npmconf": "~0.1.1",
         "msee": "*"
     },
     "devDependencies": {
