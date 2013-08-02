@@ -17,3 +17,7 @@ bcs
 下面这个设置是可选的：
 
     edp config bcs.host <bcs cdn host>
+
+默认只上传小于10M的文件，如果需要放宽这个限制，可以添加`max-size`参数，例如：
+
+    edp bcs <file> bs://<bucket>/mydir --max-size=20m
