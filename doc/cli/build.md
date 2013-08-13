@@ -92,8 +92,7 @@ builder会通过`injectProcessor`方法将内建处理器的类注入配置模�
                 entryExtnames: pageEntries
             } ), 
             new ModuleCompiler( {
-                configFile: 'module.conf',
-                entryExtnames: moduleEntries
+                configFile: 'module.conf'
             } ), 
             new JsCompressor(), 
             new PathMapper( {
