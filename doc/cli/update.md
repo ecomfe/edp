@@ -5,6 +5,13 @@ update
 
     edp update
     edp update [name]
+    edp update [name] [--reserve-older]
+
+
+### Options
+
++ --reserve-older - 保留包的老版本。
+
 
 ### Description
 
@@ -15,4 +22,4 @@ update
 + 如果`当前目录`处于`项目目录`下，将从`项目目录`的`package.json`或`.edpproj/metadata`文件中读取依赖包声明。
 + 如果`当前目录`不处于`项目目录`下，将从`当前目录`下的`package.json`文件中读取依赖包声明。
 
-
+更新包功能将自动移除较老的包版本。如果想保留原版本，请添加`--reserve-older`。
