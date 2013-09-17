@@ -270,7 +270,7 @@ exports.getProcessors = function () {
         AbstractProcessor.call( this, options );
     }
     TestReplacer.prototype = new AbstractProcessor();
-    ModuleCompiler.prototype.name = 'TestReplacer';
+    TestReplacer.prototype.name = 'TestReplacer';
     TestReplacer.prototype.process = function ( file, processContext, callback ) {
         file.setData( file.data.replace( /联通/g, '移动' ) );
         callback();
