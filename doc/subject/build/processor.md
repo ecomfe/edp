@@ -252,6 +252,37 @@ new VariableSubstitution( {
 } )
 ```
 
+## 自定义processor
+
+edp build自带的processor可能满足不了你的需求，这时候你可以定制自己的processor，就像用Javascript写一个简单的类。有两点需要注意的：
+
+1. 最好从edp提供的`AbstractProcessor`继承，这样定制的processor将直接获得exclude和include筛选的能力。
+2. 在getProcessors中而不是global下，因为`AbstractProcessor`等内建的processor是模块加载完后被inject的。
+3. 在prototype中提供一个`name`属性，在构建的输出中会被print出来，便于跟踪构建过程。
+4. 实现`process`方法 *function ( file, processContext, callback )*，该方法在edp构建时将被自动调用。
+5. `process`方法处理完成后，手工调用callback。
+
+下面是一个简单的例子，将文件中的“联通”字样替换成“移动”：
+
+```javascript
+exports.getProcessors = function () {
+    function TestReplacer( options ) {
+        AbstractProcessor.call( this, options );
+    }
+    TestReplacer.prototype = new AbstractProcessor();
+    ModuleCompiler.prototype.name = 'TestReplacer';
+    TestReplacer.prototype.process = function ( file, processContext, callback ) {
+        file.setData( file.data.replace( /联通/g, '移动' ) );
+        callback();
+    };
+
+    return [ 
+        new TestReplacer()
+    ];
+};
+```
+
+
 
 
 
