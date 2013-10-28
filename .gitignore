@@ -4,3 +4,4 @@ npm-debug.log
 Thumbs.db
 .DS_Store
 *.swp
+.jshintrc
