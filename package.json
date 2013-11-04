@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "0.6.8-beta.13",
+    "version": "0.6.8-beta.14",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -18,8 +18,8 @@
         "edp-config": ">=0.4.2",
         "edp-build": ">=0.5.14",
         "edp-package": ">=0.4.6",
-        "edp-project": ">=0.4.24",
-        "edp-webserver": ">=0.4.10",
+        "edp-project": ">=0.4.25",
+        "edp-webserver": ">=0.4.11",
         "edp-codegen": ">=0.4.2",
         "read": "~1.0",
         "jshint": "~2.1",
