@@ -26,7 +26,7 @@
         "esprima": "~1.0.2",
         "escodegen": "~0.0.22",
         "uglify-js": "~2.3.0",
-        "colors": "~0.6.0-1",
+        "chalk": "~0.3.0",
         "cssbeautify": "~0.3.0",
         "csslint": "~0.9",
         "uglifycss": "~0.0.5",
