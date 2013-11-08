@@ -15,28 +15,28 @@ htmllint
 
 ```
 [
-	{
-		element: "a", 
-		attributes: { 
-			"charset": true,
-			"coords": true,
-			"download": true,
-			"href": true,
-			"hreflang": true,
-			"media": true,
-			"name": true,
-			"ping": true,
-			"rel": true,
-			"rev": true,
-			"shape": true,
-			"target": true,
-			"type": true
-		}
-	},
-	{
-		element: "abbr", 
-		attributes: { }
-	}
+    {
+        element: "a", 
+        attributes: { 
+            "charset": true,
+            "coords": true,
+            "download": true,
+            "href": true,
+            "hreflang": true,
+            "media": true,
+            "name": true,
+            "ping": true,
+            "rel": true,
+            "rev": true,
+            "shape": true,
+            "target": true,
+            "type": true
+        }
+    },
+    {
+        element: "abbr", 
+        attributes: { }
+    }
 ]
 ```
 
@@ -44,21 +44,21 @@ htmllint
 
 ```
 [
-	{
-		on: "div:not([class])",
-		test: function(index, element, lint) {
-			lint.warn("CLASSLESS_DIV");	
-		}
-	},
-	{ 
-		on: "*",
-		test: function(index, element, lint) {
-			var cls = this.className;
-			if(this.hasAttribute('class') && /^\s*$/.test(cls)) {
-				lint.warn("EMPTY_CLASS");
-			}
-		} 
-	}
+    {
+        on: "div:not([class])",
+        test: function(index, element, lint) {
+            lint.warn("CLASSLESS_DIV"); 
+        }
+    },
+    { 
+        on: "*",
+        test: function(index, element, lint) {
+            var cls = this.className;
+            if(this.hasAttribute('class') && /^\s*$/.test(cls)) {
+                lint.warn("EMPTY_CLASS");
+            }
+        } 
+    }
 ]
 ```
 
