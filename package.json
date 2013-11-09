@@ -21,6 +21,7 @@
         "edp-project": ">=0.4.25",
         "edp-webserver": ">=0.4.11",
         "edp-codegen": ">=0.4.2",
+        "edp-watch": "~0.0.1",
         "read": "~1.0",
         "jshint": "~2.1",
         "esprima": "~1.0.2",
