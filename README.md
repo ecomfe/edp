@@ -47,7 +47,7 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
     csslint         使用csslint检测当前目录下所有CSS文件
     extension       扩展管理相关功能
     help            显示帮助信息
-    htmllint        使用htmllint检测当前目录下所有HTML文件
+    htmlhint        使用htmllint检测当前目录下所有HTML文件
     import          导入包
     jshint          使用jshint检测当前目录下所有Javascript文件
     minify          使用minify命令来让js、css、json文件获得最小化的输出
