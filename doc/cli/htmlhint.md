@@ -1,15 +1,15 @@
-htmllint
+htmlhint
 ---------
 ### Usage
 
-    edp htmllint [target]
+    edp htmlhint [target]
 
 
 ### Description
 
-使用`htmllint`对`当前目录`下所有HTML文件代码进行检测。检测结果将输出markdown格式的报告。
+使用`htmlhint`对`当前目录`下所有HTML文件代码进行检测。检测结果将输出markdown格式的报告。
 
-如果`当前目录`或`子目录`下包含`.htmllintrc`文件，则检测过程使用该用户配置，否则使用edp默认配置。
+如果`当前目录`或`子目录`下包含`.htmlhintrc`文件，则检测过程使用该用户配置，否则使用edp默认配置。
 
 针对标签的配置：
 
@@ -64,5 +64,6 @@ htmllint
 
 更多配置暂时可参考：
 
-https://github.com/ecomfe/edp/lib/htmllint/elements.js
-https://github.com/ecomfe/edp/lib/htmllint/rules.js
+https://github.com/ecomfe/edp-htmlhint/lib/elements.js
+
+https://github.com/ecomfe/edp-htmlhint/lib/config.js
