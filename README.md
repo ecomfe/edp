@@ -87,4 +87,5 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
 - [project](doc/cli/project.md)
 - [search](doc/cli/search.md)
 - [update](doc/cli/update.md)
+- [watch](doc/cli/watch.md)
 - [webserver](doc/cli/webserver.md)

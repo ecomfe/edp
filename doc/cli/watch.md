@@ -5,7 +5,7 @@ watch
 
     edp watch
     edp watch [task-group]
-    edp watch [taskGroup] [--config=confFile]
+    edp watch [task-group] [--config=confFile]
 
 ### Options
 
