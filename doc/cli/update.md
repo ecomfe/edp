@@ -5,12 +5,13 @@ update
 
     edp update
     edp update [name]
-    edp update [name] [--reserve-older]
+    edp update [name] [--reserve-older] [--force]
 
 
 ### Options
 
 + --reserve-older - 保留包的老版本。
++ --force         - 没有confirm提示，直接更新。
 
 
 ### Description
