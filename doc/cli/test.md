@@ -13,11 +13,11 @@ edp-test
 
 建议目录结构为 `/test/spec/*Spec.js`。
 
-`init' 子命令将在 `test` 目录生成测试配置文件 `config.js` 和测试入口文件 `main.js`
+`init` 子命令将在 `test` 目录生成测试配置文件 `config.js` 和测试入口文件 `main.js`
 
 `start` 子命令将启动测试服务，并报告测试结果和代码覆盖率，检测到无配置文件时会自动调用 `init`。
 
-不带任何子子命令的 `edp test` 相当于 `edp test start`
+不带任何子命令的 `edp test` 相当于 `edp test start`
 
 配置示例：
 
