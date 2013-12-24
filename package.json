@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "0.6.8-beta.15",
+    "version": "0.6.8-beta.16",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -12,17 +12,18 @@
         { "name": "virola", "email" : "virola.zhu@gmail.com" },
         { "name": "Leo Wang", "email" : "leowang721@gmail.com" },
         { "name": "fanxueliang", "email" : "fanxueliang.g@gmail.com" },
-        { "name": "chris", "email" : "wfsr@foxmail.com" }
+        { "name": "chris", "email" : "wfsr@foxmail.com" },
+        { "name": "Ielgnaw", "email": "wuji0223@126.com" }
     ],
     "dependencies": {
         "edp-config": ">=0.4.2",
-        "edp-build": ">=0.5.15",
+        "edp-build": ">=0.5.16",
         "edp-package": ">=0.4.7",
         "edp-project": ">=0.4.25",
-        "edp-webserver": ">=0.4.12",
+        "edp-webserver": ">=0.4.13",
         "edp-codegen": ">=0.4.2",
-        "edp-watch": ">=0.1.0-beta.1",
-        "edp-htmlhint": ">=0.1.1",
+        "edp-watch": ">=0.1.0-beta.2",
+        "edp-htmlhint": ">=0.1.2",
         "read": "~1.0",
         "jshint": "~2.1",
         "js-beautify": "~1.4.2",
