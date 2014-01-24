@@ -15,6 +15,7 @@
         { "name": "chris", "email" : "wfsr@foxmail.com" },
         { "name": "Ielgnaw", "email": "wuji0223@126.com" }
     ],
+    "preferGlobal": true,
     "dependencies": {
         "edp-config": ">=0.4.2",
         "edp-build": ">=0.5.16",
