@@ -1,7 +1,7 @@
 {
-    "name": "edp",
-    "description": "Enterprise Develop Platform",
-    "version": "0.6.8-beta.16",
+    "name": "edp-dev",
+    "description": "Enterprise Develop Platform (dev)",
+    "version": "0.6.9",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -17,14 +17,13 @@
     ],
     "preferGlobal": true,
     "dependencies": {
-        "edp-config": ">=0.4.2",
-        "edp-build": ">=0.5.16",
-        "edp-package": ">=0.4.7",
-        "edp-project": ">=0.4.25",
-        "edp-webserver": ">=0.4.13",
-        "edp-codegen": ">=0.4.2",
+        "edp-config": "~0.4.2",
+        "edp-build": "~0.5.16",
+        "edp-package": "~0.4.7",
+        "edp-project": "~0.4.25",
+        "edp-webserver": "~0.4.13",
         "edp-watch": ">=0.1.0-beta.2",
-        "edp-htmlhint": ">=0.1.2",
+        "edp-htmlhint": "~0.1.2",
         "read": "~1.0",
         "jshint": "~2.1",
         "js-beautify": "~1.4.2",
@@ -47,6 +46,6 @@
     },
     "repository": "git://github.com/ecomfe/edp",
     "bin": {
-        "edp": "./bin/edp-cli"
+        "edp-dev": "./bin/edp-cli"
     }
 }
