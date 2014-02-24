@@ -16,6 +16,9 @@
         { "name": "Ielgnaw", "email": "wuji0223@126.com" }
     ],
     "preferGlobal": true,
+    "scripts": {
+        "prepare": "npm ln edp-core edp-config edp-build edp-package edp-project edp-webserver edp-watch edp-htmlhint edp-test"
+    },
     "dependencies": {
         "edp-core": "~0.0.1",
         "edp-config": "~0.4.2",
