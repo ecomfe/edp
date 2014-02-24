@@ -1,7 +1,7 @@
 {
     "name": "edp-dev",
     "description": "Enterprise Develop Platform (dev)",
-    "version": "0.6.15",
+    "version": "0.6.16",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
