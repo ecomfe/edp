@@ -1,7 +1,7 @@
 {
     "name": "edp-dev",
     "description": "Enterprise Develop Platform (dev)",
-    "version": "0.6.16",
+    "version": "0.6.17",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -20,7 +20,7 @@
         "prepare": "npm ln edp-core edp-config edp-build edp-package edp-project edp-webserver edp-watch edp-htmlhint edp-test"
     },
     "dependencies": {
-        "edp-core": "~0.0.1",
+        "edp-core": "~0.0.14",
         "edp-config": "~0.4.2",
         "edp-build": "~0.5.16",
         "edp-package": "~0.4.7",
