@@ -1,5 +1,5 @@
 {
-    "name": "edp-dev",
+    "name": "edp",
     "description": "Enterprise Develop Platform (dev)",
     "version": "0.6.19",
     "contributors": [
@@ -50,6 +50,6 @@
     },
     "repository": "git://github.com/ecomfe/edp",
     "bin": {
-        "edp-dev": "./bin/edp-cli"
+        "edp": "./bin/edp-cli"
     }
 }
