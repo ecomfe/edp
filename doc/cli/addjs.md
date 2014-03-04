@@ -3,7 +3,7 @@ addjs
 
 ### Usage
 
-    edp addjs <jsfile>
+    edp addjs <jsfile> [--id=yourid] [--type=function|object]
     
 ### Options
 

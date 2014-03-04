@@ -3,6 +3,7 @@ jshint
 ### Usage
 
     edp jshint
+    edp jshint [target]
 
 
 ### Description

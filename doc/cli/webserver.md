@@ -8,7 +8,6 @@ webserver
     edp webserver start [--config=configFile]
     edp webserver start [--document-root=documentRoot]
 
-
 ### Options
 
 + --port - 启动的端口号，不指定则按照配置文件中配置的端口号启动，默认配置文件的端口配置为`8848`。
@@ -94,5 +93,4 @@ WebServer的配置是一个NodeJS风格的Javascript模块。WebServer运行时�
             }
         ];
     };
-
 

@@ -1,7 +1,5 @@
-EDP
+EDP [![NPM version](https://badge.fury.io/js/edp.png)](https://npmjs.org/package/edp) [![Dependencies Status](https://david-dm.org/ecomfe/edp.png)](https://david-dm.org/ecomfe/edp)
 ==========
-
-[![Dependencies Status](https://david-dm.org/ecomfe/edp.png)](https://david-dm.org/ecomfe/edp)
 
 EDP是一个企业级前端应用的开发平台，提供了常用的项目管理工具、包管理工具、调试工具、构建工具、代码生成工具、代码检测工具等一系列开发时的支持，并允许用户自定义自己的扩展。
 
@@ -47,6 +45,7 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
     csslint         使用csslint检测当前目录下所有CSS文件
     extension       扩展管理相关功能
     help            显示帮助信息
+    htmlhint        使用htmllint检测当前目录下所有HTML文件
     import          导入包
     jshint          使用jshint检测当前目录下所有Javascript文件
     minify          使用minify命令来让js、css、json文件获得最小化的输出
@@ -86,4 +85,5 @@ edp已经发布到npm上，可以通过下面的npm命令安装。`-g`选项是�
 - [project](doc/cli/project.md)
 - [search](doc/cli/search.md)
 - [update](doc/cli/update.md)
+- [watch](doc/cli/watch.md)
 - [webserver](doc/cli/webserver.md)

@@ -2,7 +2,7 @@ csslint
 ---------
 ### Usage
 
-    edp csslint [target] [--no-color]
+    edp csslint [target]
 
 ### Description
 

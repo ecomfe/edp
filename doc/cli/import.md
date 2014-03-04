@@ -5,6 +5,7 @@ import
 
     edp import <name>[@version]
     edp import <localfile>
+    edp import <package.json> [--older] [--save-dev]
 
 
 ### Description
@@ -16,4 +17,6 @@ import
 
 
 默认情况下`import`从`http://registry.edp.baidu.com`导入包。从本地文件导入包时，`localfile`支持`.zip`、`.tar.gz`、`.tgz`文件。
+
+支持从`package.json`文件导入包，同时有两个可选参数：`--older`表示只导入最低版本的包；`--save-dev`表示同时导入`devDependencies`。
 
