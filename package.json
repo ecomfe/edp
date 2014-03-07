@@ -17,36 +17,30 @@
     ],
     "preferGlobal": true,
     "scripts": {
-        "prepare": "npm ln edp-core edp-config edp-build edp-package edp-project edp-webserver edp-watch edp-htmlhint edp-test"
+        "prepare": "npm ln edp-core edp-config",
+        "postinstall": "npm link npm",
+        "test": "make -C test"
     },
     "dependencies": {
         "edp-core": "~0.0.18",
-        "edp-config": "~0.4.4",
-        "edp-build": "~0.5.35",
-        "edp-package": "~0.4.11",
-        "edp-project": "~0.4.31",
-        "edp-webserver": "~0.4.18",
-        "edp-watch": "~0.1.2",
-        "edp-htmlhint": "~0.1.3",
-        "edp-doctor": "~0.0.5",
-        "read": "~1.0",
-        "jshint": "~2.4.4",
-        "html-minifier": "~0.5.4",
-        "uglify-js": "~2.4.12",
-        "chalk": "~0.4.0",
-        "csslint": "~0.10.0",
-        "uglifycss": "~0.0.5",
-        "semver": "~2.2.1",
-        "npm-registry-client": "~0.4.4",
-        "npmconf": "~0.1.1",
-        "msee": "~0.1.0"
+        "edp-config": "~0.4.4"
     },
     "devDependencies": {
-        "mocha": "~1.9",
-        "should": "~1.2"
     },
     "repository": "git://github.com/ecomfe/edp",
     "bin": {
         "edp": "./bin/edp-cli"
+    },
+    "edp": {
+        "extensions": {
+            "import": "edp-package",
+            "search": "edp-package",
+            "csslint": "edp-lint",
+            "jslint": "edp-lint",
+            "htmllint": "edp-lint",
+            "addhtml": "edp-add",
+            "addjs": "edp-add",
+            "install": "edp-core"
+        }
     }
 }
