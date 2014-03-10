@@ -1,7 +1,7 @@
 {
-    "name": "edp",
+    "name": "edp-dev",
     "description": "Enterprise Develop Platform (dev)",
-    "version": "0.6.20",
+    "version": "1.0.0",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -17,7 +17,6 @@
     ],
     "preferGlobal": true,
     "scripts": {
-        "prepare": "npm ln edp-core edp-config",
         "postinstall": "npm link npm",
         "test": "make -C test"
     },
@@ -30,7 +29,7 @@
     },
     "repository": "git://github.com/ecomfe/edp",
     "bin": {
-        "edp": "./bin/edp-cli"
+        "edp-dev": "./bin/edp-cli"
     },
     "edp": {
         "extensions": {
