@@ -23,7 +23,8 @@
     },
     "dependencies": {
         "edp-core": "~0.0.18",
-        "edp-config": "~0.4.4"
+        "edp-config": "~0.4.4",
+        "msee": "~0.1.1"
     },
     "devDependencies": {
     },
@@ -35,11 +36,14 @@
         "extensions": {
             "import": "edp-package",
             "search": "edp-package",
+
             "csslint": "edp-lint",
             "jslint": "edp-lint",
             "htmllint": "edp-lint",
+
             "addhtml": "edp-add",
             "addjs": "edp-add",
+
             "install": "edp-core"
         }
     }
