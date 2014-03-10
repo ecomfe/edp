@@ -22,7 +22,8 @@
     "dependencies": {
         "edp-core": "~1.0.0",
         "edp-config": "~1.0.0",
-        "msee": "~0.1.1"
+        "msee": "~0.1.1",
+        "sprintf": "~0.1.3"
     },
     "devDependencies": {
     },
