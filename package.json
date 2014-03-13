@@ -33,17 +33,11 @@
     },
     "edp": {
         "extensions": {
-            "import": "edp-package",
-            "search": "edp-package",
-
-            "csslint": "edp-lint",
-            "jslint": "edp-lint",
-            "htmllint": "edp-lint",
-
-            "addhtml": "edp-add",
-            "addjs": "edp-add",
-
-            "install": "edp-core"
+            "edp-core": [ "install" ],
+            "edp-config": [ "config" ],
+            "edp-build": [ "build" ],
+            "edp-package": [ "import", "search", "update" ],
+            "edp-project": [ "init" ]
         }
     }
 }
