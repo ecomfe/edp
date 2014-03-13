@@ -64,12 +64,44 @@ describe('cmd', function(){
 
         var module = cmd.getCommandModule( pkg, args, rootNode );
         expect( module.name ).toBe( 'xyz' );
-        expect( module.node.module.cli ).toBe( undefined );
+        expect( module.node.module.cli ).toEqual( {} );
         expect( module.node.fullPath ).toBe( undefined );
 
         module = cmd.getCommandModule( pkg, [ 'xyz', 'zk' ], rootNode );
         expect( module.name ).toBe( 'zk' );
         expect( module.node.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'xyz', 'zk.js' ) );
+    });
+
+    it('Builtin Command 1', function(){
+        // edp zk
+        //   -> "edp-foo": [ "zk" ]
+        var pkg = 'edp-foo';
+        var args = [ 'zk' ];
+        var dir = './node_modules/edp-foo';
+        var rootNode = cmd.getRootNode( pkg, dir );
+
+        var module = cmd.getCommandModule( pkg, [ 'zk' ], rootNode );
+        expect( module.name ).toBe( null );
+        expect( module.node ).toBe( null );
+    });
+
+    it('Builtin Command 2', function(){
+        // edp foo
+        //   -> "edp-foo": [ "zk" ]
+        var pkg = 'edp-foo';
+        var dir = './node_modules/edp-foo';
+        var rootNode = cmd.getRootNode( pkg, dir );
+
+        var module = cmd.getCommandModule( pkg, [ 'foo' ], rootNode );
+        expect( module.name ).toBe( 'foo' );
+        expect( module.node ).not.toBe( null );
+        expect( module.node.fullPath ).toBe( path.resolve(
+            __dirname, dir, 'cli', 'foo.js'
+        ) );
+    });
+
+    it('User Command 1', function(){
+        // see getCommandModule3
     });
 });
 
