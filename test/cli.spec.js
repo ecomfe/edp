@@ -14,36 +14,9 @@
  * @description 
  * lib/cli.js的测试用例
  **/
-var cli = require( '../lib/cli' );
+var cli = require( '../lib/cmd' );
 
 describe('cli', function(){
-    it('getCommandModule', function(){
-        var providerPackage = 'edp-foo';
-        var args = [];
-        var cmd = cli.getCommandModule( providerPackage, args );
-        expect( cmd ).not.toBe( null );
-        expect( cmd.name ).not.toBe( null );
-        expect( cmd.module ).not.toBe( null );
-        expect( cmd.name ).toBe( 'foo' );
-
-        args = [ 'a', 'b', 'c', 'd' ];
-        cmd = cli.getCommandModule( providerPackage, args );
-        expect( cmd.name ).toBe( 'foo' );
-
-        args = [ '-a', 'b', 'c', 'd' ];
-        cmd = cli.getCommandModule( providerPackage, args );
-        expect( cmd.name ).toBe( 'foo' );
-
-        args = [ 'zk', '-b', 'c', 'd' ];
-        cmd = cli.getCommandModule( providerPackage, args );
-        expect( cmd.name ).toBe( 'zk' );
-
-        // -a应该被shift掉的
-        args = [ '-a', 'zk', 'b', 'c', 'd' ];
-        cmd = cli.getCommandModule( providerPackage, args );
-        expect( cmd.name ).toBe( 'foo' );
-    });
-
     it('getCommandArguments', function(){
         var x = cli.getCommandArguments(
             [ 'list', 'help' ],
