@@ -17,7 +17,8 @@
     ],
     "preferGlobal": true,
     "scripts": {
-        "prepare": "npm ln edp-core edp-config edp-build edp-package edp-project edp-webserver edp-watch edp-htmlhint edp-test"
+        "prepare": "npm ln edp-core edp-config edp-build edp-package edp-project edp-webserver edp-watch edp-htmlhint edp-test",
+        "test": "make -C test"
     },
     "dependencies": {
         "edp-core": "~0.0.18",
