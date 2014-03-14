@@ -12,20 +12,20 @@
  * @author leeight(liyubei@baidu.com)
  * @version $Revision$ 
  * @description 
- * lib/cli.js的测试用例
+ * lib/cmd.js的测试用例
  **/
-var cli = require( '../lib/cmd' );
+var cmd = require( '../lib/cmd' );
 
-describe('cli', function(){
+describe('cmd', function(){
     it('getCommandArguments', function(){
-        var x = cli.getCommandArguments(
+        var x = cmd.getCommandArguments(
             [ 'list', 'help' ],
             [ '--list', '123', '-h', '456' ]
         );
         expect( x.args ).toEqual( [ '123', '456' ]);
         expect( x.opts ).toEqual( { l: true, list: true, h: true, help: true } );
 
-        x = cli.getCommandArguments(
+        x = cmd.getCommandArguments(
             [ 'list:', 'help', 'a' ],
             [
                 '--list', '123',
