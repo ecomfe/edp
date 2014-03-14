@@ -38,7 +38,12 @@
             "edp-config": [ "config" ],
             "edp-build": [ "build" ],
             "edp-package": [ "import", "search", "update" ],
-            "edp-project": [ "init" ]
+            "edp-project": [ ],
+            "edp-lint": [ "htmlhint", "csslint", "jshint" ],
+            "edp-beautify": [ "beautify" ],
+            "edp-doctor": [ "doctor" ],
+            "edp-minify": [ "minify" ],
+            "edp-test": [ "test" ]
         }
     }
 }

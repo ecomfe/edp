@@ -21,7 +21,7 @@ describe('cmd', function(){
     it('lookupPackage', function(){
         expect( cmd.lookupPackage( 'install' ) ).toBe( 'edp-core' );
         expect( cmd.lookupPackage( 'config' ) ).toBe( 'edp-config' );
-        expect( cmd.lookupPackage( 'init' ) ).toBe( 'edp-project' );
+        expect( cmd.lookupPackage( 'init' ) ).toBe( 'edpx-init' );
         expect( cmd.lookupPackage( 'project' ) ).toBe( 'edp-project' );
         expect( cmd.lookupPackage( 'xyz' ) ).toBe( 'edpx-xyz' );
     });
