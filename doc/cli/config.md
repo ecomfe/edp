@@ -5,7 +5,8 @@ config
 
     edp config <name> [value]
     edp config --list
-    
+    edp config
+
 ### Options
 
 + --list - 列出所有用户配置。

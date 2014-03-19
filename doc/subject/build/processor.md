@@ -252,6 +252,87 @@ new VariableSubstitution( {
 } )
 ```
 
+
+### ManifestCompiler
+
+ManifestCompiler用于给文件增加manifest属性、以及生成*.appcache文件。
+
+```javascript
+new ManifestCompiler( {
+    configFile: 'module.conf',
+    manifests: [
+        { 
+            cachePage: 'main.html', 
+            autoCache: false,
+            manifestName: 'main.appcache', 
+            cache: [
+                'asset/file2.js' , 
+            ],
+            fallback: [
+                '/ offline.html'
+            ], 
+            network: [ 
+                'asset/css/color.css'
+            ] 
+        },
+        { 
+            cachePage: 'page/*', 
+            prefixPath: '../',
+            manifestName: 'page.appcache', 
+            fallback: [
+                '/ ../offline.html'
+            ], 
+            network: [ 
+                'asset/css/color.css'
+            ] 
+        }
+    ]
+} )
+```
+
+#### options.configFile
+
+用于指定模块的配置文件。与ModuleCompiler中的参数相同。
+
+#### options.manifests
+
+生成manifest文件的配置数组
+
+#### options.manifests.cachePage
+
+缓存文件路径(支持通配符)，缓存文件根目录是`output`
+
+#### options.manifests.autoCache
+
+自动缓存资源，若不需要自动缓存资源，指定值为`false`，默认值为`true`
+
+#### options.manifests.manifestName
+
+manifest文件名
+
+#### options.manifests.prefixPath
+
+当缓存文件不在edp project init后的文件夹下时，需要指定该参数，使资源的根目录是`output`。例如，缓存文件在page文件夹下，则prefixPath的值为`../`。缓存文件在page/page文件夹下，则prefixPath的值为`../../`
+
+#### options.manifests.cache
+
+cache部分资源(资源路径是用`output`作为起始目录)，请参考[concept-appcache-manifest-explicit](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#concept-appcache-manifest-explicit)。
+
+#### options.manifests.fallback
+
+fallback部分资源(资源路径是用`output`作为起始目录)，请参考[concept-appcache-manifest-fallback](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#concept-appcache-manifest-fallback)。
+
+#### options.manifests.network
+
+network部分资源(资源路径是用`output`作为起始目录)，请参考[concept-appcache-manifest-network](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#concept-appcache-manifest-network)。
+
+上面的manifests中的例子依次表示的是：
+
+1. `output`路径下的main.html增加manifest属性，manifest文件名为main.appcache，不自动缓存资源，指定缓存资源为asset/file2.js，当前页面(main.html)无法访问时的替代资源是offline.html，从不缓存的资源是asset/css/color.css
+2. `output`路径下的page文件下的所有文件增加manifest属性，资源文件前缀是`../`，manifest文件名为page.appcache，自动缓存资源，当前页面(main.html)无法访问时的替代资源是offline.html，从不缓存的资源是asset/css/color.css
+
+
+
 ## 自定义processor
 
 edp build自带的processor可能满足不了你的需求，这时候你可以定制自己的processor，就像用Javascript写一个简单的类。有两点需要注意的：
