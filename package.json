@@ -39,6 +39,7 @@
             "edp-build": [ "build" ],
             "edp-package": [ "import", "search", "update" ],
             "edp-project": [ ],
+            "edp-webserver": [ ],
             "edp-lint": [ "htmlhint", "csslint", "jshint" ],
             "edp-beautify": [ "beautify" ],
             "edp-doctor": [ "doctor" ],
