@@ -21,35 +21,20 @@ describe('help', function(){
     it('getUserCommands', function(){
         var dir = path.join( __dirname, 'node_modules' );
         var extensionCommands = help.getUserCommands( dir );
-        expect( extensionCommands.length ).toBe( 1);
+        expect( extensionCommands.length ).toBe( 1 );
 
-        var cmd = extensionCommands[ 0 ];
-        var subs = help.expandCommands( cmd, cmd.name );
-        expect( subs.length ).toBe( 1 );
-        expect( subs[ 0 ] ).toEqual( [ 'edpx-bar bar', 'hello world' ] );
+        var cmd = extensionCommands[0];
+        expect( cmd.module.cli.description ).toBe( 'hello world' );
     });
 
     it('getBuiltinCommands', function(){
         var dir = path.join( __dirname, 'node_modules' );
         var builtinCommands = help.getBuiltinCommands( dir );
-        expect( builtinCommands.length ).toBe( 3 );
+        expect( builtinCommands.length ).toBe( 4 );
 
-        var cmd = builtinCommands[ 0 ];
-        var subs = help.expandCommands( cmd, cmd.name );
-        expect( subs.length ).toBe( 2 );
-        expect( subs[ 0 ] ).toEqual( [ 'edp-bar bar', '' ] );
-        expect( subs[ 1 ] ).toEqual( [ 'edp-bar zk', '' ] );
-
-        cmd = builtinCommands[ 1 ];
-        var subs = help.expandCommands( cmd, cmd.name );
-        expect( subs.length ).toBe( 2 );
-        expect( subs[ 0 ] ).toEqual( [ 'edp-foo foo', '' ] );
-        expect( subs[ 1 ] ).toEqual( [ 'edp-foo foo zk', '' ] );
-
-        cmd = builtinCommands[ 2 ];
-        var subs = help.expandCommands( cmd, cmd.name );
-        expect( subs.length ).toBe( 1 );
-        expect( subs[ 0 ] ).toEqual( [ 'edp-xyz xyz zk', '' ] );
+        builtinCommands.forEach( function ( commandNode ) {
+            expect(['zk', 'bar', 'foo', 'xyz']).toContain(commandNode.name);
+        });
     });
 });
 
