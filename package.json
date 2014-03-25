@@ -40,6 +40,7 @@
             "edp-package": [ "import", "search", "update" ],
             "edp-project": [ ],
             "edp-webserver": [ ],
+            "edp-watch": [ ],
             "edp-lint": [ "htmlhint", "csslint", "jshint" ],
             "edp-beautify": [ "beautify" ],
             "edp-doctor": [ "doctor" ],
