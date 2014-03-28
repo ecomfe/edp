@@ -1,18 +1,18 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * test/cmd.spec.js ~ 2014/03/13 11:24:35
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
- *  
+ * @version $Revision$
+ * @description
+ *
  **/
 var path = require( 'path' );
 var cmd = require( '../lib/cmd' );
@@ -40,11 +40,13 @@ describe('cmd', function(){
 
         var commandNode = cmd.getCommand( ['foo'] );
         expect( commandNode.name ).toBe( 'foo' );
-        expect( commandNode.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'foo.js' ) );
+        expect( commandNode.fullPath ).toBe(
+            path.resolve( __dirname, dir, 'cli', 'foo.js' ) );
 
         commandNode = cmd.getCommand( [ 'foo', 'zk' ] );
         expect( commandNode.name ).toBe( 'zk' );
-        expect( commandNode.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'foo', 'zk.js' ) );
+        expect( commandNode.fullPath ).toBe(
+            path.resolve( __dirname, dir, 'cli', 'foo', 'zk.js' ) );
     });
 
     it('getCommand2', function(){
@@ -52,11 +54,13 @@ describe('cmd', function(){
 
         var commandNode = cmd.getCommand( ['bar'] );
         expect( commandNode.name ).toBe( 'bar' );
-        expect( commandNode.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'bar.js' ) );
+        expect( commandNode.fullPath ).toBe(
+            path.resolve( __dirname, dir, 'cli', 'bar.js' ) );
 
         commandNode = cmd.getCommand( [ 'zk' ] );
         expect( commandNode.name ).toBe( 'zk' );
-        expect( commandNode.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'zk.js' ) );
+        expect( commandNode.fullPath ).toBe(
+            path.resolve( __dirname, dir, 'cli', 'zk.js' ) );
     });
 
     it('getCommand3', function(){
@@ -69,13 +73,13 @@ describe('cmd', function(){
 
         commandNode = cmd.getCommand( [ 'xyz', 'zk' ] );
         expect( commandNode.name ).toBe( 'zk' );
-        expect( commandNode.fullPath ).toBe( path.resolve( __dirname, dir, 'cli', 'xyz', 'zk.js' ) );
+        expect( commandNode.fullPath ).toBe(
+            path.resolve( __dirname, dir, 'cli', 'xyz', 'zk.js' ) );
     });
 
     it('Builtin Command', function(){
         // edp foo
         //   -> "edp-foo": [ "zk" ]
-        var pkg = 'edp-foo';
         var dir = '../node_modules/edp-foo';
 
         var commandNode = cmd.getCommand( [ 'foo' ] );

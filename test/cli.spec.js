@@ -1,17 +1,17 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * cli.spec.js ~ 2014/03/07 21:03:31
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
+ * @version $Revision$
+ * @description
  * lib/cmd.js的测试用例
  **/
 var cmd = require( '../lib/cmd' );
@@ -23,7 +23,12 @@ describe('cmd', function(){
             [ '--list', '123', '-h', '456' ]
         );
         expect( x.args ).toEqual( [ '123', '456' ]);
-        expect( x.opts ).toEqual( { l: true, list: true, h: true, help: true } );
+        expect( x.opts ).toEqual( {
+            l: true,
+            list: true,
+            h: true,
+            help: true
+        } );
 
         x = cmd.getCommandArguments(
             [ 'list:', 'help', 'a' ],
@@ -34,7 +39,13 @@ describe('cmd', function(){
             ]
         );
         expect( x.args ).toEqual( [ '456', 'zk' ] );
-        expect( x.opts ).toEqual( { list: '123', l: '123', h: true, help: true, a: true });
+        expect( x.opts ).toEqual( {
+            list: '123',
+            l: '123',
+            h: true,
+            help: true,
+            a: true
+        });
     });
 });
 
