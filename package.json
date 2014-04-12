@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "1.0.0-beta.5",
+    "version": "1.0.0-beta.6",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -17,8 +17,7 @@
     ],
     "preferGlobal": true,
     "scripts": {
-        "test": "make -C test",
-        "postinstall": "npm link --local npm"
+        "test": "make -C test"
     },
     "dependencies": {
         "edp-core": "~1.0.12",
