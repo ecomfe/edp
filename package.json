@@ -1,7 +1,7 @@
 {
     "name": "edp",
     "description": "Enterprise Develop Platform",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "otakustay", "email" : "otakustay@live.com" },
@@ -33,7 +33,7 @@
     },
     "edp": {
         "extensions": {
-            "edp-core": [ "install", "link", "unlink" ],
+            "edp-core": [ "install", "outdated" ],
             "edp-config": [ "config" ],
             "edp-build": [ "build" ],
             "edp-package": [ "import", "search", "update" ],
