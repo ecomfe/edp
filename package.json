@@ -41,7 +41,7 @@
             "edp-project": [ ],
             "edp-webserver": [ ],
             "edp-watch": [ ],
-            "edp-lint": [ "htmlhint", "csslint", "jshint" ],
+            "edp-lint": [ "htmlhint", "csslint", "jshint", "lesslint" ],
             "edp-beautify": [ "beautify" ],
             "edp-doctor": [ "doctor" ],
             "edp-minify": [ "minify" ],
