@@ -21,7 +21,7 @@
                 -g为全局安装参数，必选。 <br>
                 在Linux/Mac平台下，全局安装可能需要sudo。
             </p>
-            <img class="demo-pic" src="/css/images/demo/install.png"/>
+            <img class="demo-pic" src="<%- url_for('css/images/demo/install.png') %>"/>
 		</div>
 	</div>
 
@@ -34,7 +34,7 @@
                 导入包的指定版本： <br>
                 edp import &lt;package>@&lt;version><br><br>
             </p>
-            <img class="demo-pic" src="/css/images/demo/import.png"/>
+            <img class="demo-pic" src="<%- url_for('css/images/demo/import.png') %>"/>
 		</div>
 	</div>
 
@@ -47,7 +47,7 @@
                 将当前目录初始化为项目目录 <br>
                 项目目录不允许嵌套 <br>
             </p>
-            <img class="demo-pic" src="/css/images/demo/init.png"/>
+            <img class="demo-pic" src="<%- url_for('css/images/demo/init.png') %>"/>
         </div>
 	</div>
 
@@ -60,8 +60,8 @@
                 指定构建输出目录： <br>
                 edp build --output &lt;path> <br><br>
             </p>
-            <img class="demo-pic" src="/css/images/demo/init.png"/>
-            <a class="more" href="/Doc/Initialization/1-install/index.html">
+            <img class="demo-pic" src="<%- url_for('css/images/demo/init.png') %>"/>
+            <a class="more" href="<%- url_for('Doc/Initialization/1-install/index.html') %>">
                 more
             </a>
 		</div>
@@ -78,7 +78,7 @@
 
 <%- partial('_partial/footer') %>
 
-<script src="/js/fullPage.min.js"></script>
+<script src="<%- url_for('js/fullPage.min.js') %>"></script>
 <script>
     var runPage;
     runPage = new FullPage({
