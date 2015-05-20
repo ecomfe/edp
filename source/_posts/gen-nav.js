@@ -63,16 +63,21 @@ var text = '';
 types.forEach(function (type) {
     text += '\n<li><a class="cat-title">' + type.title + '</a>\n    <ul>';
     type.docs.forEach(function (doc) {
-        text += '\n        <li><a href="<%= root_path %>/' + type.name + '/' + doc.filename + '/">' + doc.title + '</a></li>';
+        //text += '\n        <li><a href="<%= root_path %>/' + type.name + '/' + doc.filename + '/">' + doc.title + '</a></li>';
 
         if (doc.primaries.length > 0) {
+            text += '\n        <li><a class="cat-title" href="<%= root_path %>/' + type.name + '/' + doc.filename + '/">' + doc.title + '</a></li>';
             text += '\n        <ul>';
+
             doc.primaries.forEach(function (primary) {
                 text += '\n            <li><a href="<%= root_path %>/' + type.name + '/' + doc.filename + '/#' + primary + '">' + primary + '</a></li>';
             });
             text += '\n        </ul>';
         }
-    })
+        else {
+            text += '\n        <li><a href="<%= root_path %>/' + type.name + '/' + doc.filename + '/">' + doc.title + '</a></li>';
+        }
+    });
     text += '\n    </ul>\n</li>';
 });
 
