@@ -12,8 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://localhost:4000
-root: /
+url: http://ecomfe.github.io/edp
+root: /edp/
 permalink: Doc/:category/:title/
 permalink_defaults:
 
@@ -64,4 +64,7 @@ theme: edp
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:ecomfe/edp.git
+  branch: gh-pages
+  message: deploy website
