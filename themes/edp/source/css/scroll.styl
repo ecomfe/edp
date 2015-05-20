@@ -1,0 +1,71 @@
+@import "_variables"
+@import "reset.css"
+
+body
+div
+p
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+body
+  background-size: contain
+  width: 100%
+  overflow-y: scroll
+  font: 16px/1.5 "Microsoft YaHei"  Helvetica  STHeiti STXihei   Microsoft JhengHei  Arial
+
+&\:\:-webkit-scrollbar
+  display: none
+
+
+
+@import "_partial/header"
+@import "_partial/footer"
+
+#menuarea
+  position: absolute
+  top: 0
+  height: 60px
+  width: 100%
+  z-index: 1000
+
+
+
+.bg-top
+  img
+    width: 100%
+    height: 100%
+
+.contain
+  .cont-box
+    color: #493125
+    margin: 7% auto
+    width: 45em
+    font-size: 20px
+    .item1
+      background: url('./images/shell.svg')
+    .item2
+      background: url('./images/pack.svg')
+    .item3
+      background: url('./images/install.svg')
+
+    .cont-item
+      height: 200px
+      padding: 42px 0
+      padding-left: 270px
+      background-size: 120px
+      background-repeat: no-repeat
+      background-position: left center
+      .item-txt
+        h1
+          font-size: 26px
+          font-weight: bold
+          color: #7eb7e5
+          margin-bottom: 30px
+      .start
+        text-decoration: none
+        color: #493125
+        &:hover
+          color: #7eb7e5

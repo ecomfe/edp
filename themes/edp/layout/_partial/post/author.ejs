@@ -1,0 +1,7 @@
+<% if (post.author) { %><span class="article-author"><i class="fa fa-pencil"></i>
+    <% if (post.author_link) { %>
+        <a target="_blank" href="<%- post.author_link %>" title="<%- post.author %>"><%- post.author %></a>
+    <% } else { %>
+        <%- post.author %>
+    <% } %>
+</span><% } %>

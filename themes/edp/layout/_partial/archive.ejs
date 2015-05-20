@@ -1,0 +1,11 @@
+<% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+<% }) %>
+<% if (page.total > 1){ %>
+    <nav id="page-nav">
+    <%- paginator({
+        prev_text: '&lt;',
+        next_text: '&gt;'
+    }) %>
+    </nav>
+<% } %>

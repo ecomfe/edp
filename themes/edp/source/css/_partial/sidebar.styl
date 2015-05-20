@@ -1,0 +1,63 @@
+@import "_partial/dtree.css"
+
+#sidebar
+  float: left
+  width: 26%
+  height: 80%
+  margin-top: 59px
+  overflow: hidden
+  overflow-y: auto
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif
+  font-size: 11px
+  color: #888
+  line-height: 2.3em
+  white-space: nowrap
+
+&\:\:-webkit-scrollbar
+  display: none
+
+.tree
+
+  /*margin-top: 10px*/
+  margin-left: 9%
+  float: left
+  /*width: 26%*/
+  height : 80%
+  margin-top : 59px
+  position : fixed
+  overflow-y : auto
+  a
+    color: #888
+    text-decoration: none
+    &:hover
+      color: #7eb7e5
+  h1
+    font-size: 16px
+    line-height: 2em
+    color: #41AAFF
+    border-bottom: 1px solid #41AAFF
+    margin-bottom: 8px
+    margin-left: 8px;
+    text-shadow: 1px 1px 1px #ccc
+  ul
+    margin-left: 10px
+  li
+    padding-left: 6px
+
+.wrap
+  ul
+    display: none
+
+.wrap
+  ul.show
+    display: block
+
+.cat-title
+  padding: 18px
+  background: url('./images/icon2.png') left center no-repeat
+  cursor: default
+.open
+  padding: 18px
+  background: url('./images/icon1.png') left center no-repeat
+.single-title
+  padding: 18px

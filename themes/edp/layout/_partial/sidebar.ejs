@@ -1,0 +1,74 @@
+
+<aside id="sidebar">
+    <div class="dtree">
+        <p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.closeAll();">close all</a></p>
+        <div id="dtree-inner"></div>
+        <script type="text/javascript">
+            (function(){
+                d = new dTree('d');
+
+                d.add(0,-1,'Category');
+
+                d.add(8,0,'安装与升级');
+                d.add(18,8,'安装', '\\Doc\\Initialization\\1-install\\index.html');
+                d.add(28,8,'查看命令列表', '\\Doc\\Initialization\\2-currentCommands\\index.html');
+                d.add(38,8,'查看命令帮助', '\\Doc\\Initialization\\3-commandsHelp\\index.html');
+                d.add(48,8,'升级', '\\Doc\\Initialization\\4-update\\index.html');
+
+                d.add(1,0,'包管理');
+                d.add(11,1,'为什么要进行包管理', '\\Doc\\Package-management\\1-reasonofPackMngm\\index.html');
+                d.add(21,1,'查找当前存在的包', '\\Doc\\Package-management\\2-findCurrPack\\index.html');
+                d.add(31,1,'导入与使用包', '\\Doc\\Package-management\\3-instlAndUse\\index.html');
+                d.add(131,31,'导入包的最新版', '\\Doc\\Package-management\\3-instlAndUse\\index.html#导入包的最新版');
+                d.add(231,31,'导入指定版本的包', '\\Doc\\Package-management\\3-instlAndUse\\index.html#导入指定版本的包');
+                d.add(41,1,'升级包', '\\Doc\\Package-management\\4-updatePack\\index.html');
+                d.add(141,41,'升级指定包', '\\Doc\\Package-management\\4-updatePack\\index.html#升级指定包');
+                d.add(241,41,'升级所有包', '\\Doc\\Package-management\\4-updatePack\\index.html#升级所有包');
+
+                d.add(2,0,'项目管理');
+                d.add(12,2,'初始化项目', '\\Doc\\Project-management\\1-initProj\\index.html');
+                d.add(22,2,'使用edp项目的好处', '\\Doc\\Project-management\\2-advantage\\index.html');
+
+                d.add(3,0,'项目构建');
+                d.add(13,3,'构建一个项目', '\\Doc\\Build\\1-build\\index.html');
+                d.add(113,13,'指定输出目录', '\\Doc\\Build\\1-build\\index.html#指定输出目录');
+                d.add(213,13,'强制覆盖', '\\Doc\\Build\\1-build\\index.html#强制覆盖');
+                d.add(313,13,'指定构建配置文件', '\\Doc\\Build\\1-build\\index.html#指定构建配置文件');
+                d.add(23,3,'构建过程', '\\Doc\\Build\\2-buildProc\\index.html');
+                d.add(33,3,'自定义构建', '\\Doc\\Build\\3-custBuild\\index.html');
+
+                d.add(4,0,'前端代码静态检测');
+                d.add(14,4,'代码检测', '\\Doc\\Lint\\1-codeCheck\\index.html');
+                d.add(24,4,'Javascript代码检测', '\\Doc\\Lint\\2-jsCheck\\index.html');
+                d.add(124,24,'自定义jshint配置', '\\Doc\\Lint\\2-jsCheck\\index.html#自定义jshint配置');
+                d.add(224,24,'排除检测文件', '\\Doc\\Lint\\2-jsCheck\\index.html#排除检测文件');
+                d.add(34,4,'CSS代码检测', '\\Doc\\Lint\\3-cssCheck\\index.html');
+                d.add(134,34,'自定义csslint配置', '\\Doc\\Lint\\3-cssCheck\\index.html#自定义csslint配置');
+                d.add(234,34,'排除检测文件', '\\Doc\\Lint\\3-cssCheck\\index.html#排除检测文件');
+                d.add(44,4,'HTML代码检测', '\\Doc\\Lint\\4-htmlCheck\\index.html');
+                d.add(144,44,'排除检测文件', '\\Doc\\Lint\\4-htmlCheck\\index.html#排除检测文件');
+
+                d.add(5,0,'使用WebServer进行调试');
+                d.add(15,5,'启动WebServer', '\\Doc\\WebServer\\1-startServer\\index.html');
+                d.add(115,15,'指定监听端口', '\\Doc\\WebServer\\1-startServer\\index.html#指定监听端口');
+                d.add(215,15,'指定WebServer配置文件', '\\Doc\\WebServer\\1-startServer\\index.html#指定WebServer配置文件');
+                d.add(25,5,'配置WebServer', '\\Doc\\WebServer\\2-confServer\\index.html');
+                d.add(35,5,'资源处理函数', '\\Doc\\WebServer\\3-resourceFunc\\index.html');
+                d.add(45,5,'内置资源处理函数', '\\Doc\\WebServer\\4-innerResourFunc\\index.html');
+                d.add(55,5,'自定义资源处理函数', '\\Doc\\WebServer\\5-custResourFunc\\index.html');
+
+                d.add(6,0,'扩展自己的EDP命令');
+                d.add(16,6,'Builtin Commands', '\\Doc\\Command-extension\\1-BuiltinComd\\index.html');
+                d.add(26,6,'Command Resolve', '\\Doc\\Command-extension\\2-ComdResol\\index.html');
+                d.add(36,6,'User Commands', '\\Doc\\Command-extension\\3-userComd\\index.html');
+                d.add(46,6,'Command Help', '\\Doc\\Command-extension\\4-comdHelp\\index.html');
+
+                d.add(7,0,'诊断工具', '\\Doc\\Doctor\\doctor\\index.html');
+
+    //        document.write(d);
+                document.getElementById("dtree-inner").innerHTML = d;
+            })();
+
+        </script>
+    </div>
+</aside>

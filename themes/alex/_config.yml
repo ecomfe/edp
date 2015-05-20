@@ -1,0 +1,29 @@
+# Header
+menu:
+  首页: /
+  演示: /
+  文档: /
+  Github: /
+rss: 
+github: https://github.com/ppoffice/hexo-theme-alex
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: left
+widgets:
+- category
+
+# Links
+links: 
+  Hexo: http://hexo.io
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:

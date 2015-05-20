@@ -1,0 +1,140 @@
+layout: false
+---
+
+<%- partial('_partial/head') %>
+<body>
+
+<div id="menuarea">
+    <%- partial('_partial/header', {name: 'header-noDis'}) %>
+
+</div>
+
+<section class="bg-top">
+    <img src="/css/images/computer1.jpg" />
+</section>
+<section class="contain">
+    <div class="cont-box">
+        <div class="cont-item item1">
+            <div class="item-txt">
+            <h1>EDP是什么?</h1>
+                全称Enterprise Develop Platform ——企业级前端应用开发平台<br>
+                一个基于Node.JS与NPM的前端开发平台。<br>
+                通过命令行轻松助你完成前端开发全过程。<br>
+            </div>
+        </div>
+        <div class="cont-item item2">
+            <div class="item-txt">
+                <h1>EDP能做什么? </h1>
+                1. 简洁的项目创建及包管理 <br>
+                2. 多种工具进行本地调试<br>
+                3. 快速项目构建及代码检测<br>
+                4. 可扩展插件<br>
+                ...
+            </div>
+        </div>
+        <div class="cont-item item3">
+            <div class="item-txt">
+                <h1>安装EDP </h1>
+                npm install -g edp
+            </div>
+        </div>
+        <div class="cont-item item4">
+            <div class="item-txt">
+                <h1>如何使用？ </h1>
+                <a class="start" href="/demo/index.html">快速上手 >></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="any-other">
+        <p><i class="fa fa-info-circle"></i> 开源的EDP来自百度<a href="http://efe.baidu.com/">EFE</a>团队。
+            在<a href="http://efe.baidu.com/">EFE</a>，我们还有其他开源产品：<br><br></p>
+        <dl>
+            <dt><a target="_blank" href="http://echarts.baidu.com/">ECharts</a></dt>
+            <dd>直观，生动，可交互，可高度个性化定制的数据可视化图表。</dd>
+            <dt><a target="_blank" href="https://github.com/ecomfe/esl">ESL</a></dt>
+            <dd>比Require.js更精简、更高效、更健壮的AMD Loader。</dd>
+            <dt><a target="_blank" href="http://ecomfe.github.io/etpl">ETpl</a></dt>
+            <dd>强复用、灵活、高性能的JavaScript模板引擎。</dd>
+            <dt><a target="_blank" href="https://github.com/ecomfe/er">ER</a></dt>
+            <dd>富浏览器端 web 应用的框架，适用于并能很方便地构建一个整站式的 AJAX web 应用。</dd>
+            <dt><a target="_blank" href="https://github.com/ecomfe/esui">ESUI</a></dt>
+            <dd>一套功能完善，并具有强大扩展机制的 UI 组件库。基于模板、声明式地编程方式让视图更具表达能力。</dd>
+            <dt><a target="_blank" href="http://ecomfe.github.io/est/">EST</a></dt>
+            <dd>基于 Less 的样式工具库，提供了一系列方便快捷的 mixin，只在调用时才输出代码。</dd>
+            <dt><a target="_blank" href="https://github.com/ecomfe/saber">Saber</a></dt>
+            <dd>提供了 JavaScript 模块、CSS 样式库与开发平台的完整前端解决方案。擅长移动端 SPA 项目、轻应用。</dd>
+            <dt><a target="_blank" href="https://github.com/ecomfe/rider">Rider</a></dt>
+            <dd>专为移动端设计的 Mixin 风格样式工具库。在其基础上创建了 Rider UI，一个灵活的 UI 样式库。</dd>
+            <dt><a target="_blank" href="http://efe.baidu.com/">......</a></dt>
+        </dl>
+    </div>
+    <p class="cp">©2014 <a href="http://efe.baidu.com" target="_blank">Baidu EFE</a> | Powered By <a
+                href="http://hexo.io">Hexo</a></p>
+</footer>
+<script>
+
+
+    var dom = document.getElementById('header');
+    var topDiv = document.getElementById('menuarea');
+
+    ////滚动离开顶部导航显示，接触顶部导航隐藏
+    function hideMenuByScroll() {
+//        var dom = document.getElementById('header');
+        var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if(winScroll === 0){
+            dom.className = 'header-noDis';
+        }
+        else{
+            dom.className = 'header';
+        }
+    }
+    //导航显示
+    function showMenu(e) {
+        dom.className = 'header';
+    }
+    //页面在最上方时导航隐藏
+    function hideMenu(e) {
+        var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if(winScroll === 0) {
+            dom.className = 'header-noDis';
+        }
+
+
+    }
+
+    if(topDiv.addEventListener) {
+        topDiv.addEventListener('mouseover', showMenu);
+    }
+    else if(topDiv.attachEvent) {
+        topDiv.attachEvent('onmouseover', showMenu);
+    }
+
+    if(dom.addEventListener) {
+        dom.addEventListener('mouseout', hideMenu);
+    }
+    else if(dom.attachEvent) {
+        dom.attachEvent('onmouseout', hideMenu);
+    }
+
+    //IE之外的绑定事件方法
+    if(document.addEventListener && !document.attachEvent) {
+
+        document.addEventListener('mousewheel',hideMenuByScroll);
+        //FF绑定滚动事件
+        document.addEventListener('DOMMouseScroll',hideMenuByScroll);
+
+    }
+    //IE
+    else if(document.attachEvent && !document.addEventListener) {
+        document.attachEvent('onmousewheel', hideMenuByScroll);
+
+    }else{
+        window.onmousewheel = hideMenuByScroll;
+    }
+
+</script>
+

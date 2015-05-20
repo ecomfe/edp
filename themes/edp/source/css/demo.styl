@@ -1,0 +1,175 @@
+@import "_variables"
+@import "reset.css"
+
+body
+div
+p
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+html
+  overflow: hidden
+
+body
+  width: 100%
+  *cursor: default
+  overflow: hidden
+  font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial
+  background: url('/css/images/demo-bg2.jpg') no-repeat
+  background-size: cover
+
+#pageContain
+  overflow: hidden
+
+.page
+  display: none
+  width: 100%
+  height: 90%
+  overflow: hidden
+  position: absolute
+  top: 60px
+  left: 0
+
+
+.contain
+  width: 100%
+  height: 100%
+  display: none
+  position: relative
+  z-index: 0
+
+.current
+.slide
+  .contain
+    display: block
+
+.current
+  display: block
+  z-index: 1
+
+.slide
+  display: block
+  z-index: 2
+
+.swipe
+  display: block
+  z-index: 3
+  transition-duration: 0ms !important
+  -webkit-transition-duration: 0ms !important
+
+.page1
+.page2
+.page3
+.page4
+.page5
+.page6
+  /*background: rgba(60,60,60,0.27)*/
+  /*opacity:0.27*/
+
+#navBar
+  z-index: 3
+  position: absolute
+  bottom: 12%
+  height: 50px
+  width: 230px
+  background-color: #393939
+  opacity: 0.5
+  border-radius: 25px
+  margin-left: -25px
+  padding-left: 25px
+  /*-moz-box-shadow: 3px 3px 6px #B7AEAE*/
+  /*-webkit-box-shadow: 3px 3px 6px #B7AEAE*/
+
+  object
+    height:50%
+    position: absolute
+    bottom: 0
+  .bg-btm
+    background-color: #393939
+    position: absolute
+    right: 0
+    height: 50%
+    width: 100%
+
+
+#navBar
+  .active
+    font-size: 23px
+    font-weight: bold
+
+#navBar
+  li
+    float: left
+    cursor: pointer
+    font-size: 19px
+    font-style: italic
+    line-height: 50px
+    text-align: center
+    width: 21%
+    height: 30px
+    color: #fff
+
+.txt
+  margin-top: 4%
+  margin-left: 14%
+  font-size: 16px
+  color: #fff
+  width: 24%
+  float: left
+  padding-top: 40px
+  span
+    font-size: 29px
+    line-height: 2em
+    color: #7ec7e5
+    display: block
+    border-bottom: 1px solid #7ec7e5
+    width: 4.5em
+  .title-l2
+    width: 2.5em
+  .title-l3
+    width: 3.5em
+
+.more
+  z-index: 100
+  display: block
+  position: fixed
+  bottom: 4%
+  right: 7%
+  color: #fff
+  /*text-shadow: -1px -1px 0 #A8A6A6*/
+  text-decoration: none
+  font-size: 15px
+  line-height: 1.5em
+  object
+    /*width: 2.5em*/
+    /*margin-bottom: -0.4em*/
+  a&:hover:after
+      content: '>>'
+
+.main-nav-link-1
+  /*border-bottom: 2px solid #FCDFAA*/
+.demo-pic
+  float: left
+  width: 52%
+  margin-top: 2%
+
+@import "_partial/header"
+@import "_partial/footer"
+
+footer
+  position: fixed
+  bottom: 8px
+  z-index: 3
+  width: 100%
+  color: #fff
+  padding-top: 0
+  line-height: 1em
+  text-shadow: 2px 2px 2px #716D6D
+
+.menu
+  /*background-color: #393939*/
+  /*-moz-box-shadow: 0 5px 80px #A8A6A6*/
+  /*-webkit-box-shadow: 0 5px 80px #A8A6A6*/

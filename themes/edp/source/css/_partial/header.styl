@@ -1,0 +1,58 @@
+.header
+.header-d
+  position: fixed
+  top: 0
+  width: 100%
+  height: 60px
+  z-index: 1100
+  line-height: 3.7em
+  background-color: #393939
+  opacity: 0.5
+  transition: 0.5s ease
+
+
+.logo
+  position: absolute
+  float: left
+  top: 0
+  left: 25px
+
+.menu
+  font-weight: bold
+  color: #fff
+  z-index: 1050
+  height: 60px
+  line-height: 60px
+  /*line-height: 3.7em*/
+  font-family: 'Open Sans', font-yahei
+  position: absolute
+  float: left
+  top: 0
+  right: 30px
+  :first-child
+    /*margin-left: 67%*/
+  a
+    display: inline-block
+    text-decoration: none
+    color: #fff
+    padding:0 1em
+    margin: 0 1em
+    line-height: 58px
+
+  .nav-active
+
+  a:link
+  a:hover
+    color: #1595FB
+  a:focus
+    color: #1595FB
+
+.header-noDis
+  top: -60px
+  transition: 0.5s ease
+  .menu
+    margin-top: -60px
+    transition: 0.5s ease
+
+@import '_partial/logo.css'
+

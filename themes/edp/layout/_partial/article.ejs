@@ -1,0 +1,16 @@
+<article>
+    <h1 class="article-title"><%- post.title %></h1>
+
+    <%- post.content %>
+</article>
+
+<nav class="article-pagination">
+    <% if (page.prev) { %>
+    <a href="<%- config.root %><%- page.prev.path %>" class="article-prev">前一篇: <%- page.prev.title %></a>
+    <% } %>
+    <% if (page.next) { %>
+    <a href="<%- config.root %><%- page.next.path %>" class="article-next">后一篇: <%- page.next.title %></a>
+    <% } %>
+</nav>
+
+<%- partial('_partial/post/comment') %>
