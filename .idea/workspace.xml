@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16aaf4ce-f7e7-4c19-b6d6-8e2240f9fa20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/gen-nav.js" afterPath="$PROJECT_DIR$/source/_posts/gen-nav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/edp/layout/_partial/sider.ejs" afterPath="$PROJECT_DIR$/themes/edp/layout/_partial/sider.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
     </list>
     <ignored path="edp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,16 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="demo.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/edp/source/css/demo.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-157.68" vertical-offset="0" max-vertical-offset="4239">
-              <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="demo.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/edp/layout/demo.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,16 +44,6 @@
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head_post.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/head_post.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5" vertical-offset="0" max-vertical-offset="324">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -89,11 +68,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sider.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sider.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/sider.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55636364" vertical-offset="0" max-vertical-offset="5805">
+            <state vertical-scroll-proportion="0.75" vertical-offset="486" max-vertical-offset="5805">
               <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/edp/layout/layout.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="486">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/edp/layout/index.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.75" vertical-offset="0" max-vertical-offset="3942">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/edp/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33981693" vertical-offset="81" max-vertical-offset="2052">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -104,26 +123,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-50.76" vertical-offset="0" max-vertical-offset="1701">
               <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/edp/layout/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-97.5" vertical-offset="0" max-vertical-offset="3942">
-              <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/head.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/themes/edp/layout/_partial/head_post.ejs" />
         <option value="$PROJECT_DIR$/source/_posts/gen-nav.js" />
         <option value="$PROJECT_DIR$/themes/edp/layout/_partial/sider.ejs" />
+        <option value="$PROJECT_DIR$/_config.yml" />
       </list>
     </option>
   </component>
@@ -497,14 +497,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/edp/layout/layout.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="486">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/article.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="594">
@@ -595,14 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/edp/layout/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-97.5" vertical-offset="0" max-vertical-offset="3942">
-          <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/head.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="874">
@@ -623,14 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-157.68" vertical-offset="0" max-vertical-offset="4239">
           <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/edp/layout/demo.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.5" vertical-offset="0" max-vertical-offset="2808">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -671,8 +647,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/edp/layout/_partial/sider.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55636364" vertical-offset="0" max-vertical-offset="5805">
+        <state vertical-scroll-proportion="0.75" vertical-offset="486" max-vertical-offset="5805">
           <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/edp/layout/layout.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="486">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/edp/layout/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.75" vertical-offset="0" max-vertical-offset="3942">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/edp/layout/demo.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.5" vertical-offset="0" max-vertical-offset="2808">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/edp/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33981693" vertical-offset="81" max-vertical-offset="2052">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding />
         </state>
       </provider>
