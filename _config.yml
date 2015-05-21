@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://ecomfe.github.io/edp
 root: /edp/
-permalink: Doc/:category/:title/
+permalink: doc/:category/:title/
 permalink_defaults:
 
 # Directory

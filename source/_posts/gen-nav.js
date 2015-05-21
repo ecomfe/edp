@@ -34,12 +34,12 @@ files.forEach(function (file) {
 
 var types = [
     {name: 'Initialization', title: '安装与升级'},
-    {name: 'Package_management', title: '包管理'},
-    {name: 'Project_management', title: '项目管理'},
+    {name: 'Package-management', title: '包管理'},
+    {name: 'Project-management', title: '项目管理'},
     {name: 'Build', title: '项目构建'},
     {name: 'Lint', title: '前端代码静态检测'},
     {name: 'WebServer', title: '使用WebServer进行调试'},
-    {name: 'Command_extension', title: '扩展自己的EDP命令'},
+    {name: 'Command-extension', title: '扩展自己的EDP命令'},
     {name: 'Doctor', title: '诊断工具'}
 ];
 
