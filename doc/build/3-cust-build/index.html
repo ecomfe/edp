@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>通过配置进行自定义构建 | EDP</title>
+    <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
+</head>
+<body>
+<header id="header">
+    <a class='logo' href="/edp/">
+        <img src="/edp/css/images/logo.png" width="120" alt="logo">
+    </a>
+
+    <nav class="menu">
+        <a href="/edp/doc/initialization/1-install/">Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+<div class="wrap">
+    <aside id="sidebar">
+<div class="tree">
+    <h1>Category</h1>
+    <ul class="category">
+        <li><a class="cat-title">安装与升级</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/initialization/1-install/">安装EDP</a>
+                    <ul>
+                        <li><a href="/edp/Doc/initialization/1-install/#npm install">npm install</a></li>
+                        <li><a href="/edp/Doc/initialization/1-install/#使用cnpm安装">使用cnpm安装</a></li>
+                        <li><a href="/edp/Doc/initialization/1-install/#使用内网npm镜像安装">使用内网npm镜像安装</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/initialization/2-current-commands/">查看EDP当前支持的命令列表</a></li>
+                <li><a href="/edp/Doc/initialization/3-commands-help/">查看命令帮助</a></li>
+                <li><a href="/edp/Doc/initialization/4-update/">升级EDP</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">包管理</a>
+            <ul>
+                <li><a href="/edp/Doc/package-management/1-reasonof-pack-mngm/">为什么要进行包管理</a></li>
+                <li><a href="/edp/Doc/package-management/2-find-curr-pack/">查找当前存在的包</a></li>
+                <li><a class="cat-title" href="/edp/Doc/package-management/3-instl-and-use/">导入并使用包</a>
+                    <ul>
+                        <li><a href="/edp/Doc/package-management/3-instl-and-use/#导入包的最新版">导入包的最新版</a></li>
+                        <li><a href="/edp/Doc/package-management/3-instl-and-use/#导入指定版本的包">导入指定版本的包</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/package-management/4-update-pack/">升级已导入的包</a>
+                    <ul>
+                        <li><a href="/edp/Doc/package-management/4-update-pack/#升级指定包">升级指定包</a></li>
+                        <li><a href="/edp/Doc/package-management/4-update-pack/#升级所有包">升级所有包</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">项目管理</a>
+            <ul>
+                <li><a href="/edp/Doc/project-management/1-init-proj/">初始化项目</a></li>
+                <li><a href="/edp/Doc/project-management/2-advantage/">使用edp项目的好处</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">项目构建</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/build/1-build/">构建一个项目</a>
+                    <ul>
+                        <li><a href="/edp/Doc/build/1-build/#指定输出目录">指定输出目录</a></li>
+                        <li><a href="/edp/Doc/build/1-build/#强制覆盖">强制覆盖</a></li>
+                        <li><a href="/edp/Doc/build/1-build/#指定构建配置文件">指定构建配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/build/2-build-proc/">构建过程</a></li>
+                <li><a class="cat-title" href="/edp/Doc/build/3-cust-build/">通过配置进行自定义构建</a>
+                    <ul>
+                        <li><a href="/edp/Doc/build/3-cust-build/#input">input</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#output">output</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#exclude">exclude</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#fileEncodings">fileEncodings</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#getProcessors">getProcessors</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#injectProcessor">injectProcessor</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">前端代码静态检测</a>
+            <ul>
+                <li><a href="/edp/Doc/lint/1-code-check/">代码检测</a></li>
+                <li><a class="cat-title" href="/edp/Doc/lint/2-js-check/">Javascript代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/2-js-check/#自定义jshint配置">自定义jshint配置</a></li>
+                        <li><a href="/edp/Doc/lint/2-js-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/lint/3-css-check/">CSS代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/3-css-check/#自定义csslint配置">自定义csslint配置</a></li>
+                        <li><a href="/edp/Doc/lint/3-css-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/lint/4-html-check/">HTML代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/4-html-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">使用WebServer进行调试</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/webserver/1-start-server/">启动WebServer</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/1-start-server/#指定监听端口">指定监听端口</a></li>
+                        <li><a href="/edp/Doc/webserver/1-start-server/#指定WebServer配置文件">指定WebServer配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/webserver/2-conf-server/">配置WebServer</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#port">port</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#directoryIndexes">directoryIndexes</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#documentRoot">documentRoot</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#injectResource">injectResource</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#getLocations">getLocations</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/webserver/3-resource-func/">资源处理函数</a></li>
+                <li><a class="cat-title" href="/edp/Doc/webserver/4-inner-resour-func/">内置资源处理函数</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#file">file</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#content">content</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#header">header</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#json">json</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#jsonp">jsonp</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#dumpRequest">dumpRequest</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#redirect">redirect</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#less">less</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autoless">autoless</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#stylus">stylus</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autostylus">autostylus</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autocss">autocss</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#coffee">coffee</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autocoffee">autocoffee</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#php">php</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#proxy">proxy</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#proxyNoneExists">proxyNoneExists</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#html2js">html2js</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#livereload">livereload</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#listDirectory">listDirectory</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#addRequestHeader">addRequestHeader</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#write">write</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#home">home</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#delay">delay</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#empty">empty</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/webserver/5-cust-resour-func/">自定义资源处理函数</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">扩展自己的EDP命令</a>
+            <ul>
+                <li><a href="/edp/Doc/command-extension/1-builtin-comd/">Builtin Commands</a></li>
+                <li><a class="cat-title" href="/edp/Doc/command-extension/2-comd-resol/">Command Resolve</a>
+                    <ul>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Default Command">Default Command</a></li>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Sub Command">Sub Command</a></li>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Arguments and Options">Arguments and Options</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/command-extension/3-user-comd/">User Commands</a></li>
+                <li><a href="/edp/Doc/command-extension/4-comd-help/">Command Help</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">诊断工具</a>
+            <ul>
+                <li><a href="/edp/Doc/doctor/doctor/">Doctor</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</aside>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(".category a").on("click", function() {
+            var $this = $(this);
+            var $li = $this.parents("li:eq(0)");
+            var $ul = $li.children("ul:eq(0)");
+
+            if($($ul)[0].className){
+                $ul.removeClass();
+                $this.removeClass('open');
+            }
+            else{
+                $ul.addClass("show");
+                $this.addClass('open');
+            }
+            var str = "";
+            $(".category.show").each(function(){
+                str += $("ul").index($(this)[0]) + " ";
+            });
+            localStorage.setItem("show_index", str);
+        });
+
+        var str = localStorage.getItem("show_index");
+        str = str.substring(0, str.length - 1);
+        var arr = str.split(" ");
+        for(var i = 0; i < arr.length; i++) {
+            $("ul:eq(" + arr[i] + ")").addClass("show");
+        }
+
+        $(".category.show").siblings("a").addClass('open');
+
+    });
+
+
+//    var aa = document.getElementsByTagName('a');
+////    alert(lis.length);
+////    e.stopPropagation();
+//
+//    for(var i = 0; i < aa.length; i++){
+//        if(document.all){
+//            aa[i].attachEvent('onclick', toggleList);
+//        }
+//        else{
+//            aa[i].addEventListener('click', toggleList, false);
+//        }
+//    }
+//    function toggleList(e){
+//        var e = e || window.event;
+//        var childList = e.srcElement.parentElement.getElementsByTagName('ul');
+////        alert(childList.length);
+//        if(childList.length > 0) {
+////            alert(childList[0].className);
+//            if(childList[0].className) {
+//                childList[0].removeAttribute('class');
+//            }
+//            else {
+//                childList[0].setAttribute('class', 'show');
+//            }
+//        }
+//
+////        alert(typeof(e.srcElement.parentElement) );
+//    }
+</script>
+    <section id="main">
+        <article>
+    <h1 class="article-title">通过配置进行自定义构建</h1>
+
+    <p>运行<code>edp build</code>时，默认使用的<code>配置文件</code>为当前目录下的<code>edp-build-config.js</code>。如果该文件不存在，将使用<a href="https://github.com/ecomfe/edp-build/blob/1.0.0-dev/lib/config.js" target="_blank" rel="external">默认配置</a>。你可以新建一个<code>edp-build-config.js</code>，或者使用其他文件名，在运行命令时通过<code>--config</code>参数指定。</p>
+<p>配置文件是一个<code>node module</code>，EDP在构建时将<code>require</code>它，所以，配置文件后缀必须为<code>.js</code>。</p>
+<p>下面是EDP的构建默认配置。通过edp提供的<a href="/Doc/Project-management/1-initProj/">项目管理功能</a>来初始化<code>项目</code>时，生成的<code>edp-build-config.js</code>与此不同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cwd = process.cwd();</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>( <span class="string">'path'</span> );</span><br><span class="line"></span><br><span class="line">exports.input = cwd;</span><br><span class="line">exports.output = path.resolve( cwd, <span class="string">'output'</span> );</span><br><span class="line"></span><br><span class="line">exports.exclude = [</span><br><span class="line">    <span class="string">'tool'</span>,</span><br><span class="line">    <span class="string">'doc'</span>,</span><br><span class="line">    <span class="string">'test'</span>,</span><br><span class="line">    <span class="string">'module.conf'</span>,</span><br><span class="line">    <span class="string">'dep/packages.manifest'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/test'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/doc'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/demo'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/tool'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/*.md'</span>,</span><br><span class="line">    <span class="string">'dep/*/*/package.json'</span>,</span><br><span class="line">    <span class="string">'edp-*'</span>,</span><br><span class="line">    <span class="string">'.edpproj'</span>,</span><br><span class="line">    <span class="string">'.svn'</span>,</span><br><span class="line">    <span class="string">'.git'</span>,</span><br><span class="line">    <span class="string">'.gitignore'</span>,</span><br><span class="line">    <span class="string">'.idea'</span>,</span><br><span class="line">    <span class="string">'.project'</span>,</span><br><span class="line">    <span class="string">'Desktop.ini'</span>,</span><br><span class="line">    <span class="string">'Thumbs.db'</span>,</span><br><span class="line">    <span class="string">'.DS_Store'</span>,</span><br><span class="line">    <span class="string">'*.tmp'</span>,</span><br><span class="line">    <span class="string">'*.bak'</span>,</span><br><span class="line">    <span class="string">'*.swp'</span>,</span><br><span class="line">    <span class="string">'node_module'</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">exports.getProcessors = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        <span class="keyword">new</span> LessCompiler(),</span><br><span class="line">        <span class="keyword">new</span> PathMapper()</span><br><span class="line">    ];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.injectProcessor = <span class="function"><span class="keyword">function</span> (<span class="params"> processors </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> key <span class="keyword">in</span> processors ) &#123;</span><br><span class="line">        global[ key ] = processors[ key ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们建议：通过edp提供的<a href="/Doc/Project-management/1-initProj/">项目管理功能</a>来初始化<code>项目</code>，在其生成的<code>edp-build-config.js</code>上进行构建配置自定义。</p>
+<p>在自定义自己的构建配置时，有下面几个东西需要了解和注意：</p>
+<h1 id="input">input</h1><p>输入目录，<code>{string}</code>，默认为<code>当前目录</code>。该属性基本不需要修改。</p>
+<h1 id="output">output</h1><p>输出目录，<code>{string}</code>，默认为<code>当前目录下的output目录</code>。</p>
+<h1 id="exclude">exclude</h1><p>排除文件，<code>{Array}</code>。该数组里匹配上的每一项，在构建的<code>输入</code>阶段就会被排除，所以，被排除的文件也不会进入后续的<code>处理</code>和<code>输出</code>阶段。</p>
+<p>数组中的每一项可以是符合<a href="https://www.npmjs.org/package/minimatch" target="_blank" rel="external">minimatch</a>规则的pattern，也可以是正则表达式。例如我只想排除到项目根目录下面的tool目录，而不是所有的tool目录，就可以这么写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">exports.exclude = [</span><br><span class="line">    <span class="regexp">/^tool\//</span>,</span><br><span class="line">    <span class="string">'Thumbs.db'</span>,</span><br><span class="line">    <span class="string">'.DS_Store'</span>,</span><br><span class="line">    <span class="string">'*.tmp'</span>,</span><br><span class="line">    <span class="string">'*.bak'</span>,</span><br><span class="line">    <span class="string">'*.swp'</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h1 id="fileEncodings">fileEncodings</h1><p>在处理输入文件的过程中，<code>edp</code>默认所有的<strong>文本文件</strong>都是<code>utf-8</code>编码的，如果有一些特殊编码的文件，需要在这个参数中声明，这样子才能保证输出的时候文件编码保持不变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exports.fileEncodings = &#123;&#10;    &#39;src/common/img/channel-example-csv.csv&#39;: &#39;gbk&#39;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="getProcessors">getProcessors</h1><p>处理器列表，<code>{Array} function</code>。该方法会被EDP在构建时调用，获取构建过程的Processors。</p>
+<p>EDP提供了许多内置Processors，基本可以满足前端项目的构建需求。你可以使用内置Processors，也可以扩展自己的Processor。我们在<a href="/Doc/Build/2-buildProc/">Build Processors文档</a>对此进行了详细说明。</p>
+<h1 id="injectProcessor">injectProcessor</h1><p>该方法用于EDP将内置的Processors注入到配置模块中，从而在配置模块里可以使用内置Processors。请保持该方法的存在，并使用默认实现，不要修改它。</p>
+
+</article>
+
+<nav class="article-pagination">
+    
+    <a href="/edp/doc/build/2-build-proc/" class="article-prev">前一篇: 构建过程</a>
+    
+    
+    <a href="/edp/doc/lint/1-code-check/" class="article-next">后一篇: 代码检测</a>
+    
+</nav>
+
+<div class="ds-thread" data-thread-key="doc/build/3-cust-build/" data-title="通过配置进行自定义构建" data-url="http://ecomfe.github.io/edp/doc/build/3-cust-build/"></div>
+<script>
+var duoshuoQuery = {short_name:"baidu-efe"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+
+    
+    </section>
+</div>
+
+<footer>
+    <p class="cp">©2015 <a href="http://efe.baidu.com/" target="_blank">Baidu EFE</a> | Powered By <a href="http://hexo.io/">Hexo</a></p>
+</footer>
+
+
+</body>
+</html>

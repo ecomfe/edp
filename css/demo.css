@@ -1,0 +1,359 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+html {
+  overflow: hidden;
+}
+body {
+  width: 100%;
+  *cursor: default;
+  overflow: hidden;
+  font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+  background: url("/edp/css/images/demo-bg.jpg") no-repeat;
+  background-size: cover;
+}
+#pageContain {
+  overflow: hidden;
+}
+.page {
+  display: none;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+.contain {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+  z-index: 0;
+}
+.current .contain,
+.slide .contain {
+  display: block;
+}
+.current {
+  display: block;
+  z-index: 1;
+}
+.slide {
+  display: block;
+  z-index: 2;
+}
+.swipe {
+  display: block;
+  z-index: 3;
+  transition-duration: 0ms !important;
+  -webkit-transition-duration: 0ms !important;
+}
+#navBar {
+  z-index: 3;
+  position: absolute;
+  bottom: 12%;
+  height: 50px;
+  width: 230px;
+  background-color: #393939;
+  opacity: 0.5;
+  border-radius: 25px;
+  margin-left: -25px;
+  padding-left: 25px;
+}
+#navBar object {
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+}
+#navBar .bg-btm {
+  background-color: #393939;
+  position: absolute;
+  right: 0;
+  height: 50%;
+  width: 100%;
+}
+#navBar .active {
+  font-size: 23px;
+  font-weight: bold;
+}
+#navBar li {
+  float: left;
+  cursor: pointer;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 50px;
+  text-align: center;
+  width: 21%;
+  height: 30px;
+  color: #fff;
+}
+.txt {
+  margin-top: 4%;
+  margin-left: 14%;
+  font-size: 16px;
+  color: #fff;
+  width: 24%;
+  float: left;
+  padding-top: 40px;
+}
+.txt span {
+  font-size: 29px;
+  line-height: 2em;
+  color: #7ec7e5;
+  display: block;
+  border-bottom: 1px solid #7ec7e5;
+  width: 4.5em;
+}
+.txt .title-l2 {
+  width: 2.5em;
+}
+.txt .title-l3 {
+  width: 3.5em;
+}
+.more {
+  z-index: 100;
+  display: block;
+  position: fixed;
+  bottom: 4%;
+  right: 7%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+a.more:hover:after {
+  content: '>>';
+}
+.demo-pic {
+  float: left;
+  width: 52%;
+  margin-top: 2%;
+}
+header {
+  width: 100%;
+  height: 60px;
+  line-height: 3;
+  background-color: #1d2731;
+  overflow: auto;
+}
+.logo {
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 25px;
+}
+.menu {
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  float: right;
+  margin-right: 30px;
+}
+.menu :first-child,
+.menu a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 1em;
+  margin: 0 1em;
+  line-height: 58px;
+}
+.menu .nav-active,
+.menu a:link,
+.menu a:hover {
+  color: #1595fb;
+}
+.menu a:focus {
+  color: #1595fb;
+}
+.banner {
+  background: #1d2731;
+  color: #fff;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  font-size: 16px;
+  padding: 20% 0 0;
+  height: 80%;
+}
+.banner p {
+  font-size: 28px;
+}
+.banner p img {
+  vertical-align: bottom;
+}
+.banner .banner-nav {
+  margin: 20px auto 150px;
+  text-align: center;
+  line-height: 40px;
+}
+.banner a {
+  display: inline-block;
+}
+.banner a.install {
+  width: 230px;
+  font-family: 'Courier New';
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+}
+.banner .install:link,
+.banner .install:focus,
+.banner .install:visited {
+  text-decoration: none;
+  color: #bbb;
+}
+.banner .install:hover {
+  background: rgba(255,255,255,0.2);
+}
+.banner a.docs {
+  font-family: 'Courier New';
+  margin-left: 10px;
+  width: 60px;
+  background: #c06443;
+color
+}
+.banner .docs:link,
+.banner .docs:focus,
+.banner .docs:visited {
+  text-decoration: none;
+  color: #fff;
+}
+.banner .docs:hover {
+  background: rgba(192,100,67,0.9);
+}
+@import url(http://fonts.googleapis.com/css?family=Roboto:900italic,500italic);
+
+.logo {
+    float: left;
+    padding: 7px 5px 13px 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    -webkit-perspective: 60px;
+    -webkit-backface-visibility: hidden;
+}
+.logo svg {
+    width: 50px;
+    height: 50px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(20deg) rotateY(15deg) rotateZ(-35deg);
+}
+.title,
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    text-transform: lowercase;
+}
+.logo-title {
+    float: left;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 50px;
+    font-weight: 900;
+    font-size: 42px;
+    color: #3c4245;
+}
+.logo-title:after {
+    content: '.';
+    color: #116ea9;
+}
+.subtitle {
+    float: left;
+    margin: 0;
+    color: #82898e;
+    padding: 12px 0 8px;
+    line-height: 50px;
+    font-weight: 500;
+    font-size: 36px;
+}
+footer {
+  color: #535353;
+  padding: 25px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+footer a {
+  color: #7eb7e5;
+  text-decoration: none;
+  font-weight: 700;
+}
+footer dl dt {
+  float: left;
+  clear: left;
+  width: 70px;
+}
+footer dl dd {
+  float: left;
+  clear: right;
+}
+footer dl:after {
+  content: ' ';
+  clear: both;
+  display: table;
+}
+footer .cp {
+  margin-top: 3em;
+  text-align: center;
+}
+.footer {
+  background-color: #1d2731;
+  color: #ddd;
+}
+.footer a {
+  color: #abcde9;
+}
+.footer .any-other {
+  margin: 0 auto;
+  max-width: 900px;
+}
+footer {
+  position: fixed;
+  bottom: 8px;
+  z-index: 3;
+  width: 100%;
+  color: #fff;
+  padding-top: 0;
+  line-height: 1em;
+}

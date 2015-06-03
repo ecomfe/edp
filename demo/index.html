@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>演示</title>
+    <link rel="stylesheet" href="/edp/css/demo.css" type="text/css">
+</head>
+
+<body>
+<header id="header">
+    <a class='logo' href="/edp/">
+        <img src="/edp/css/images/logo.png" width="120" alt="logo">
+    </a>
+
+    <nav class="menu">
+        <a href="/edp/doc/initialization/1-install/">Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank">GitHub</a>
+    </nav>
+</header>
+<div id="pageContain">
+	<div class="page page1 current">
+		<div class="contain">
+			<p class="txt">
+                <span class="title-l2">安装</span> <br><br>
+                安装命令：<br>
+                npm install -g edp  <br><br>
+                -g为全局安装参数，必选。 <br>
+                在Linux/Mac平台下，全局安装可能需要sudo。
+            </p>
+            <img class="demo-pic" src="/edp/css/images/demo/install.png"/>
+		</div>
+	</div>
+
+	<div class="page page2">
+		<div class="contain">
+            <p class="txt">
+                <span class="title-l3">包管理</span> <br><br>
+                导入包命令：<br>
+                edp import &lt;package> <br><br>
+                导入包的指定版本： <br>
+                edp import &lt;package>@&lt;version><br><br>
+            </p>
+            <img class="demo-pic" src="/edp/css/images/demo/import.png"/>
+		</div>
+	</div>
+
+	<div class="page page3">
+		<div class="contain">
+            <p class="txt">
+                <span>项目管理</span> <br><br>
+                项目初始化：<br>
+                edp project init <br><br>
+                将当前目录初始化为项目目录 <br>
+                项目目录不允许嵌套 <br>
+            </p>
+            <img class="demo-pic" src="/edp/css/images/demo/init.png"/>
+        </div>
+	</div>
+
+	<div class="page page4">
+		<div class="contain">
+            <p class="txt">
+                <span>项目构建</span> <br><br>
+                构建命令：<br>
+                edp build <br><br>
+                指定构建输出目录： <br>
+                edp build --output &lt;path> <br><br>
+            </p>
+            <img class="demo-pic" src="/edp/css/images/demo/init.png"/>
+            <a class="more" href="/edp/Doc/Initialization/1-install/index.html">
+                more
+            </a>
+		</div>
+	</div>
+
+</div>
+
+<ul id="navBar">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+
+<footer>
+    <p class="cp">©2015 <a href="http://efe.baidu.com/" target="_blank">Baidu EFE</a> | Powered By <a href="http://hexo.io/">Hexo</a></p>
+</footer>
+
+
+<script src="/edp/js/fullPage.min.js"></script>
+<script>
+    var runPage;
+    runPage = new FullPage({
+        id: 'pageContain',
+        slideTime: 800,
+        effect: {
+            transform: {
+                translate: 'X'
+            },
+            opacity: [0, 1]
+        },
+        mode: 'wheel, touch, nav:navBar',
+        easing: 'ease'
+    });
+</script>
+
+</body>
+</html>

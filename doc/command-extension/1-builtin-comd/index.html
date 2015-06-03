@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Builtin Commands | EDP</title>
+    <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
+</head>
+<body>
+<header id="header">
+    <a class='logo' href="/edp/">
+        <img src="/edp/css/images/logo.png" width="120" alt="logo">
+    </a>
+
+    <nav class="menu">
+        <a href="/edp/doc/initialization/1-install/">Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank">GitHub</a>
+    </nav>
+</header>
+
+<div class="wrap">
+    <aside id="sidebar">
+<div class="tree">
+    <h1>Category</h1>
+    <ul class="category">
+        <li><a class="cat-title">安装与升级</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/initialization/1-install/">安装EDP</a>
+                    <ul>
+                        <li><a href="/edp/Doc/initialization/1-install/#npm install">npm install</a></li>
+                        <li><a href="/edp/Doc/initialization/1-install/#使用cnpm安装">使用cnpm安装</a></li>
+                        <li><a href="/edp/Doc/initialization/1-install/#使用内网npm镜像安装">使用内网npm镜像安装</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/initialization/2-current-commands/">查看EDP当前支持的命令列表</a></li>
+                <li><a href="/edp/Doc/initialization/3-commands-help/">查看命令帮助</a></li>
+                <li><a href="/edp/Doc/initialization/4-update/">升级EDP</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">包管理</a>
+            <ul>
+                <li><a href="/edp/Doc/package-management/1-reasonof-pack-mngm/">为什么要进行包管理</a></li>
+                <li><a href="/edp/Doc/package-management/2-find-curr-pack/">查找当前存在的包</a></li>
+                <li><a class="cat-title" href="/edp/Doc/package-management/3-instl-and-use/">导入并使用包</a>
+                    <ul>
+                        <li><a href="/edp/Doc/package-management/3-instl-and-use/#导入包的最新版">导入包的最新版</a></li>
+                        <li><a href="/edp/Doc/package-management/3-instl-and-use/#导入指定版本的包">导入指定版本的包</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/package-management/4-update-pack/">升级已导入的包</a>
+                    <ul>
+                        <li><a href="/edp/Doc/package-management/4-update-pack/#升级指定包">升级指定包</a></li>
+                        <li><a href="/edp/Doc/package-management/4-update-pack/#升级所有包">升级所有包</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">项目管理</a>
+            <ul>
+                <li><a href="/edp/Doc/project-management/1-init-proj/">初始化项目</a></li>
+                <li><a href="/edp/Doc/project-management/2-advantage/">使用edp项目的好处</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">项目构建</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/build/1-build/">构建一个项目</a>
+                    <ul>
+                        <li><a href="/edp/Doc/build/1-build/#指定输出目录">指定输出目录</a></li>
+                        <li><a href="/edp/Doc/build/1-build/#强制覆盖">强制覆盖</a></li>
+                        <li><a href="/edp/Doc/build/1-build/#指定构建配置文件">指定构建配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/build/2-build-proc/">构建过程</a></li>
+                <li><a class="cat-title" href="/edp/Doc/build/3-cust-build/">通过配置进行自定义构建</a>
+                    <ul>
+                        <li><a href="/edp/Doc/build/3-cust-build/#input">input</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#output">output</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#exclude">exclude</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#fileEncodings">fileEncodings</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#getProcessors">getProcessors</a></li>
+                        <li><a href="/edp/Doc/build/3-cust-build/#injectProcessor">injectProcessor</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">前端代码静态检测</a>
+            <ul>
+                <li><a href="/edp/Doc/lint/1-code-check/">代码检测</a></li>
+                <li><a class="cat-title" href="/edp/Doc/lint/2-js-check/">Javascript代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/2-js-check/#自定义jshint配置">自定义jshint配置</a></li>
+                        <li><a href="/edp/Doc/lint/2-js-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/lint/3-css-check/">CSS代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/3-css-check/#自定义csslint配置">自定义csslint配置</a></li>
+                        <li><a href="/edp/Doc/lint/3-css-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/lint/4-html-check/">HTML代码检测</a>
+                    <ul>
+                        <li><a href="/edp/Doc/lint/4-html-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a class="cat-title">使用WebServer进行调试</a>
+            <ul>
+                <li><a class="cat-title" href="/edp/Doc/webserver/1-start-server/">启动WebServer</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/1-start-server/#指定监听端口">指定监听端口</a></li>
+                        <li><a href="/edp/Doc/webserver/1-start-server/#指定WebServer配置文件">指定WebServer配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a class="cat-title" href="/edp/Doc/webserver/2-conf-server/">配置WebServer</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#port">port</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#directoryIndexes">directoryIndexes</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#documentRoot">documentRoot</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#injectResource">injectResource</a></li>
+                        <li><a href="/edp/Doc/webserver/2-conf-server/#getLocations">getLocations</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/webserver/3-resource-func/">资源处理函数</a></li>
+                <li><a class="cat-title" href="/edp/Doc/webserver/4-inner-resour-func/">内置资源处理函数</a>
+                    <ul>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#file">file</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#content">content</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#header">header</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#json">json</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#jsonp">jsonp</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#dumpRequest">dumpRequest</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#redirect">redirect</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#less">less</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autoless">autoless</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#stylus">stylus</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autostylus">autostylus</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autocss">autocss</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#coffee">coffee</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#autocoffee">autocoffee</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#php">php</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#proxy">proxy</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#proxyNoneExists">proxyNoneExists</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#html2js">html2js</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#livereload">livereload</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#listDirectory">listDirectory</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#addRequestHeader">addRequestHeader</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#write">write</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#home">home</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#delay">delay</a></li>
+                        <li><a href="/edp/Doc/webserver/4-inner-resour-func/#empty">empty</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/webserver/5-cust-resour-func/">自定义资源处理函数</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">扩展自己的EDP命令</a>
+            <ul>
+                <li><a href="/edp/Doc/command-extension/1-builtin-comd/">Builtin Commands</a></li>
+                <li><a class="cat-title" href="/edp/Doc/command-extension/2-comd-resol/">Command Resolve</a>
+                    <ul>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Default Command">Default Command</a></li>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Sub Command">Sub Command</a></li>
+                        <li><a href="/edp/Doc/command-extension/2-comd-resol/#Arguments and Options">Arguments and Options</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/Doc/command-extension/3-user-comd/">User Commands</a></li>
+                <li><a href="/edp/Doc/command-extension/4-comd-help/">Command Help</a></li>
+            </ul>
+        </li>
+        <li><a class="cat-title">诊断工具</a>
+            <ul>
+                <li><a href="/edp/Doc/doctor/doctor/">Doctor</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</aside>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(".category a").on("click", function() {
+            var $this = $(this);
+            var $li = $this.parents("li:eq(0)");
+            var $ul = $li.children("ul:eq(0)");
+
+            if($($ul)[0].className){
+                $ul.removeClass();
+                $this.removeClass('open');
+            }
+            else{
+                $ul.addClass("show");
+                $this.addClass('open');
+            }
+            var str = "";
+            $(".category.show").each(function(){
+                str += $("ul").index($(this)[0]) + " ";
+            });
+            localStorage.setItem("show_index", str);
+        });
+
+        var str = localStorage.getItem("show_index");
+        str = str.substring(0, str.length - 1);
+        var arr = str.split(" ");
+        for(var i = 0; i < arr.length; i++) {
+            $("ul:eq(" + arr[i] + ")").addClass("show");
+        }
+
+        $(".category.show").siblings("a").addClass('open');
+
+    });
+
+
+//    var aa = document.getElementsByTagName('a');
+////    alert(lis.length);
+////    e.stopPropagation();
+//
+//    for(var i = 0; i < aa.length; i++){
+//        if(document.all){
+//            aa[i].attachEvent('onclick', toggleList);
+//        }
+//        else{
+//            aa[i].addEventListener('click', toggleList, false);
+//        }
+//    }
+//    function toggleList(e){
+//        var e = e || window.event;
+//        var childList = e.srcElement.parentElement.getElementsByTagName('ul');
+////        alert(childList.length);
+//        if(childList.length > 0) {
+////            alert(childList[0].className);
+//            if(childList[0].className) {
+//                childList[0].removeAttribute('class');
+//            }
+//            else {
+//                childList[0].setAttribute('class', 'show');
+//            }
+//        }
+//
+////        alert(typeof(e.srcElement.parentElement) );
+//    }
+</script>
+    <section id="main">
+        <article>
+    <h1 class="article-title">Builtin Commands</h1>
+
+    <p>edp提供的命令分为Builtin Commands和User Commands，各个命令的实现分别由不同的npm package来完成。</p>
+<p>根据package.json里面的配置，我们可以了解到edp提供的Builtin Commands和npm package的对应关系如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#10;  &#34;edp&#34;: &#123;&#10;    &#34;extensions&#34;: &#123;&#10;      &#34;edp-core&#34;: [ &#34;install&#34; ],&#10;      &#34;edp-config&#34;: [ &#34;config&#34; ],&#10;      &#34;edp-build&#34;: [ &#34;build&#34; ],&#10;      &#34;edp-package&#34;: [ &#34;import&#34;, &#34;search&#34;, &#34;update&#34; ],&#10;      &#34;edp-project&#34;: [ ],&#10;      &#34;edp-webserver&#34;: [ ],&#10;      &#34;edp-watch&#34;: [ ],&#10;      &#34;edp-lint&#34;: [ &#34;htmlhint&#34;, &#34;csslint&#34;, &#34;jshint&#34; ],&#10;      &#34;edp-beautify&#34;: [ &#34;beautify&#34; ],&#10;      &#34;edp-doctor&#34;: [ &#34;doctor&#34; ],&#10;      &#34;edp-minify&#34;: [ &#34;minify&#34; ],&#10;      &#34;edp-test&#34;: [ &#34;test&#34; ]&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>例如当我们执行<code>edp install</code>的时候，首先edp会检查是否安装了edp-core这个npm package，如果没有的话，会自动安装，安装成功之后会执行install这个命令，执行的时候会传递必要的参数给install这个命令。</p>
+
+</article>
+
+<nav class="article-pagination">
+    
+    <a href="/edp/doc/webserver/5-cust-resour-func/" class="article-prev">前一篇: 自定义资源处理函数</a>
+    
+    
+    <a href="/edp/doc/command-extension/2-comd-resol/" class="article-next">后一篇: Command Resolve</a>
+    
+</nav>
+
+<div class="ds-thread" data-thread-key="doc/command-extension/1-builtin-comd/" data-title="Builtin Commands" data-url="http://ecomfe.github.io/edp/doc/command-extension/1-builtin-comd/"></div>
+<script>
+var duoshuoQuery = {short_name:"baidu-efe"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+
+    
+    </section>
+</div>
+
+<footer>
+    <p class="cp">©2015 <a href="http://efe.baidu.com/" target="_blank">Baidu EFE</a> | Powered By <a href="http://hexo.io/">Hexo</a></p>
+</footer>
+
+
+</body>
+</html>
