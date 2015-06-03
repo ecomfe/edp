@@ -3,47 +3,37 @@ layout: false
 
 <%- partial('_partial/head') %>
 <body>
-
-<div id="menuarea">
-    <%- partial('_partial/header', {name: 'header-noDis'}) %>
-</div>
-
-<section class="bg-top">
-    <img src="<%- url_for('css/images/home-bg.jpg') %>" />
+<section class="banner">
+    <p><img src="<%- url_for('css/images/logo.png') %>" width="120">&nbsp;&nbsp;&nbsp;基于Node.JS与NPM的前端开发平台</p>
+    <div class="banner-nav">
+        <a class="install" href="https://www.npmjs.com/package/edp" target="_blank">$ npm install -g edp</a><a class="docs" href="<%- url_for('Doc/Initialization/1-install/') %>" target="_blank">Docs</a>
+    </div>
+    <div id="banner-share">
+        <iframe src="https://ghbtns.com/github-btn.html?user=ecomfe&repo=edp&type=star&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=ecomfe&repo=edp&type=fork&count=true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+    </div>
 </section>
 <section class="contain">
-    <div class="cont-box">
-        <div class="cont-item item1">
-            <div class="item-txt">
-            <h1>EDP是什么?</h1>
-                全称Enterprise Develop Platform ——企业级前端应用开发平台<br>
-                一个基于Node.JS与NPM的前端开发平台。<br>
-                通过命令行轻松助你完成前端开发全过程。<br>
-            </div>
-        </div>
-        <div class="cont-item item2">
-            <div class="item-txt">
-                <h1>EDP能做什么? </h1>
-                1. 简洁的项目创建及包管理 <br>
-                2. 多种工具进行本地调试<br>
-                3. 快速项目构建及代码检测<br>
-                4. 可扩展插件<br>
-                ...
-            </div>
-        </div>
-        <div class="cont-item item3">
-            <div class="item-txt">
-                <h1>安装EDP </h1>
-                npm install -g edp
-            </div>
-        </div>
-        <div class="cont-item item4">
-            <div class="item-txt">
-                <h1>如何使用？ </h1>
-                <a class="start" href="<%- url_for('demo/index.html') %>">快速上手 >></a>
-            </div>
-        </div>
-    </div>
+    <dl>
+    <dt>--- EDP是什么? ---</dt>
+    <dd>
+        基于Node.JS与NPM的前端应用开发平台<br>
+        通过命令行和WebUI界面多种方式使用
+    </dd>
+    <dt>--- EDP能做什么? ---</dt>
+    <dd>
+        简洁的项目创建及包管理<br>
+        多种工具进行本地调试<br>
+        快速项目构建及代码检测<br>
+        可扩展插件<br>
+        ...
+    </dd>
+    <dt>--- 快速上手 ---</dt>
+    <dd><img width="640" height="450" src="<%- url_for('img/import.png') %>"><br>包管理 - 导入依赖包</dd>
+    <dd><img width="640" height="450" src="<%- url_for('img/proj-init.png') %>"><br>项目管理 - 项目初始化</dd>
+    <dd><img width="640" height="450" src="<%- url_for('img/build.png') %>"><br>打包构建</dd>
+    <dd><img width="640" height="450" src="<%- url_for('img/web.png') %>"><br>通过Web界面使用</dd>
+    
 </section>
 
 <footer class="footer">
@@ -70,72 +60,9 @@ layout: false
             <dt><a target="_blank" href="http://efe.baidu.com/">......</a></dt>
         </dl>
     </div>
-    <p class="cp">©2014 <a href="http://efe.baidu.com" target="_blank">Baidu EFE</a> | Powered By <a
+    <p class="cp">©2015 <a href="http://efe.baidu.com" target="_blank">Baidu EFE</a> | Powered By <a
                 href="http://hexo.io">Hexo</a></p>
 </footer>
-<script>
-
-
-    var dom = document.getElementById('header');
-    var topDiv = document.getElementById('menuarea');
-
-    ////滚动离开顶部导航显示，接触顶部导航隐藏
-    function hideMenuByScroll() {
-//        var dom = document.getElementById('header');
-        var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-
-        if(winScroll === 0){
-            dom.className = 'header-noDis';
-        }
-        else{
-            dom.className = 'header';
-        }
-    }
-    //导航显示
-    function showMenu(e) {
-        dom.className = 'header';
-    }
-    //页面在最上方时导航隐藏
-    function hideMenu(e) {
-        var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        if(winScroll === 0) {
-            dom.className = 'header-noDis';
-        }
-
-
-    }
-
-    if(topDiv.addEventListener) {
-        topDiv.addEventListener('mouseover', showMenu);
-    }
-    else if(topDiv.attachEvent) {
-        topDiv.attachEvent('onmouseover', showMenu);
-    }
-
-    if(dom.addEventListener) {
-        dom.addEventListener('mouseout', hideMenu);
-    }
-    else if(dom.attachEvent) {
-        dom.attachEvent('onmouseout', hideMenu);
-    }
-
-    //IE之外的绑定事件方法
-    if(document.addEventListener && !document.attachEvent) {
-
-        document.addEventListener('mousewheel',hideMenuByScroll);
-        //FF绑定滚动事件
-        document.addEventListener('DOMMouseScroll',hideMenuByScroll);
-
-    }
-    //IE
-    else if(document.attachEvent && !document.addEventListener) {
-        document.attachEvent('onmousewheel', hideMenuByScroll);
-
-    }else{
-        window.onmousewheel = hideMenuByScroll;
-    }
-
-</script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <aside id="sidebar">
 <div class="tree">
     <h1>Category</h1>
-    <ul class="wrap">
+    <ul class="category">
         <li><a class="cat-title">安装与升级</a>
             <ul>
                 <li><a class="cat-title" href="<%= root_path %>/Initialization/1-install/">安装EDP</a>
@@ -159,7 +159,7 @@
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script>
     $(function() {
-        $("ul.wrap a").on("click", function() {
+        $(".category a").on("click", function() {
             var $this = $(this);
             var $li = $this.parents("li:eq(0)");
             var $ul = $li.children("ul:eq(0)");
@@ -173,7 +173,7 @@
                 $this.addClass('open');
             }
             var str = "";
-            $("ul.show").each(function(){
+            $(".category.show").each(function(){
                 str += $("ul").index($(this)[0]) + " ";
             });
             localStorage.setItem("show_index", str);
@@ -186,7 +186,7 @@
             $("ul:eq(" + arr[i] + ")").addClass("show");
         }
 
-        $("ul.show").siblings("a").addClass('open');
+        $(".category.show").siblings("a").addClass('open');
 
     });
 

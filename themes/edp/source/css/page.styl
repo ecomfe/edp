@@ -7,21 +7,17 @@
 @import "_partial/footer"
 
 body
-  font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial
+  font: 16px/1.5 Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial
+  background: #f7f7f7
+
+.wrap
+  width: 900px
+  margin: 30px auto
+  overflow: auto
 
 #main
-  float: left
-  /*width: 63%*/
-  position: fixed
-  top: 66px
-  bottom: 0
-  right: 0
-  left: 65px
-  overflow-y: auto
-  overflow-x: hidden
-  margin-left: 24%
-  padding-top: 27px
-  padding-right: 14%
+  width: 660px
+  float: right
 
   .article-pagination
     margin: 30px 0
@@ -41,7 +37,3 @@ body
   &\:\:-webkit-scrollbar-thumb
     background-color: #7ec7e5
     border-radius: 8px
-
-.header-d
-  background-color: #393939
-  opacity: 1

@@ -1,14 +1,9 @@
-.header
-.header-d
-  position: fixed
-  top: 0
+header
   width: 100%
   height: 60px
-  z-index: 1100
-  line-height: 3.7em
-  background-color: #393939
-  opacity: 0.5
-  transition: 0.5s ease
+  line-height: 3
+  background-color: #1D2731
+  overflow: auto
 
 
 .logo
@@ -18,16 +13,12 @@
   left: 25px
 
 .menu
-  font-weight: bold
   color: #fff
-  z-index: 1050
   height: 60px
   line-height: 60px
-  font-family: 'Open Sans', font-yahei
-  position: absolute
-  float: left
-  top: 0
-  right: 30px
+  float: right
+  margin-right: 30px
+
   :first-child
   a
     display: inline-block
@@ -45,12 +36,53 @@
   a:focus
     color: #1595FB
 
-.header-noDis
-  top: -60px
-  transition: 0.5s ease
-  .menu
-    margin-top: -60px
-    transition: 0.5s ease
+.banner
+  background: #1D2731
+  color: #fff
+  color: rgba(255, 255, 255, .8)
+  text-align: center
+  font-size: 16px
+  padding: 20% 0 0
+  height: 80%
+
+  p
+    font-size: 28px
+    img
+      vertical-align:bottom
+  .banner-nav
+    margin: 20px auto 150px
+    text-align: center
+    line-height: 40px
+  a
+    display: inline-block
+  a.install
+    width: 230px
+    font-family: 'Courier New'
+    text-align: center
+    background: rgba(255,255,255,.1)
+  .install:link
+  .install:focus
+  .install:visited
+    text-decoration: none
+    color: #bbb
+  .install:hover
+    background: rgba(255,255,255,.2)
+  a.docs
+    font-family: 'Courier New'
+    margin-left: 10px
+    width: 60px
+    background: #c06443
+    color
+  
+  .docs:link
+  .docs:focus
+  .docs:visited
+    text-decoration: none
+    color: #fff
+  .docs:hover
+    background: rgba(192,100,67,.9)
 
 @import '_partial/logo.css'
+
+
 

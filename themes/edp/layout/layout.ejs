@@ -1,13 +1,15 @@
 ﻿<%- partial('_partial/head_post') %>
 <body>
-<%- partial('_partial/header', {name: 'header-d'}) %>
+<%- partial('_partial/header', {nologo: 0}) %>
 
-<%- partial('_partial/sider', {root_path: url_for('Doc')}) %>
+<div class="wrap">
+    <%- partial('_partial/sider', {root_path: url_for('Doc')}) %>
+    <section id="main">
+        <%- partial('_partial/article', {post: page}) %>    
+    </section>
+</div>
 
-<section id="main">
-    <%- partial('_partial/article', {post: page}) %>
-    <%- partial('_partial/footer') %>
-</section>
+<%- partial('_partial/footer') %>
 
 </body>
 </html>

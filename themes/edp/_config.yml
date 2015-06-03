@@ -1,8 +1,6 @@
 # Header
 menu:
-  首页: /edp/
-  演示: demo/
-  文档: Doc/Initialization/1-install/
+  Docs: Doc/Initialization/1-install/
   Github: https://github.com/ecomfe/edp
 rss: 
 github: https://github.com/ecomfe/edp

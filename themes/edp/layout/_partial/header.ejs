@@ -1,11 +1,10 @@
-<header id="header" class=<%= name%>>
-    <a class='logo' href="/">
-        <img src="<%- url_for('css/images/logo.png') %>" width="120px">
+<header id="header">
+    <a class='logo' href="<%- url_for('/edp/') %>">
+        <img src="<%- url_for('css/images/logo.png') %>" width="120" alt="logo">
     </a>
-    <nav class="menu">
-        <% for (var i in theme.menu){ %>
-        <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-        <% } %>
-    </nav>
 
+    <nav class="menu">
+        <a href="<%- url_for('Doc/Initialization/1-install/') %>">Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank">GitHub</a>
+    </nav>
 </header>
