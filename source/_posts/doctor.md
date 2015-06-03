@@ -1,12 +1,12 @@
 title: Doctor
 categories:
-- Doctor
+- doctor
 tags:
 -  doctor
 layout:
     layout
 date:
-    01-01
+    2015-01-01
 ---
 
 通常，一个前端项目如果出现了一些不符合预期的问题，可以通过诊断工具`edp doctor`帮你定位并解决这些问题。诊断工具会检查如下的内容：

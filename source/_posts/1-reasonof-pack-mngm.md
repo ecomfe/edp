@@ -1,12 +1,12 @@
 title: 为什么要进行包管理
 categories:
-- Package_management
+- package-management
 tags:
 -  package
 layout:
     layout
 date:
-    01-23
+    2015-01-23
 ---
 
 

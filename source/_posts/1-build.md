@@ -1,12 +1,12 @@
 title: 构建一个项目
 categories:
-- Build
+- build
 tags:
 -  build
 layout:
     layout
 date:
-    01-17
+    2015-01-17
 ---
 
 

@@ -1,13 +1,13 @@
 title: CSS代码检测
 categories:
-- Lint
+- lint
 tags:
 -  webserver start
 -  css
 layout:
     layout
 date:
-    01-12
+    2015-01-12
 ---
 
 

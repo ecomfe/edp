@@ -1,12 +1,12 @@
 title: 构建过程
 categories:
-- Build
+- build
 tags:
 -  build
 layout:
     layout
 date:
-    01-16
+    2015-01-16
 ---
 
 EDP的构建过程分成3步：

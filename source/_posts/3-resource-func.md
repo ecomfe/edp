@@ -1,6 +1,6 @@
 title: 资源处理函数
 categories:
-- WebServer
+- webserver
 tags:
 -  webserver
 -  config
@@ -8,7 +8,7 @@ tags:
 layout:
     layout
 date:
-    01-08
+    2015-01-08
 ---
 
 

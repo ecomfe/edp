@@ -1,6 +1,6 @@
 title: User Commands
 categories:
-- Command_extension
+- command-extension
 tags:
 -  command
 -  customize
@@ -8,7 +8,7 @@ tags:
 layout:
     layout
 date:
-    01-03
+    2015-01-03
 ---
 
 edp默认提供的User Commands包括`edpx-bcs`, `edpx-add`, `edpx-ub-ria`。如果想要创建一个自己的扩展，可以采用如下的方式：

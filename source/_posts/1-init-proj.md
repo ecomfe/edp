@@ -1,13 +1,13 @@
 title: 初始化项目
 categories:
-- Project_management
+- project-management
 tags:
 -  project management
 -  init
 layout:
     layout
 date:
-    01-19
+    2015-01-19
 ---
 
 

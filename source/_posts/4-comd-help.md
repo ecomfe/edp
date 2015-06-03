@@ -1,13 +1,13 @@
 title: Command Help
 categories:
-- Command_extension
+- command-extension
 tags:
 -  command
 -  help
 layout:
     layout
 date:
-    01-02
+    2015-01-02
 ---
 
 

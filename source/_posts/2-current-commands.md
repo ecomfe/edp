@@ -1,13 +1,13 @@
 title: 查看EDP当前支持的命令列表
 categories:
-- Initialization
+- initialization
 tags:
 -  init
 -  current commands
 layout:
     layout
 date:
-    01-26
+    2015-01-26
 ---
 
 

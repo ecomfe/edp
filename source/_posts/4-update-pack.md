@@ -1,12 +1,12 @@
 title: 升级已导入的包
 categories:
-- Package_management
+- package-management
 tags:
 -  package
 layout:
     layout
 date:
-    01-20
+    2015-01-20
 ---
 
 通过edp的`update`命令：`edp update [package]`，可以对使用`import`命令导入过的包进行升级。

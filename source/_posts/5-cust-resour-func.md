@@ -1,6 +1,6 @@
 title: 自定义资源处理函数
 categories:
-- WebServer
+- webserver
 tags:
 -  webserver
 -  config
@@ -8,7 +8,7 @@ tags:
 layout:
     layout
 date:
-    01-06
+    2015-01-06
 ---
 
 当内置的资源处理函数无法满足自己需求的时候，也可以很方便的添加一个自定义的资源处理函数。假定我们希望将符合`POST /data/***`特征的请求以mockup数据返回，但是mockup的数据放在`src/mockup`目录下面，那么我们可以添加一个自己的处理函数`mockup`，同时配合`file`来完成这个工作。

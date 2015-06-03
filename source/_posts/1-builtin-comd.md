@@ -1,13 +1,13 @@
 title: Builtin Commands
 categories:
-- Command_extension
+- command-extension
 tags:
 -  command
 -  builtin commands
 layout:
     layout
 date:
-    01-05
+    2015-01-05
 ---
 
 

@@ -1,12 +1,12 @@
 title: 查看命令帮助
 categories:
-- Initialization
+- initialization
 tags:
 -  commands help
 layout:
     layout
 date:
-    01-25
+    2015-01-25
 ---
 
 当不确定一个命令的参数或用法时，在命令后加入--help可以查看命令的帮助信息。

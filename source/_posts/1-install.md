@@ -1,12 +1,12 @@
 title: 安装EDP
 categories:
-- Initialization
+- initialization
 tags:
 - init
 layout:
     layout
 date:
-    01-27
+    2015-01-27
 ---
 
 

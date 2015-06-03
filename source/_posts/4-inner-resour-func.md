@@ -1,6 +1,6 @@
 title: 内置资源处理函数
 categories:
-- WebServer
+- webserver
 tags:
 -  webserver
 -  config
@@ -8,7 +8,7 @@ tags:
 layout:
     layout
 date:
-    01-07
+    2015-01-07
 ---
 
 EDP内置了一些`资源处理函数`，可以满足对常见资源的处理。下面列举一些常用的内置`资源处理函数`。

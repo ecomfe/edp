@@ -1,12 +1,12 @@
 title: 使用edp项目的好处
 categories:
-- Project_management
+- project-management
 tags:
 -  project management
 layout:
     layout
 date:
-    01-18
+    2015-01-18
 ---
 
 

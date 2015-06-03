@@ -1,12 +1,12 @@
 title: 代码检测
 categories:
-- Lint
+- lint
 tags:
 -  check
 layout:
     layout
 date:
-    01-14
+    2015-01-14
 ---
 代码检测
 ===

@@ -1,13 +1,13 @@
 title: 通过配置进行自定义构建
 categories:
-- Build
+- build
 tags:
 -  build
 -  customize
 layout:
     layout
 date:
-    01-15
+    2015-01-15
 ---
 
 

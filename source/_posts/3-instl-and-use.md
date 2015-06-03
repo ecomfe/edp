@@ -1,12 +1,12 @@
 title: 导入并使用包
 categories:
-- Package_management
+- package-management
 tags:
 -  package
 layout:
     layout
 date:
-    01-21
+    2015-01-21
 ---
 
 

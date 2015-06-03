@@ -1,13 +1,13 @@
 title: Command Resolve
 categories:
-- Command_extension
+- command-extension
 tags:
 -  command
 -  command resolve
 layout:
     layout
 date:
-    01-04
+    2015-01-04
 ---
 
 

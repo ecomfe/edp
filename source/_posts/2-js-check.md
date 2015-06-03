@@ -1,13 +1,13 @@
 title: Javascript代码检测
 categories:
-- Lint
+- lint
 tags:
 -  check
 -  javascript
 layout:
     layout
 date:
-    01-13
+    2015-01-13
 ---
 
 EDP内置并封装了`jshint`和`jscs`，通过`jshint`命令：`edp jshint`或`edp lint --type=js`，能够对`当前目录`下所有`js`文件的代码进行检测。

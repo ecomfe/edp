@@ -1,12 +1,12 @@
 title: 查找当前存在的包
 categories:
-- Package_management
+- package-management
 tags:
 -  package
 layout:
     layout
 date:
-    01-22
+    2015-01-22
 ---
 通过edp的`search`命令：`edp search [keyword]`，可以查找当前存在的包。如果不输入`keyword`，将列出当前存在的所有包。
 

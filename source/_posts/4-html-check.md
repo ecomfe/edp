@@ -1,13 +1,13 @@
 title: HTML代码检测
 categories:
-- Lint
+- lint
 tags:
 -  webserver start
 -  html
 layout:
     layout
 date:
-    01-11
+    2015-01-11
 ---
 
 EDP内置并封装了`htmlhint`工具，通过`htmlhint`命令：`edp htmlhint`，能够对`当前目录`下所有`html`文件的代码进行检测。

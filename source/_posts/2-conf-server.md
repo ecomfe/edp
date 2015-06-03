@@ -1,13 +1,13 @@
 title: 配置WebServer
 categories:
-- WebServer
+- webserver
 tags:
 -  webserver
 -  config
 layout:
     layout
 date:
-    01-09
+    2015-01-09
 ---
 
 运行`edp webserver start`时，默认使用的`配置文件`为当前目录下的`edp-webserver-config.js`。如果该文件不存在，将使用`默认配置`。你可以新建一个`edp-webserver-config.js`，或者使用其他文件名，在运行命令时通过`--config`参数指定。
