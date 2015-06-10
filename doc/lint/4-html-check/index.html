@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>HTML代码检测 | EDP</title>
+    <title>HTML 代码检查 | EDP</title>
     <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
 </head>
 <body>
@@ -242,27 +242,31 @@
 </script>
     <section id="main">
         <article>
-    <h1 class="article-title">HTML代码检测</h1>
+    <h1 class="article-title">HTML 代码检查</h1>
 
-    <p>EDP内置并封装了<code>htmlhint</code>工具，通过<code>htmlhint</code>命令：<code>edp htmlhint</code>，能够对<code>当前目录</code>下所有<code>html</code>文件的代码进行检测。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ edp htmlhint&#10;&#10;edp INFO index.html&#10;edp WARN &#8594; line 7, col 3: INCORRECT_CLOSE_TAG_ORDER: head&#10;edp WARN &#8594; line 25, col 27: UNUNIQUE_ID: try-nav</span><br></pre></td></tr></table></figure>
-<h1 id="排除检测文件">排除检测文件</h1><p>有时我们想要排除一些文件，不期望这些文件被检测：比如测试页面。这时我们可以在<code>当前目录</code>下建立<code>.htmlhintignore</code>文件。</p>
-<p><code>.htmlhintignore</code>中，每一行是一个pattern。其逻辑与<code>gitignore</code>一致，详细说明请参看<code>man 5 gitignore</code>。</p>
+    <p>EDP 内置 <a href="https://github.com/ecomfe/fecs" target="_blank" rel="external">FECS</a>，而 <code>FECS</code> 通过封装的 <code>htmlcs</code> 实现对 <code>html</code> 文件的检查。通过 <code>htmlhint</code> 命令：<code>edp htmlhint</code> 或 <code>edp lint --type=html</code>，能够对 <code>当前目录</code> 下所有 <code>html</code> 文件的代码进行检查。</p>
+<p>注意，目录 EDP 的代码检查并没有使用 <code>htmlhint</code>，只是由于兼容旧版，保留了 <code>htmlhint</code> 的命令。更多信息，移步 <a href="https://github.com/ecomfe/fecs/wiki" target="_blank" rel="external">fecs.wiki</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ edp htmlhint&#10;&#10;edp INFO index.html&#10;edp  WARN &#8594; line 1, col 1: &#60;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=Edge&#34;&#62; recommended.&#10;edp  WARN &#8594; line 6, col 5: Default value of attribute &#34;type&#34; (&#34;text/css&#34;) does not need to be set.&#10;edp  WARN &#8594; line 6, col 5: Attribute &#34;rel&#34; of &#60;link&#62; should be set as &#34;stylesheet&#34;.&#10;edp  WARN &#8594; line 7, col 5: Default value of attribute &#34;type&#34; (&#34;text/javascript&#34;) does not need to be set.&#10;edp  WARN &#8594; line 7, col 5: Javascript contents are recommended to be imported in the tail of &#60;body&#62;.&#10;edp  WARN &#8594; line 8, col 5: Style tag can not be used.&#10;edp  WARN &#8594; line 14, col 5: Default value of attribute &#34;type&#34; (&#34;text/javascript&#34;) does not need to be set.&#10;edp  WARN &#8594; line 14, col 5: Javascript contents are recommended to be imported in the tail of &#60;body&#62;.</span><br></pre></td></tr></table></figure>
+<h1 id="自定义配置">自定义配置</h1><p>EDP 默认使用 <a href="https://github.com/ecomfe/fecs/blob/master/lib/html/htmlcs.json" target="_blank" rel="external"><code>htmlcs</code> 的配置</a>，如果想使用自己的检测配置，可以在 <code>当前目录</code> 下建立 <code>.fecsrc</code>文件。该文件是 JSON 格式，其中相关参数将与默认参数 mixin。具体参数的含义请参考 <a href="https://github.com/ecomfe/htmlcs/blob/master/lib/default/htmlcsrc.json" target="_blank" rel="external">https://github.com/ecomfe/htmlcs/blob/master/lib/default/htmlcsrc.json</a>。</p>
+<p>下面是一个<code>.fecsrc</code>的简单例子：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">htmlcs</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">html-lang</span>": <span class="value"><span class="literal">false</span></span><br><span class="line">    </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>如果有的 html 文件比较特殊，可以在文件顶部内容中，通过注释的形式，单独设置检查该文件时是否禁止的规则。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--htmlcs-disable asset-type --&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="排除检测文件">排除检测文件</h1><p>有时我们想要排除一些文件，不期望这些文件被检测：比如数据模拟、测试用例、工具代码。这时我们可以在<code>当前目录</code>下建立<code>.fecsignore</code>文件。</p>
+<p><code>.fecsignore</code>中，每一行是一个pattern。其逻辑与<code>gitignore</code>一致，详细说明请参看<code>man 5 gitignore</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**/tool/**&#10;**/doc/**</span><br></pre></td></tr></table></figure>
-<p>提示：<code>test</code>、<code>output</code>、<code>node_module</code>、<code>asset</code>、<code>dist</code>、<code>release</code>、<code>doc</code>、<code>dep</code>目录已经被自动排除。</p>
+<p>提示：<code>bower_components</code>、<code>node_module</code> 目录已经被自动排除。</p>
 
 </article>
 
 <nav class="article-pagination">
     
-    <a href="/edp/doc/lint/3-css-check/" class="article-prev">前一篇: CSS代码检测</a>
     
-    
-    <a href="/edp/doc/webserver/1-start-server/" class="article-next">后一篇: 启动WebServer</a>
+    <a href="/edp/doc/lint/3-css-check/" class="article-next">后一篇: CSS 代码检查</a>
     
 </nav>
 
-<div class="ds-thread" data-thread-key="doc/lint/4-html-check/" data-title="HTML代码检测" data-url="http://ecomfe.github.io/edp/doc/lint/4-html-check/"></div>
+<div class="ds-thread" data-thread-key="doc/lint/4-html-check/" data-title="HTML 代码检查" data-url="http://ecomfe.github.io/edp/doc/lint/4-html-check/"></div>
 <script>
 var duoshuoQuery = {short_name:"baidu-efe"};
 (function() {
