@@ -14,7 +14,7 @@ date:
 
 EDP 内置 [FECS](https://github.com/ecomfe/fecs)，而 `FECS` 通过封装的 `csshint` 实现对 `css` 文件的检查。通过 `csslint` 命令：`edp csslint` 或 `edp lint --type=css`，能够对 `当前目录` 下所有 `css` 文件的代码进行检查。
 
-注意，目录 EDP 的代码检查并没有使用 `csslint`，只是由于兼容旧版，保留了 `csslint` 的命令。更多信息，移步 [fecs.wiki](https://github.com/ecomfe/fecs/wiki)
+注意，目前 EDP 的代码检查并没有使用 `csslint`，只是为了兼容旧版才保留 `csslint` 命令。更多信息，移步 [fecs.wiki](https://github.com/ecomfe/fecs/wiki)
 
 ```
 $ edp csslint
@@ -50,9 +50,9 @@ EDP 默认使用 [`csshint` 的配置](https://github.com/ecomfe/fecs/blob/maste
 
 # 排除检测文件
 
-有时我们想要排除一些文件，不期望这些文件被检测：比如数据模拟、测试用例、工具代码。这时我们可以在`当前目录`下建立`.fecsignore`文件。
+有时我们想要排除一些文件，不期望这些文件被检测：比如数据模拟、测试用例、工具代码。这时我们可以在 `当前目录` 下建立 `.fecsignore` 文件。
 
-`.fecsignore`中，每一行是一个pattern。其逻辑与`gitignore`一致，详细说明请参看`man 5 gitignore`。
+`.fecsignore` 中，每一行是一个 pattern。其逻辑与`gitignore`一致，详细说明请参看`man 5 gitignore`。
 
 ```
 **/tool/**
