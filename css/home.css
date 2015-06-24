@@ -74,24 +74,22 @@ header {
   height: 60px;
   line-height: 60px;
   float: right;
-  margin-right: 30px;
+  margin-right: 50px;
 }
-.menu :first-child,
 .menu a {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  padding: 0 1em;
-  margin: 0 1em;
+  margin: 0 10px;
   line-height: 58px;
 }
 .menu .nav-active,
 .menu a:link,
 .menu a:hover {
-  color: #1595fb;
+  color: #7eb7e5;
 }
 .menu a:focus {
-  color: #1595fb;
+  color: #7eb7e5;
 }
 .banner {
   background: #1d2731;

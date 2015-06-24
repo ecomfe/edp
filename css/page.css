@@ -52,24 +52,22 @@ header {
   height: 60px;
   line-height: 60px;
   float: right;
-  margin-right: 30px;
+  margin-right: 50px;
 }
-.menu :first-child,
 .menu a {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  padding: 0 1em;
-  margin: 0 1em;
+  margin: 0 10px;
   line-height: 58px;
 }
 .menu .nav-active,
 .menu a:link,
 .menu a:hover {
-  color: #1595fb;
+  color: #7eb7e5;
 }
 .menu a:focus {
-  color: #1595fb;
+  color: #7eb7e5;
 }
 .banner {
   background: #1d2731;
@@ -198,8 +196,8 @@ color
 .tree h1 {
   font-size: 16px;
   line-height: 2em;
-  color: #41aaff;
-  border-bottom: 1px solid #41aaff;
+  color: #2a6ca1;
+  border-bottom: 1px solid #2a6ca1;
   margin-bottom: 8px;
   margin-left: 8px;
 }
@@ -209,16 +207,12 @@ color
 .tree li {
   padding-left: 6px;
 }
-.category ul {
-  display: none;
-}
 .category ul.show {
   display: block;
 }
-.cat-title {
-  padding: 18px;
-  background: url("./images/icon2.png") left center no-repeat;
-  cursor: default;
+.category .cat-title {
+  font-size: 14px;
+  color: #3f85be;
 }
 .open {
   padding: 18px;
@@ -228,26 +222,30 @@ color
   padding: 18px;
 }
 article {
+  font-size: 14px;
   font-family: "Microsoft Yahei", Georgia, "Times New Roman", serif;
   color: #535353;
 }
 article code {
-  font-size: 85%;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  background-color: #e5dfdf;
+  background: #e6e6e6;
+  color: #666;
   border-radius: 3px;
-  padding: 0.2em;
+  padding: 0 3px;
+  margin: 0 3px;
 }
 article h1 {
-  font-size: 28px;
+  font-size: 26px;
   margin-top: 0;
 }
 article .article-title {
   text-decoration: none;
-  font-size: 36px;
-  font-weight: 200;
+  font-size: 28px;
   line-height: 1.5em;
   margin-bottom: 25px;
+  border-left: 5px solid #444;
+  padding-left: 10px;
+  color: #444;
 }
 article p,
 article table,
@@ -288,13 +286,14 @@ article p a,
 article table a,
 article ol a,
 article ul a {
+  margin: 0 3px;
   text-decoration: none;
-  color: #11a7db;
+  color: #529bd6;
 }
 article figure,
 article blockquote {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-  background: #d7d7d7;
+  background: #e7e7e7;
 }
 article figure .gutter,
 article blockquote .gutter {
@@ -307,6 +306,8 @@ article blockquote .gutter {
 article figure .code,
 article blockquote .code {
   padding-left: 8px;
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 article blockquote {
   padding-left: 8px;

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>通过配置进行自定义构建 | EDP</title>
     <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
+    <link rel="stylesheet" href="/edp/css/font-awesome.css" type="text/css">
 </head>
 <body>
 <header id="header">
@@ -12,8 +13,8 @@
     </a>
 
     <nav class="menu">
-        <a href="/edp/doc/initialization/1-install/">Docs</a>
-        <a href="https://github.com/ecomfe/edp" target="_blank">GitHub</a>
+        <a href="/edp/doc/initialization/1-install/"><i class="fa fa-book"></i> Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank"><i class="fa fa-github"></i> GitHub</a>
     </nav>
 </header>
 
@@ -22,31 +23,31 @@
 <div class="tree">
     <h1>Category</h1>
     <ul class="category">
-        <li><a class="cat-title">安装与升级</a>
+        <li><b class="cat-title">安装与升级</b>
             <ul>
-                <li><a class="cat-title" href="/edp/doc/initialization/1-install/">安装EDP</a>
+                <li><a href="/edp/doc/initialization/1-install/">安装</a>
                     <ul>
                         <li><a href="/edp/doc/initialization/1-install/#npm install">npm install</a></li>
                         <li><a href="/edp/doc/initialization/1-install/#使用cnpm安装">使用cnpm安装</a></li>
                         <li><a href="/edp/doc/initialization/1-install/#使用内网npm镜像安装">使用内网npm镜像安装</a></li>
                     </ul>
                 </li>
-                <li><a href="/edp/doc/initialization/2-current-commands/">查看EDP当前支持的命令列表</a></li>
+                <li><a href="/edp/doc/initialization/2-current-commands/">查看当前支持的命令列表</a></li>
                 <li><a href="/edp/doc/initialization/3-commands-help/">查看命令帮助</a></li>
-                <li><a href="/edp/doc/initialization/4-update/">升级EDP</a></li>
+                <li><a href="/edp/doc/initialization/4-update/">升级</a></li>
             </ul>
         </li>
-        <li><a class="cat-title">包管理</a>
+        <li><b class="cat-title">包管理</b>
             <ul>
                 <li><a href="/edp/doc/package-management/1-reasonof-pack-mngm/">为什么要进行包管理</a></li>
                 <li><a href="/edp/doc/package-management/2-find-curr-pack/">查找当前存在的包</a></li>
-                <li><a class="cat-title" href="/edp/doc/package-management/3-instl-and-use/">导入并使用包</a>
+                <li><a href="/edp/doc/package-management/3-instl-and-use/">导入并使用包</a>
                     <ul>
                         <li><a href="/edp/doc/package-management/3-instl-and-use/#导入包的最新版">导入包的最新版</a></li>
                         <li><a href="/edp/doc/package-management/3-instl-and-use/#导入指定版本的包">导入指定版本的包</a></li>
                     </ul>
                 </li>
-                <li><a class="cat-title" href="/edp/doc/package-management/4-update-pack/">升级已导入的包</a>
+                <li><a href="/edp/doc/package-management/4-update-pack/">升级已导入的包</a>
                     <ul>
                         <li><a href="/edp/doc/package-management/4-update-pack/#升级指定包">升级指定包</a></li>
                         <li><a href="/edp/doc/package-management/4-update-pack/#升级所有包">升级所有包</a></li>
@@ -54,15 +55,15 @@
                 </li>
             </ul>
         </li>
-        <li><a class="cat-title">项目管理</a>
+        <li><b class="cat-title">项目管理</b>
             <ul>
                 <li><a href="/edp/doc/project-management/1-init-proj/">初始化项目</a></li>
                 <li><a href="/edp/doc/project-management/2-advantage/">使用edp项目的好处</a></li>
             </ul>
         </li>
-        <li><a class="cat-title">项目构建</a>
+        <li><b class="cat-title">项目构建</b>
             <ul>
-                <li><a class="cat-title" href="/edp/doc/build/1-build/">构建一个项目</a>
+                <li><a href="/edp/doc/build/1-build/">构建一个项目</a>
                     <ul>
                         <li><a href="/edp/doc/build/1-build/#指定输出目录">指定输出目录</a></li>
                         <li><a href="/edp/doc/build/1-build/#强制覆盖">强制覆盖</a></li>
@@ -70,7 +71,7 @@
                     </ul>
                 </li>
                 <li><a href="/edp/doc/build/2-build-proc/">构建过程</a></li>
-                <li><a class="cat-title" href="/edp/doc/build/3-cust-build/">通过配置进行自定义构建</a>
+                <li><a href="/edp/doc/build/3-cust-build/">通过配置进行自定义构建</a>
                     <ul>
                         <li><a href="/edp/doc/build/3-cust-build/#input">input</a></li>
                         <li><a href="/edp/doc/build/3-cust-build/#output">output</a></li>
@@ -82,37 +83,37 @@
                 </li>
             </ul>
         </li>
-        <li><a class="cat-title">前端代码静态检测</a>
+        <li><b class="cat-title">前端代码静态检测</b>
             <ul>
                 <li><a href="/edp/doc/lint/1-code-check/">代码检测</a></li>
-                <li><a class="cat-title" href="/edp/doc/lint/2-js-check/">Javascript代码检测</a>
+                <li><a href="/edp/doc/lint/2-js-check/">Javascript代码检测</a>
                     <ul>
                         <li><a href="/edp/doc/lint/2-js-check/#自定义jshint配置">自定义jshint配置</a></li>
                         <li><a href="/edp/doc/lint/2-js-check/#排除检测文件">排除检测文件</a></li>
                     </ul>
                 </li>
-                <li><a class="cat-title" href="/edp/doc/lint/3-css-check/">CSS代码检测</a>
+                <li><a href="/edp/doc/lint/3-css-check/">CSS代码检测</a>
                     <ul>
                         <li><a href="/edp/doc/lint/3-css-check/#自定义csslint配置">自定义csslint配置</a></li>
                         <li><a href="/edp/doc/lint/3-css-check/#排除检测文件">排除检测文件</a></li>
                     </ul>
                 </li>
-                <li><a class="cat-title" href="/edp/doc/lint/4-html-check/">HTML代码检测</a>
+                <li><a href="/edp/doc/lint/4-html-check/">HTML代码检测</a>
                     <ul>
                         <li><a href="/edp/doc/lint/4-html-check/#排除检测文件">排除检测文件</a></li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li><a class="cat-title">使用WebServer进行调试</a>
+        <li><b class="cat-title">使用WebServer进行调试</b>
             <ul>
-                <li><a class="cat-title" href="/edp/doc/webserver/1-start-server/">启动WebServer</a>
+                <li><a href="/edp/doc/webserver/1-start-server/">启动WebServer</a>
                     <ul>
                         <li><a href="/edp/doc/webserver/1-start-server/#指定监听端口">指定监听端口</a></li>
                         <li><a href="/edp/doc/webserver/1-start-server/#指定WebServer配置文件">指定WebServer配置文件</a></li>
                     </ul>
                 </li>
-                <li><a class="cat-title" href="/edp/doc/webserver/2-conf-server/">配置WebServer</a>
+                <li><a href="/edp/doc/webserver/2-conf-server/">配置WebServer</a>
                     <ul>
                         <li><a href="/edp/doc/webserver/2-conf-server/#port">port</a></li>
                         <li><a href="/edp/doc/webserver/2-conf-server/#directoryIndexes">directoryIndexes</a></li>
@@ -122,7 +123,7 @@
                     </ul>
                 </li>
                 <li><a href="/edp/doc/webserver/3-resource-func/">资源处理函数</a></li>
-                <li><a class="cat-title" href="/edp/doc/webserver/4-inner-resour-func/">内置资源处理函数</a>
+                <li><a href="/edp/doc/webserver/4-inner-resour-func/">内置资源处理函数</a>
                     <ul>
                         <li><a href="/edp/doc/webserver/4-inner-resour-func/#file">file</a></li>
                         <li><a href="/edp/doc/webserver/4-inner-resour-func/#content">content</a></li>
@@ -154,10 +155,10 @@
                 <li><a href="/edp/doc/webserver/5-cust-resour-func/">自定义资源处理函数</a></li>
             </ul>
         </li>
-        <li><a class="cat-title">扩展自己的EDP命令</a>
+        <li><b class="cat-title">扩展自己的EDP命令</b>
             <ul>
                 <li><a href="/edp/doc/command-extension/1-builtin-comd/">Builtin Commands</a></li>
-                <li><a class="cat-title" href="/edp/doc/command-extension/2-comd-resol/">Command Resolve</a>
+                <li><a href="/edp/doc/command-extension/2-comd-resol/">Command Resolve</a>
                     <ul>
                         <li><a href="/edp/doc/command-extension/2-comd-resol/#Default Command">Default Command</a></li>
                         <li><a href="/edp/doc/command-extension/2-comd-resol/#Sub Command">Sub Command</a></li>
@@ -168,7 +169,7 @@
                 <li><a href="/edp/doc/command-extension/4-comd-help/">Command Help</a></li>
             </ul>
         </li>
-        <li><a class="cat-title">诊断工具</a>
+        <li><b class="cat-title">诊断工具</b>
             <ul>
                 <li><a href="/edp/doc/doctor/doctor/">Doctor</a></li>
             </ul>
@@ -178,6 +179,7 @@
 </aside>
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script>
+/*
     $(function() {
         $(".category a").on("click", function() {
             var $this = $(this);
@@ -209,7 +211,7 @@
         $(".category.show").siblings("a").addClass('open');
 
     });
-
+*/
 
 //    var aa = document.getElementsByTagName('a');
 ////    alert(lis.length);
