@@ -77,8 +77,7 @@ header {
   color: rgba(255,255,255,0.8);
   text-align: center;
   font-size: 16px;
-  padding: 20% 0 0;
-  height: 80%;
+  padding: 100px 0;
 }
 .banner p {
   font-size: 28px;
@@ -87,7 +86,7 @@ header {
   vertical-align: bottom;
 }
 .banner .banner-nav {
-  margin: 20px auto 150px;
+  margin: 20px auto 50px;
   text-align: center;
   line-height: 40px;
 }
@@ -231,6 +230,13 @@ color
 article {
   font-family: "Microsoft Yahei", Georgia, "Times New Roman", serif;
   color: #535353;
+}
+article code {
+  font-size: 85%;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  background-color: #e5dfdf;
+  border-radius: 3px;
+  padding: 0.2em;
 }
 article h1 {
   font-size: 28px;

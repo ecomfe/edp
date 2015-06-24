@@ -215,8 +215,7 @@ header {
   color: rgba(255,255,255,0.8);
   text-align: center;
   font-size: 16px;
-  padding: 20% 0 0;
-  height: 80%;
+  padding: 100px 0;
 }
 .banner p {
   font-size: 28px;
@@ -225,7 +224,7 @@ header {
   vertical-align: bottom;
 }
 .banner .banner-nav {
-  margin: 20px auto 150px;
+  margin: 20px auto 50px;
   text-align: center;
   line-height: 40px;
 }

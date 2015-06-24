@@ -99,8 +99,7 @@ header {
   color: rgba(255,255,255,0.8);
   text-align: center;
   font-size: 16px;
-  padding: 20% 0 0;
-  height: 80%;
+  padding: 100px 0;
 }
 .banner p {
   font-size: 28px;
@@ -109,7 +108,7 @@ header {
   vertical-align: bottom;
 }
 .banner .banner-nav {
-  margin: 20px auto 150px;
+  margin: 20px auto 50px;
   text-align: center;
   line-height: 40px;
 }
@@ -245,8 +244,13 @@ footer .cp {
 .contain dt {
   color: #333;
   text-align: center;
-  margin: 50px auto 15px;
+  margin: 50px auto 20px;
   font-size: 18px;
+}
+.contain dt i {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 5px;
 }
 .contain dd {
   color: #666;
@@ -254,6 +258,15 @@ footer .cp {
   line-height: 1.8;
   text-align: center;
   margin-bottom: 25px;
+}
+.contain .edp-what {
+  color: #a62727;
+}
+.contain .edp-cando {
+  color: #5d8f46;
+}
+.contain .edp-start {
+  color: #2769a6;
 }
 .contain .cont-box {
   color: #493125;
