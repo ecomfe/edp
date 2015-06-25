@@ -223,7 +223,6 @@ color
 }
 article {
   font-size: 14px;
-  font-family: "Microsoft Yahei", Georgia, "Times New Roman", serif;
   color: #535353;
 }
 article code {
@@ -295,7 +294,7 @@ article ul a {
 }
 article figure,
 article blockquote {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   background: #e7e7e7;
 }
 article figure .gutter,
@@ -310,7 +309,6 @@ article figure .code,
 article blockquote .code {
   padding-left: 8px;
   font-size: 12px;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 article blockquote {
   padding-left: 8px;
@@ -370,7 +368,9 @@ footer .cp {
   max-width: 900px;
 }
 body {
-  font: 16px/1.5 Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+  font: 14px;
+  line-height: 1.5;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background: #f7f7f7;
 }
 .wrap {

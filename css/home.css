@@ -43,14 +43,10 @@ p {
 ul {
   list-style: none;
 }
-html {
-  height: 100%;
-}
 body {
-  background-size: contain;
-  height: 100%;
-  overflow-y: scroll;
-  font: 16px/1.5 "Microsoft YaHei" Helvetica STHeiti STXihei Microsoft JhengHei Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background: #f4f4f4;
 }
 ::-webkit-scrollbar {
