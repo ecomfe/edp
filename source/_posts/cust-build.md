@@ -15,7 +15,7 @@ date:
 
 配置文件是一个`node module`，EDP在构建时将`require`它，所以，配置文件后缀必须为`.js`。
 
-下面是EDP的构建默认配置。通过edp提供的[项目管理功能](/Doc/Project-management/1-initProj/)来初始化`项目`时，生成的`edp-build-config.js`与此不同。
+下面是EDP的构建默认配置。通过edp提供的[项目管理功能](../../../doc/project-management/init-proj/)来初始化`项目`时，生成的`edp-build-config.js`与此不同。
 
 ```javascript
 var cwd = process.cwd();
@@ -66,7 +66,7 @@ exports.injectProcessor = function ( processors ) {
 };
 ```
 
-我们建议：通过edp提供的[项目管理功能](/Doc/Project-management/1-initProj/)来初始化`项目`，在其生成的`edp-build-config.js`上进行构建配置自定义。
+我们建议：通过edp提供的[项目管理功能](../../../doc/project-management/init-proj/)来初始化`项目`，在其生成的`edp-build-config.js`上进行构建配置自定义。
 
 
 在自定义自己的构建配置时，有下面几个东西需要了解和注意：
@@ -110,7 +110,7 @@ exports.fileEncodings = {
 
 处理器列表，`{Array} function`。该方法会被EDP在构建时调用，获取构建过程的Processors。
 
-EDP提供了许多内置Processors，基本可以满足前端项目的构建需求。你可以使用内置Processors，也可以扩展自己的Processor。我们在[Build Processors文档](/Doc/Build/2-buildProc/)对此进行了详细说明。
+EDP提供了许多内置Processors，基本可以满足前端项目的构建需求。你可以使用内置Processors，也可以扩展自己的Processor。我们在[Build Processors文档](../../../doc/build/build-proc/)对此进行了详细说明。
 
 # injectProcessor
 

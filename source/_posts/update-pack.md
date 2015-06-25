@@ -43,7 +43,7 @@ $ ls dep/etpl
 
 如果当前开发的`项目`是一个包，升级过程将使用`package.json`中声明的依赖信息。
 
-如果通过edp提供的[项目管理功能](/Doc/Project-management/1-initProj/index.html)来管理`项目`，已导入包的依赖信息保存在`.edpproj/metadata`文件中。
+如果通过edp提供的[项目管理功能](../../../doc/project-management/init-proj/)来管理`项目`，已导入包的依赖信息保存在`.edpproj/metadata`文件中。
 
 ```
 $ edp update

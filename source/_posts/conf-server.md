@@ -14,7 +14,7 @@ date:
 
 配置文件是一个`node module`，EDP在`WebServer`启动前将`require`它，所以，配置文件后缀必须为`.js`。
 
-下面是EDP的构建默认配置。通过edp提供的[项目管理功能](/Doc/Project-management/1-initProj/)来初始化`项目`时，生成的`edp-webserver-config.js`与此可能不同。
+下面是EDP的构建默认配置。通过edp提供的[项目管理功能](../../../doc/project-management/init-proj/)来初始化`项目`时，生成的`edp-webserver-config.js`与此可能不同。
 
 ```javascript
 exports.port = 8848;
@@ -72,7 +72,7 @@ exports.injectResource = function ( res ) {
 };
 ```
 
-我们建议：通过edp提供的[项目管理功能](/Doc/Project-management/1-initProj/)来初始化`项目`，在其生成的`edp-webserver-config.js`上进行`WebServer`配置自定义。
+我们建议：通过edp提供的[项目管理功能](../../../doc/project-management/init-proj/)来初始化`项目`，在其生成的`edp-webserver-config.js`上进行`WebServer`配置自定义。
 
 在自定义自己的`WebServer`配置时，有下面几个东西需要了解和注意：
 

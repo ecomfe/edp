@@ -37,8 +37,8 @@ drwxr-xr-x    2 erik  staff    68  4  2 10:57 tool
 可见，`edp project init`将自动生成[我们认为合理的前端项目的目录结构](https://github.com/ecomfe/spec/blob/master/directory.md)，`dep`、`doc`、`src`、`test`、`tool`目录的相关作用请参看上面的文档。其它几个特殊的东西的说明如下：
 
 + `.edpproj` 用于保存项目相关信息
-+ `edp-build-config.js` 项目构建的配置模块，更详细信息请参考[构建你的项目](/Doc/Build/1-build/)
-+ `edp-webserver-config.js` 调试服务器的配置模块，更详细信息请参考[使用调试服务器](/Doc/WebServer/1-startServer/)
++ `edp-build-config.js` 项目构建的配置模块，更详细信息请参考[构建你的项目](../../../doc/build/build/)
++ `edp-webserver-config.js` 调试服务器的配置模块，更详细信息请参考[使用调试服务器](../../../doc/webserver/start-server/)
 + `module.conf` 项目的AMD模块配置，`html`中的`require.config`将从此处同步更新，build过程module compile也将使用此配置
 
 
