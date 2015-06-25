@@ -15,5 +15,5 @@ EDP的构建过程分成3步：
 2. 处理：使用配置的`processors`对所有读入的文件内容进行处理。
 3. 输出：将处理结果输出到`output`目录中，`output`可以通过配置文件指定，也可以通过`--output`参数传入。
 
-![Build Process](Build-Process.png)
+![Build Process](../../../img/build-process.png)
 
