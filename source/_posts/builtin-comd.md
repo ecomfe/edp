@@ -17,7 +17,7 @@ edp提供的命令分为Builtin Commands和User Commands，各个命令的实现
 
 根据package.json里面的配置，我们可以了解到edp提供的Builtin Commands和npm package的对应关系如下：
 
-```
+```json
 {
   "edp": {
     "extensions": {

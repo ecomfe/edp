@@ -100,10 +100,10 @@ exports.exclude = [
 
 在处理输入文件的过程中，`edp`默认所有的**文本文件**都是`utf-8`编码的，如果有一些特殊编码的文件，需要在这个参数中声明，这样子才能保证输出的时候文件编码保持不变。
 
-```
+```javascript
 exports.fileEncodings = {
     'src/common/img/channel-example-csv.csv': 'gbk'
-}
+};
 ```
 
 # getProcessors

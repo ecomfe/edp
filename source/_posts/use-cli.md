@@ -26,25 +26,35 @@ $ edp config --list
 
 运行edp将得到当前支持的命令列表：
 
->$ edp   
+```
+$ edp   
 Builtin Commands:  
-config &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读取和设置edp用户配置  
-install   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           安装edp的扩展包  
-link      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;          Create symlink and debug edp user command  
-unlink  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Delete the edp user command symlink   
+config      读取和设置edp用户配置  
+install     安装edp的扩展包  
+link        Create symlink and debug edp user command  
+unlink      Delete the edp user command symlink   
+```
 
 如果想一次性的安装更多的命令，可以使用如下方式：
->$ [sudo] npm i -g edp edp-build edp-webserver edpx-bcs
+
+```
+$ [sudo] npm i -g edp edp-build edp-webserver edpx-bcs
+```
 
 安装成功之后，执行
->$ edp -v
+
+```
+$ edp -v
+```
 
 就可以看到安装的Package了。
 
 **注意：**当执行edp命令的时候，若不存在，第一次会自动安装。如果你在安装edp时，使用了sudo，那么通过执行命令自动安装edp扩展时，也需要带有sudo。例如：  
 
->sudo edp install edpx-foo  
->sudo edp add  
+```
+$ sudo edp install edpx-foo  
+$ sudo edp add  
+```
 
 成功安装了扩展之后，再次使用就不需要带有sudo了。
 
@@ -52,19 +62,22 @@ unlink  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Delete the edp user command sym
 ## 查看命令帮助
 
 当不确定一个命令的参数或用法时，在命令后加入--help可以查看命令的帮助信息。
->$ edp config --help 
-> 
->\## config  
->
->\### Usage  
->
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  edp config <name> [value]  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  edp config --list  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  edp config  
->
->\### Options  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \* --list - 列出所有用户配置。  
->
->\### Description  
->
->读取和设置edp用户配置。当value未指定时，显示name配置的值；否则设置name配置的值。指定--list参数将列出所有用户配置。
+
+```
+$ edp config --help 
+ 
+## config  
+
+### Usage  
+
+        edp config <name> [value]  
+        edp config --list  
+        edp config  
+
+### Options  
+         \* --list - 列出所有用户配置。  
+
+### Description  
+
+读取和设置edp用户配置。当value未指定时，显示name配置的值；否则设置name配置的值。指定--list参数将列出所有用户配置。
+```

@@ -18,7 +18,6 @@ EDP 内置 [FECS](https://github.com/ecomfe/fecs)，而 `FECS` 通过封装的 `
 
 ```
 $ edp csslint
-
 edp INFO page.css
 edp WARN → line 4, col 10: Values of 0 shouldn't have units specified.
 edp WARN → line 7, col 1: Rule is empty.

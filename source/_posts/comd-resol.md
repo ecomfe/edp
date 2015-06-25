@@ -32,7 +32,7 @@ Default Command的名称跟npm package的名称一样（去掉edpx和edp的前�
 edp是支持<sub-cmd>的，当执行`edp project init`的时候，`init`就是`project`的`<sub-cmd>`，这个从目录结构层级上可以区分出来：
 
 ```
-➜  edp-project git:(1.0.0-dev) tree cli
+$ edp-project git:(1.0.0-dev) tree cli
 cli
 ├── project
 │   ├── init.js
@@ -48,17 +48,17 @@ cmd执行的时候有时候需要传递一些额外的参数。参数有两种�
 
 如果要设置cmd所支持的Options，可以采用如下的方式：
 
-```
+```javascript
 exports.cli = {
     options: [ 'foo', 'bar:' ]
-}
+};
 ```
 
 `bar:`后面的**冒号**意思是这个参数需要提供参数值。
 
 那么当执行`edp <cmd> a b c --foo --bar=hello`的时候，Options参数的值如下：
 
-```
+```javascript
 {
     foo: true, f: true,
     bar: 'hello', b: 'hello'
