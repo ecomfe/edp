@@ -234,9 +234,12 @@ article code {
   padding: 0 3px;
   margin: 0 3px;
 }
-article h1 {
+article img {
+  max-width: 660px;
+}
+article h2 {
   font-size: 26px;
-  margin-top: 0;
+  margin: 20px 0 10px;
 }
 article .article-title {
   text-decoration: none;

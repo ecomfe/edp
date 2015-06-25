@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>内置资源处理函数 | EDP</title>
+    <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
+    <link rel="stylesheet" href="/edp/css/font-awesome.css" type="text/css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?9773c6955c8a4722f2938db42b6d6c04";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+<header id="header">
+    <a class='logo' href="/edp/">
+        <img src="/edp/css/images/logo.png" width="120" alt="logo">
+    </a>
+
+    <nav class="menu">
+        <a href="/edp/doc/initialization/install/"><i class="fa fa-book"></i> Docs</a>
+        <a href="https://github.com/ecomfe/edp" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    </nav>
+</header>
+
+<div class="wrap">
+    <aside id="sidebar">
+<div class="tree">
+    <h1>Category</h1>
+    <ul class="category">
+        <li><b class="cat-title">安装与使用</b>
+            <ul>
+                <li><a href="/edp/doc/initialization/install/">安装</a>
+                    <ul>
+                        <li><a href="/edp/doc/initialization/install/#npm install">npm install</a></li>
+                        <li><a href="/edp/doc/initialization/install/#使用cnpm安装">使用cnpm安装</a></li>
+                        <li><a href="/edp/doc/initialization/install/#使用内网npm镜像安装">使用内网npm镜像安装</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/initialization/use-cli/">通过命令行使用</a></li>
+                <li><a href="/edp/doc/initialization/use-web/">通过web使用</a></li>
+                <li><a href="/edp/doc/initialization/update/">升级</a></li>
+            </ul>
+        </li>
+        <li><b class="cat-title">包管理</b>
+            <ul>
+                <li><a href="/edp/doc/package-management/reasonof-pack-mngm/">为什么要进行包管理</a></li>
+                <li><a href="/edp/doc/package-management/find-curr-pack/">查找当前存在的包</a></li>
+                <li><a href="/edp/doc/package-management/instl-and-use/">导入并使用包</a>
+                    <ul>
+                        <li><a href="/edp/doc/package-management/instl-and-use/#导入包的最新版">导入包的最新版</a></li>
+                        <li><a href="/edp/doc/package-management/instl-and-use/#导入指定版本的包">导入指定版本的包</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/package-management/update-pack/">升级已导入的包</a>
+                    <ul>
+                        <li><a href="/edp/doc/package-management/update-pack/#升级指定包">升级指定包</a></li>
+                        <li><a href="/edp/doc/package-management/update-pack/#升级所有包">升级所有包</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b class="cat-title">项目管理</b>
+            <ul>
+                <li><a href="/edp/doc/project-management/init-proj/">初始化项目</a></li>
+                <li><a href="/edp/doc/project-management/advantage/">使用edp项目的好处</a></li>
+            </ul>
+        </li>
+        <li><b class="cat-title">项目构建</b>
+            <ul>
+                <li><a href="/edp/doc/build/build/">构建一个项目</a>
+                    <ul>
+                        <li><a href="/edp/doc/build/build/#指定输出目录">指定输出目录</a></li>
+                        <li><a href="/edp/doc/build/build/#强制覆盖">强制覆盖</a></li>
+                        <li><a href="/edp/doc/build/build/#指定构建配置文件">指定构建配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/build/build-proc/">构建过程</a></li>
+                <li><a href="/edp/doc/build/cust-build/">通过配置进行自定义构建</a>
+                    <ul>
+                        <li><a href="/edp/doc/build/cust-build/#input">input</a></li>
+                        <li><a href="/edp/doc/build/cust-build/#output">output</a></li>
+                        <li><a href="/edp/doc/build/cust-build/#exclude">exclude</a></li>
+                        <li><a href="/edp/doc/build/cust-build/#fileEncodings">fileEncodings</a></li>
+                        <li><a href="/edp/doc/build/cust-build/#getProcessors">getProcessors</a></li>
+                        <li><a href="/edp/doc/build/cust-build/#injectProcessor">injectProcessor</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b class="cat-title">前端代码静态检测</b>
+            <ul>
+                <li><a href="/edp/doc/lint/code-check/">代码检测</a></li>
+                <li><a href="/edp/doc/lint/js-check/">Javascript代码检测</a>
+                    <ul>
+                        <li><a href="/edp/doc/lint/js-check/#自定义jshint配置">自定义jshint配置</a></li>
+                        <li><a href="/edp/doc/lint/js-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/lint/css-check/">CSS代码检测</a>
+                    <ul>
+                        <li><a href="/edp/doc/lint/css-check/#自定义csslint配置">自定义csslint配置</a></li>
+                        <li><a href="/edp/doc/lint/css-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/lint/html-check/">HTML代码检测</a>
+                    <ul>
+                        <li><a href="/edp/doc/lint/html-check/#排除检测文件">排除检测文件</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><b class="cat-title">使用WebServer进行调试</b>
+            <ul>
+                <li><a href="/edp/doc/webserver/start-server/">启动WebServer</a>
+                    <ul>
+                        <li><a href="/edp/doc/webserver/start-server/#指定监听端口">指定监听端口</a></li>
+                        <li><a href="/edp/doc/webserver/start-server/#指定WebServer配置文件">指定WebServer配置文件</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/webserver/conf-server/">配置WebServer</a>
+                    <ul>
+                        <li><a href="/edp/doc/webserver/conf-server/#port">port</a></li>
+                        <li><a href="/edp/doc/webserver/conf-server/#directoryIndexes">directoryIndexes</a></li>
+                        <li><a href="/edp/doc/webserver/conf-server/#documentRoot">documentRoot</a></li>
+                        <li><a href="/edp/doc/webserver/conf-server/#injectResource">injectResource</a></li>
+                        <li><a href="/edp/doc/webserver/conf-server/#getLocations">getLocations</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/webserver/resource-func/">资源处理函数</a></li>
+                <li><a href="/edp/doc/webserver/inner-resour-func/">内置资源处理函数</a>
+                    <ul>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#file">file</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#content">content</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#header">header</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#json">json</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#jsonp">jsonp</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#dumpRequest">dumpRequest</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#redirect">redirect</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#less">less</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#autoless">autoless</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#stylus">stylus</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#autostylus">autostylus</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#autocss">autocss</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#coffee">coffee</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#autocoffee">autocoffee</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#php">php</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#proxy">proxy</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#proxyNoneExists">proxyNoneExists</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#html2js">html2js</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#livereload">livereload</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#listDirectory">listDirectory</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#addRequestHeader">addRequestHeader</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#write">write</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#home">home</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#delay">delay</a></li>
+                        <li><a href="/edp/doc/webserver/inner-resour-func/#empty">empty</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/webserver/cust-resour-func/">自定义资源处理函数</a></li>
+            </ul>
+        </li>
+        <li><b class="cat-title">扩展自己的EDP命令</b>
+            <ul>
+                <li><a href="/edp/doc/command-extension/builtin-comd/">Builtin Commands</a></li>
+                <li><a href="/edp/doc/command-extension/comd-resol/">Command Resolve</a>
+                    <ul>
+                        <li><a href="/edp/doc/command-extension/comd-resol/#Default Command">Default Command</a></li>
+                        <li><a href="/edp/doc/command-extension/comd-resol/#Sub Command">Sub Command</a></li>
+                        <li><a href="/edp/doc/command-extension/comd-resol/#Arguments and Options">Arguments and Options</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/command-extension/user-comd/">User Commands</a></li>
+                <li><a href="/edp/doc/command-extension/comd-help/">Command Help</a></li>
+            </ul>
+        </li>
+        <li><b class="cat-title">诊断工具</b>
+            <ul>
+                <li><a href="/edp/doc/doctor/doctor/">Doctor</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</aside>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+/*
+    $(function() {
+        $(".category a").on("click", function() {
+            var $this = $(this);
+            var $li = $this.parents("li:eq(0)");
+            var $ul = $li.children("ul:eq(0)");
+
+            if($($ul)[0].className){
+                $ul.removeClass();
+                $this.removeClass('open');
+            }
+            else{
+                $ul.addClass("show");
+                $this.addClass('open');
+            }
+            var str = "";
+            $(".category.show").each(function(){
+                str += $("ul").index($(this)[0]) + " ";
+            });
+            localStorage.setItem("show_index", str);
+        });
+
+        var str = localStorage.getItem("show_index");
+        str = str.substring(0, str.length - 1);
+        var arr = str.split(" ");
+        for(var i = 0; i < arr.length; i++) {
+            $("ul:eq(" + arr[i] + ")").addClass("show");
+        }
+
+        $(".category.show").siblings("a").addClass('open');
+
+    });
+*/
+
+//    var aa = document.getElementsByTagName('a');
+////    alert(lis.length);
+////    e.stopPropagation();
+//
+//    for(var i = 0; i < aa.length; i++){
+//        if(document.all){
+//            aa[i].attachEvent('onclick', toggleList);
+//        }
+//        else{
+//            aa[i].addEventListener('click', toggleList, false);
+//        }
+//    }
+//    function toggleList(e){
+//        var e = e || window.event;
+//        var childList = e.srcElement.parentElement.getElementsByTagName('ul');
+////        alert(childList.length);
+//        if(childList.length > 0) {
+////            alert(childList[0].className);
+//            if(childList[0].className) {
+//                childList[0].removeAttribute('class');
+//            }
+//            else {
+//                childList[0].setAttribute('class', 'show');
+//            }
+//        }
+//
+////        alert(typeof(e.srcElement.parentElement) );
+//    }
+</script>
+    <section id="main">
+        <article>
+    <h1 class="article-title">内置资源处理函数</h1>
+
+    <p>EDP内置了一些<code>资源处理函数</code>，可以满足对常见资源的处理。下面列举一些常用的内置<code>资源处理函数</code>。</p>
+<h2 id="file">file</h2><p>file接受一个参数 <code>@param {string} file</code>，如果指定了文件，会渲染指定文件，否则会根据请求的路径输出文件内容。</p>
+<ol>
+<li>如果<code>pathname</code>是一个目录，会调用<code>listDirectory</code>输出当前目录文件列表</li>
+<li>如果<code>pathname</code>是一个文件，直接输出文件内容</li>
+</ol>
+<p>两种情况都会以config中配置的<code>documentRoot</code>作为根目录。</p>
+<p>参数：</p>
+<ul>
+<li><code>file</code>: {string} 指定的输出文件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/^.*$/</span>,</span><br><span class="line">    handler: file()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="content">content</h2><p>直接输出指定固定内容。</p>
+<p>参数：</p>
+<ul>
+<li><code>content</code>: {string} 输出内容</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/hello'</span>,</span><br><span class="line">    handler: content(<span class="string">'Hello World!'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="header">header</h2><p>设置指定的response header，新设置的头会覆盖<code>context.header</code>中已有的项。</p>
+<p>参数：</p>
+<ul>
+<li><code>header</code>: {Object} response header</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/^.*$/</span>,</span><br><span class="line">    handler: header(&#123;<span class="string">'x-copyright'</span>: <span class="string">'your name'</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="contentType">contentType</h4><p>输出固定Content-Type头，会覆盖已有的<code>content-type</code>的值。</p>
+<p>参数：</p>
+<ul>
+<li><code>contentType</code>: 返回的contentType的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/^.*$/</span>,</span><br><span class="line">    handler: contentType(<span class="string">'text/plain'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="json">json</h2><p>将数据按JSON格式输出，将自动设置为JSON的Content-Type</p>
+<p>参数：</p>
+<ul>
+<li><code>data</code>: 需要返回的data</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/data'</span>,</span><br><span class="line">    handler: json(&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="jsonp">jsonp</h2><p>将JSON数据按jsonp的方式输出，将自动设置为JS的Content-Type</p>
+<p>参数：</p>
+<ul>
+<li><code>data</code>: 需要返回的参数，如果<code>JSON.stringify</code>失败，则使用context.content代替</li>
+<li><code>callbackKey</code>: 回调函数名在url中的key值，默认使用callback</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/data'</span>,</span><br><span class="line">    handler: jsonp(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'callbackFunction'</span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="dumpRequest">dumpRequest</h2><p>打印请求信息，打印的内容包括：</p>
+<ul>
+<li><code>url</code>: request.url</li>
+<li><code>method</code>: request.method</li>
+<li><code>httpVersion</code>: request.httpVersion</li>
+<li><code>protocol</code>: request.protocol</li>
+<li><code>host</code>: request.host</li>
+<li><code>auth</code>: request.auth</li>
+<li><code>hostname</code>: request.hostname</li>
+<li><code>port</code>: request.port</li>
+<li><code>search</code>: request.search</li>
+<li><code>hash</code>: request.hash</li>
+<li><code>headers</code>: request.headers</li>
+<li><code>query</code>: request.query</li>
+<li><code>body</code>: request.bodyBuffer</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/^.*$/</span>,</span><br><span class="line">    handler: dumpRequest()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="redirect">redirect</h2><p>重定向，根据permanent决定返回头是302还是301</p>
+<p>参数：</p>
+<ul>
+<li><code>location</code>: 重定向地址</li>
+<li><code>permanent</code>: 是否永久，如果是永久，则status code是301，否则是302</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/'</span>,</span><br><span class="line">    handler: redirect(<span class="string">'/404'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="less">less</h2><p>对<code>context.content</code>进行less编译</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: less编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.less($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        file(),</span><br><span class="line">        less()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="autoless">autoless</h2><p>对css资源的请求，自动查找相应的同名less文件，并编译输出</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: less编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.css($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        autoless()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="stylus">stylus</h2><p>对<code>context.content</code>进行stylus编译</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: less编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.styl($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        file(),</span><br><span class="line">        stylus()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="autostylus">autostylus</h2><p>对css资源的请求，自动查找相应的同名stylus文件，并编译输出</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: less编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.css($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        autostylus()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="autocss">autocss</h2><p>对css资源的请求，自动查找相应的同名stylus或者less文件，并编译输出，autostylus和autoless都是基于autocss实现</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: less编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.css($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        autocss()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="coffee">coffee</h2><p>对<code>context.content</code>进行coffee编译</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.coffee($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        file(),</span><br><span class="line">        coffee()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="autocoffee">autocoffee</h2><p>对js资源的请求，自动查找相应的同名coffee文件，并编译输出</p>
+<p>参数：</p>
+<ul>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.js($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        autocoffee()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="php">php</h2><p>处理对php文件的请求，当前只处理url后缀是php的请求，根据当前pathname找到php文件，调用php-cgi，输出执行后的内容</p>
+<p>参数：</p>
+<ul>
+<li><code>opt_handler</code>: php-cgi可执行文件的路径，默认为path中的php-cgi</li>
+<li><code>opt_suffix</code>: 文件后缀名（当前不可用）</li>
+<li><code>opt_forwardPathName</code>: 函数，将此函数的返回值作为php文件的路径</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.php($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        php()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="proxy">proxy</h2><p>后端代理当前请求，转发到对应的主机上</p>
+<p>参数：</p>
+<ul>
+<li><code>hostname</code>: 主机名，可为域名或者IP</li>
+<li><code>port</code>: 端口，默认80</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.js($|\?)/</span>,</span><br><span class="line">    handler: proxy(<span class="string">'127.0.0.1'</span>, <span class="string">'8081'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="proxyNoneExists">proxyNoneExists</h2><p>如果当前<code>context.status</code>等于404时，代理转发当前请求</p>
+<p>查找config中的proxyMap，如果配置有如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.proxyMap = &#123;</span><br><span class="line">    <span class="string">'127.0.0.1:8080'</span>: <span class="string">'www.baidu.com:80'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>则会把127.0.0.1:8080的请求代理到www.baidu.com:80</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/^.*$/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        file(),</span><br><span class="line">        proxyNoneExists()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="html2js">html2js</h2><p>如下示例中的配置会将<code>html2js.js</code>的文件定位到<code>html2js</code>文件，并调用html2js转化为js文件输出</p>
+<p>参数：</p>
+<ul>
+<li><code>compileOptions</code>: 编译参数</li>
+<li><code>encoding</code>: 源编码方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.js($|\?)/</span>,</span><br><span class="line">    handler: html2js()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="livereload">livereload</h2><p>在html代码的body结束标签前增加下面一个script标签<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://&#123;options.ip&#125;:&#123;options.port&#125;/livereload.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>参数：</p>
+<ul>
+<li><code>options</code>: LiveReload的参数</li>
+<li><code>options.ip</code>: LiveReload服务器的IP地址，默认为当前机器的ip地址</li>
+<li><code>options.port</code>: LiveReload服务器的端口号，默认为8898</li>
+<li><code>options.encoding</code>: 文件编码，默认为utf-8</li>
+</ul>
+<h2 id="listDirectory">listDirectory</h2><p>输出指定的dir目录或者当前请求的pathname对应的目录下的文件列表</p>
+<p>参数：</p>
+<ul>
+<li><code>dir</code>: 指定路径，默认为当前请求的pathname</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\/$/</span>,</span><br><span class="line">    handler: listDirectory()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="addRequestHeader">addRequestHeader</h2><p>配合Proxy Handler使用，添加一些自定义的<em>Request Header</em></p>
+<p>参数：</p>
+<ul>
+<li><code>headers</code>: 自定义请求头</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="regexp">/\.js($|\?)/</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        addRequestHeader(&#123;</span><br><span class="line">            <span class="string">'host'</span>: <span class="string">'www.baidu.com'</span></span><br><span class="line">        &#125;),</span><br><span class="line">        proxy()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="write">write</h2><p>输出当前context的内容，并结束请求</p>
+<p>注意：write对一般开发者来说不要去使用，edp webserver会默认在handlers的最后面增加一个write handler，如果开发者调用的write，最后面一个write handler执行的时候会报错</p>
+<h2 id="home">home</h2><p>主索引页</p>
+<p>查找当前pathname路径下的指定索引文件，如果没找到，则使用<code>listDirectory</code>来作为输出</p>
+<p>参数：</p>
+<ul>
+<li><code>file</code>: {string|Array} 主索引文件，如果是数组，则从0开始寻找可用的主索引文件，找到了一个会忽略其他的文件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/'</span>,</span><br><span class="line">    handler: home(<span class="string">'index.html'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="delay">delay</h2><p>延迟输出</p>
+<p>参数：</p>
+<ul>
+<li><code>time</code>: 延迟输出的时间，单位为ms</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/hello'</span>,</span><br><span class="line">    handler: [</span><br><span class="line">        content(<span class="string">'Hello World!'</span>),</span><br><span class="line">        delay(<span class="number">500</span>)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="empty">empty</h2><p>输出空内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    location: <span class="string">'/empty'</span>,</span><br><span class="line">    handler: empty()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article>
+
+<nav class="article-pagination">
+    
+    <a href="/edp/doc/webserver/resource-func/" class="article-prev">前一篇: 资源处理函数</a>
+    
+    
+    <a href="/edp/doc/webserver/cust-resour-func/" class="article-next">后一篇: 自定义资源处理函数</a>
+    
+</nav>
+
+<div class="ds-thread" data-thread-key="doc/webserver/inner-resour-func/" data-title="内置资源处理函数" data-url="http://ecomfe.github.io/edp/doc/webserver/inner-resour-func/"></div>
+<script>
+var duoshuoQuery = {short_name:"baidu-efe"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+
+    
+    </section>
+</div>
+
+<footer>
+    <p class="cp">©2015 <a href="http://efe.baidu.com/" target="_blank">Baidu EFE</a> | Powered By <a href="http://hexo.io/">Hexo</a></p>
+</footer>
+
+
+</body>
+</html>
