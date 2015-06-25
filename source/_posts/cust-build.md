@@ -71,15 +71,15 @@ exports.injectProcessor = function ( processors ) {
 
 在自定义自己的构建配置时，有下面几个东西需要了解和注意：
 
-# input
+## input
 
 输入目录，`{string}`，默认为`当前目录`。该属性基本不需要修改。
 
-# output
+## output
 
 输出目录，`{string}`，默认为`当前目录下的output目录`。
 
-# exclude
+## exclude
 
 排除文件，`{Array}`。该数组里匹配上的每一项，在构建的`输入`阶段就会被排除，所以，被排除的文件也不会进入后续的`处理`和`输出`阶段。
 
@@ -96,7 +96,7 @@ exports.exclude = [
 ];
 ```
 
-# fileEncodings
+## fileEncodings
 
 在处理输入文件的过程中，`edp`默认所有的**文本文件**都是`utf-8`编码的，如果有一些特殊编码的文件，需要在这个参数中声明，这样子才能保证输出的时候文件编码保持不变。
 
@@ -106,12 +106,12 @@ exports.fileEncodings = {
 };
 ```
 
-# getProcessors
+## getProcessors
 
 处理器列表，`{Array} function`。该方法会被EDP在构建时调用，获取构建过程的Processors。
 
 EDP提供了许多内置Processors，基本可以满足前端项目的构建需求。你可以使用内置Processors，也可以扩展自己的Processor。我们在[Build Processors文档](../../../doc/build/build-proc/)对此进行了详细说明。
 
-# injectProcessor
+## injectProcessor
 
 该方法用于EDP将内置的Processors注入到配置模块中，从而在配置模块里可以使用内置Processors。请保持该方法的存在，并使用默认实现，不要修改它。

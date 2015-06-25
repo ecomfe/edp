@@ -24,7 +24,7 @@ edp WARN → line 7, col 1: Rule is empty.
 edp WARN → line 8, col 1: Rule is empty.
 ```
 
-# 自定义配置
+## 自定义配置
 
 EDP 默认使用 [`csshint` 的配置](https://github.com/ecomfe/fecs/blob/master/lib/css/csshint.json)，如果想使用自己的检测配置，可以在 `当前目录` 下建立 `.fecsrc`文件。该文件是 JSON 格式，其中相关参数将与默认参数 mixin。具体参数的含义请参考 <https://github.com/ielgnaw/node-csshint/blob/master/lib/config.js>。
 
@@ -47,7 +47,7 @@ EDP 默认使用 [`csshint` 的配置](https://github.com/ecomfe/fecs/blob/maste
 /* csshint-disable require-before-space,require-newline property-not-existed*/
 ```
 
-# 排除检测文件
+## 排除检测文件
 
 有时我们想要排除一些文件，不期望这些文件被检测：比如数据模拟、测试用例、工具代码。这时我们可以在 `当前目录` 下建立 `.fecsignore` 文件。
 

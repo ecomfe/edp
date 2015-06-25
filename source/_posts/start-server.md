@@ -27,7 +27,7 @@ edp INFO root = [/Users/errorrik/test], listen = [8848]
 
 在Linux/Mac环境下，可以使用`edp webserver &`，使其在后台运行，以便可以继续使用命令行。通过`jobs -l`命令可以查看哪些东西在后台运行。
 
-# 指定监听端口
+## 指定监听端口
 
 通过`--port`参数，可以指定`WebServer`的监听端口。
 
@@ -38,7 +38,7 @@ edp INFO EDP WebServer start, http://192.168.1.105:8888
 edp INFO root = [/Users/errorrik/test], listen = [8888]
 ```
 
-# 指定WebServer配置文件
+## 指定WebServer配置文件
 
 通过`--config`参数，可以指定`WebServer`的配置文件。
 

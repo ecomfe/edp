@@ -30,7 +30,7 @@ date:
 <!--edp:{"preserveBaseUrl": true}-->
 ```
 
-# 导入包的最新版
+## 导入包的最新版
 
 直接输入package的名称，将导入当前存在的最新版本。
 
@@ -47,7 +47,7 @@ $ ls dep/etpl
 2.1.0
 ```
 
-# 导入指定版本的包
+## 导入指定版本的包
 
 输入`edp import package@version`，可以导入指定版本的包。
 

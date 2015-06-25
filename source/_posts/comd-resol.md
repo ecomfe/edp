@@ -21,13 +21,13 @@ date:
 
 找到npm package之后，就会自动安装（如果之前没有安装过），然后根据这个`<cmd>`去npm package下面的`cli`目录找到对应的js文件，require之后返回一个`cli`对象，执行`cli.main`即可
 
-# Default Command
+## Default Command
 
 当我们执行`edp project`的时候，因为根据前面的Command Resolve逻辑，没有任何一个npm package提供了`project`这个命令，但是在`edp.extensions`里面配置了edp-project，因此我们找到并安装了edp-project之后，需要执行edp-project的Default Command。
 
 Default Command的名称跟npm package的名称一样（去掉edpx和edp的前缀之后）。对于edp-project来说，它的Default Command就是project，所处的位置也是在npm package的cli目录下面。
 
-# Sub Command
+## Sub Command
 
 edp是支持<sub-cmd>的，当执行`edp project init`的时候，`init`就是`project`的`<sub-cmd>`，这个从目录结构层级上可以区分出来：
 
@@ -42,7 +42,7 @@ cli
 └── project.js
 ```
 
-# Arguments and Options
+## Arguments and Options
 
 cmd执行的时候有时候需要传递一些额外的参数。参数有两种形式：Arguments和Options。
 

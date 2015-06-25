@@ -11,7 +11,7 @@ date:
 
 通过edp的`update`命令：`edp update [package]`，可以对使用`import`命令导入过的包进行升级。
 
-# 升级指定包
+## 升级指定包
 
 如果当前使用的包不是最新版，想升级到最新版，可以使用`edp update package`。
 
@@ -37,7 +37,7 @@ $ ls dep/etpl
 2.1.0
 ```
 
-# 升级所有包
+## 升级所有包
 
 不指定`package`，使用`edp update`可以根据已导入包的依赖信息，升级所有导入的包。
 

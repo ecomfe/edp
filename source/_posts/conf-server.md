@@ -76,22 +76,22 @@ exports.injectResource = function ( res ) {
 
 在自定义自己的`WebServer`配置时，有下面几个东西需要了解和注意：
 
-# port
+## port
 
 监听端口号。为了防止和其他常用的`WebServer`冲突，默认为8848，不为80或8080。
-# directoryIndexes
+## directoryIndexes
 
 是否允许显示目录下的文件索引。
 
-# documentRoot
+## documentRoot
 
 `WebServer`使用的文档根目录。默认为`配置文件`所在的当前目录。
 
-# injectResource
+## injectResource
 
 该方法用于EDP将内置的`资源处理函数`注入到配置模块中，从而在配置模块里可以使用内置`资源处理函数`。请保持该方法的存在，并使用默认实现，不要修改它。
 
-# getLocations
+## getLocations
 
 该方法返回一个数组，数组的每一项是一个具有`location`和`handler`的`Object`，代表能被`location`匹配上的资源，使用`handler`进行处理。
 

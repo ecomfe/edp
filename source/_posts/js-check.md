@@ -30,7 +30,7 @@ edp WARN → line 24, col 68: Expected '===' and instead saw '=='.
 edp WARN → line 14, col 59: 'config' is defined but never used.
 ```
 
-# 自定义配置
+## 自定义配置
 
 EDP 默认使用 [`FECS` 的配置](https://github.com/ecomfe/fecs/blob/master/lib/js/eslint.json)，如果想使用自己的检测配置，可以在 `当前目录` 下建立 `.fecsrc` 文件。该文件是 JSON 格式，其中相关参数将与默认参数 mixin。具体参数的含义请参考[ESLint Rules](http://eslint.org/docs/rules/)。
 
@@ -77,7 +77,7 @@ var json = {
 /* eslint-enable fecs-camelcase */
 ```
 
-# 排除检测文件
+## 排除检测文件
 
 有时我们想要排除一些文件，不期望这些文件被检测：比如数据模拟、测试用例、工具代码。这时我们可以在 `当前目录` 下建立 `.fecsignore` 文件。
 
