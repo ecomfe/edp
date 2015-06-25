@@ -1,4 +1,4 @@
-title: 安装EDP
+title: 安装
 categories:
 - initialization
 tags:
