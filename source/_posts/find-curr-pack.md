@@ -6,7 +6,7 @@ tags:
 layout:
     layout
 date:
-    2015-01-22
+    2015-01-24
 ---
 通过edp的`search`命令：`edp search [keyword]`，可以查找当前存在的包。如果不输入`keyword`，将列出当前存在的所有包。
 
