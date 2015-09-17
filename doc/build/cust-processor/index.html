@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>初始化项目 | EDP</title>
+    <title>自定义 Processor | EDP</title>
     <link rel="stylesheet" href="/edp/css/page.css" type="text/css">
     <link rel="stylesheet" href="/edp/css/font-awesome.css" type="text/css">
     <script>
@@ -284,31 +284,64 @@
 </script>
     <section id="main">
         <article>
-    <h1 class="article-title">初始化项目</h1>
+    <h1 class="article-title">自定义 Processor</h1>
 
-    <p>在当前目录下，通过edp命令：<code>edp project init</code>，可以将当前目录初始化成一个<code>项目目录</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir myProject &#38;&#38; cd myProject&#10;&#10;$ edp project init&#10;&#10;$ ls -la&#10;&#10;total 24&#10;drwxr-xr-x   11 erik  staff   374  4  2 10:57 .&#10;drwxr-xr-x+ 108 erik  staff  3672  4  2 10:57 ..&#10;drwxr-xr-x    3 erik  staff   102  4  2 10:57 .edpproj&#10;drwxr-xr-x    2 erik  staff    68  4  2 10:57 dep&#10;drwxr-xr-x    2 erik  staff    68  4  2 10:57 doc&#10;-rw-r--r--    1 erik  staff  1764  4  2 10:57 edp-build-config.js&#10;-rw-r--r--    1 erik  staff  1371  4  2 10:57 edp-webserver-config.js&#10;-rw-r--r--    1 erik  staff    61  4  2 10:57 module.conf&#10;drwxr-xr-x    2 erik  staff    68  4  2 10:57 src&#10;drwxr-xr-x    2 erik  staff    68  4  2 10:57 test&#10;drwxr-xr-x    2 erik  staff    68  4  2 10:57 tool</span><br></pre></td></tr></table></figure>
-<p>可见，<code>edp project init</code>将自动生成<a href="https://github.com/ecomfe/spec/blob/master/directory.md" target="_blank" rel="external">我们认为合理的前端项目的目录结构</a>，<code>dep</code>、<code>doc</code>、<code>src</code>、<code>test</code>、<code>tool</code>目录的相关作用请参看上面的文档。其它几个特殊的东西的说明如下：</p>
+    <p>有时，内置的Processor没法满足我们的需求。EDP BUILD的<code>配置文件</code>是一个<code>node module</code>。我们可以很灵活的在<code>配置文件</code>中自定义自己的Processor。在下面的章节里，我们简单介绍了<code>Processor的运行过程</code>，然后提供了<code>通过Object自定义processor</code>和<code>从AbstractProcessor继承自定义processor</code>的例子</p>
+<h2 id="Processor的运行过程">Processor的运行过程</h2><p><a href="Build#%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B">构建过程</a>中，构建主模块通过<code>Processor</code>的实例方法<code>start(processContext, callback)</code>，与<code>Processor</code>发生交互。<code>Processor</code>执行完成后，调用由构建主模块传入的<code>callback</code>，通知主模块当前<code>Processor</code>处理已经完成。</p>
+<p><code>Processor</code>的<code>start</code>方法做三件事情：</p>
+<ol>
+<li>调用实例方法<code>beforeAll(processContext)</code>。该方法默认实现为<code>根据files属性选取当前processor要处理的文件集</code></li>
+<li>根据选取的文件集，挨个调用实例方法<code>process(file, processContext, callback)</code></li>
+<li>调用实例方法<code>afterAll(processContext)</code>。该方法默认不做任何事情，需要后续处理的processor可以实现该方法</li>
+</ol>
+<p>大多数情况下，自定义自己的Processor都是为了对文件内容做一些自己的处理，这时候只需要重写process方法。我们来看看<code>process</code>方法的参数：</p>
+<h3 id="file">file</h3><p><code>FileInfo</code>。EDP Build在读入文件时，会把文件包装成<code>FileInfo</code>对象，你可以通过<code>setData</code>方法更改数据内容。最后，EDP Build会根据这个<code>FileInfo</code>对象的状态进行输出。</p>
+<p>该对象包含以下属性：</p>
 <ul>
-<li><code>.edpproj</code> 用于保存项目相关信息</li>
-<li><code>edp-build-config.js</code> 项目构建的配置模块，更详细信息请参考<a href="../../../doc/build/build/">构建你的项目</a></li>
-<li><code>edp-webserver-config.js</code> 调试服务器的配置模块，更详细信息请参考<a href="../../../doc/webserver/start-server/">使用调试服务器</a></li>
-<li><code>module.conf</code> 项目的AMD模块配置，<code>html</code>中的<code>require.config</code>将从此处同步更新，build过程module compile也将使用此配置</li>
+<li>data - 文件数据，文本文件时data为<code>string</code>，二进制文件时data为<code>Buffer</code></li>
+<li>extname - 文件扩展名</li>
+<li>path - 文件路径，相对于构建目录</li>
+<li>fullPath - 文件完整路径</li>
+<li>fileEncoding - 文件的文本编码类型</li>
+<li>outputPath - 输出路径，修改此项可以更改文件输出目标</li>
 </ul>
-<p><code>项目目录</code>不允许嵌套。如果当前目录已经位于一个<code>项目目录</code>内，则初始化将失败。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ edp project init&#10;&#10;edp ERROR [edp project init] Project is already inited in /Users/userName/myProject</span><br></pre></td></tr></table></figure>
+<h3 id="processContext">processContext</h3><p><code>ProcessContext</code>。构建处理运行时，该对象包含一些运行的基本环境信息。</p>
+<ul>
+<li>baseDir - 构建基础目录</li>
+<li>exclude - 构建排除文件列表</li>
+<li>outputDir - 构建输出目录</li>
+<li>fileEncodings - 文件编码表</li>
+</ul>
+<h3 id="callback">callback</h3><p><code>function</code>。当前文件处理完成的回调函数。</p>
+<p>由于处理过程可能是异步的（比如less只提供了异步编译接口），所以，处理完成后需要手工调用<code>callback</code>，告诉EDP<code>当前文件的处理已经完成</code>。</p>
+<h2 id="通过Object自定义processor">通过Object自定义processor</h2><p>下面，我们通过编写一个简单的<code>StringReplacer</code>，介绍了如何自定义自己的processor：</p>
+<h3 id="只需要一步：在getProcessor方法中，使用JS_plain_Object">只需要一步：在getProcessor方法中，使用<code>JS plain Object</code></h3><p><code>getProcessors</code>方法返回的是处理器实例数组。如果其中的项是一个<code>JS plain Object</code>，构建主模块会自动让其具有默认的行为。</p>
+<p>自定义Processor的Object中，我们必须包含<code>name</code>项，EDP在输出当前Build的过程时，会用到这个属性。我们可以根据自己的需求，选择复写<code>start</code>、<code>process</code>、<code>beforeAll</code>、<code>afterAll</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">exports.getProcessors = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        <span class="keyword">new</span> LessCompiler(&#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> CssCompressor(&#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// 通过`JS plain Object`自定义processor</span></span><br><span class="line">        &#123;</span><br><span class="line">            files: [ <span class="string">'index.html'</span> ],</span><br><span class="line">            from: <span class="string">'oldvalue'</span>,</span><br><span class="line">            to: <span class="string">'newvalue'</span>,</span><br><span class="line">            name: <span class="string">'StringReplacer'</span>,</span><br><span class="line">            process: <span class="function"><span class="keyword">function</span> (<span class="params">file, processContext, callback</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.from &amp;&amp; <span class="keyword">this</span>.to) &#123;</span><br><span class="line">                    file.setData(</span><br><span class="line">                        file.data.replace(from, to)</span><br><span class="line">                    );</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至此，我们已经完成了<code>StringReplacer</code>的开发和使用。</p>
+<h2 id="从AbstractProcessor继承自定义processor">从AbstractProcessor继承自定义processor</h2><p>和上面的章节一样，下面通过编写一个简单的<code>StringReplacer</code>，介绍了如何自定义自己的Processor：</p>
+<h3 id="第一步：写一个类，并继承于AbstractProcessor">第一步：写一个类，并继承于AbstractProcessor</h3><p><code>配置文件</code>被EDP加载后，将通过<code>injectProcessor</code>方法往配置模块的<code>global</code>中注入<code>内置Processors</code>，其中包含了processor的抽象类<code>AbstractProcessor</code>。我们需要编写自己的Processor类，并通过原型继承的方式，从<code>AbstractProcessor</code>继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineStringReplacer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">StringReplacer</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">        AbstractProcessor.call(<span class="keyword">this</span>, options);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    StringReplacer.prototype = <span class="keyword">new</span> AbstractProcessor();</span><br><span class="line">    StringReplacer.prototype.name = <span class="string">'StringReplacer'</span>;</span><br><span class="line">    <span class="keyword">return</span> StringReplacer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们需要为自己的Processor指定一个name，EDP在输出当前Build的过程时，会用到这个属性。</p>
+<p>注意：由于EDP在加载完<code>配置模块</code>后，才会进行<code>内置Processors</code>注入，所以直接在配置模块的下编写Processor类并继承会失败，因为这时<code>AbstractProcessor</code>还没有被注入。所以Processor类应编写在一个function内，并在未来执行（见第三步）。</p>
+<h3 id="第二步：编写process方法">第二步：编写process方法</h3><p>我们可以根据自己的需求，选择复写<code>start</code>、<code>process</code>、<code>beforeAll</code>、<code>afterAll</code>。在当前场景下，我们只需要编写<code>process</code>方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineStringReplacer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">StringReplacer</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">        AbstractProcessor.call(<span class="keyword">this</span>, options);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    StringReplacer.prototype = <span class="keyword">new</span> AbstractProcessor();</span><br><span class="line">    StringReplacer.prototype.name = <span class="string">'StringReplacer'</span>;</span><br><span class="line">    StringReplacer.prototype.process = <span class="function"><span class="keyword">function</span> (<span class="params">file, processContext, callback</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.from &amp;&amp; <span class="keyword">this</span>.to) &#123;</span><br><span class="line">            file.setData(</span><br><span class="line">                file.data.replace(from, to)</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        callback();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> StringReplacer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三步：使用自己的Processor">第三步：使用自己的Processor</h3><p>我们可以在<code>getProcessors</code>方法中，初始化自己的Processor类，并使用它。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">exports.getProcessors = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> StringReplacer = defineStringReplacer();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        <span class="keyword">new</span> LessCompiler(&#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> CssCompressor(&#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> StringReplacer(&#123;</span><br><span class="line">            files: [ <span class="string">'index.html'</span> ],</span><br><span class="line">            from: <span class="string">'oldvalue'</span>,</span><br><span class="line">            to: <span class="string">'newvalue'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至此，我们已经完成了<code>StringReplacer</code>的开发和使用。</p>
+
 </article>
 
 <nav class="article-pagination">
     
-    <a href="/edp/doc/package-management/update-pack/" class="article-prev">前一篇: 升级已导入的包</a>
+    <a href="/edp/doc/build/builtin-processor/" class="article-prev">前一篇: 内置 Processor</a>
     
     
-    <a href="/edp/doc/project-management/advantage/" class="article-next">后一篇: 使用edp项目的好处</a>
+    <a href="/edp/doc/build/cust-build/" class="article-next">后一篇: 通过配置进行自定义构建</a>
     
 </nav>
 
-<div class="ds-thread" data-thread-key="doc/project-management/init-proj/" data-title="初始化项目" data-url="http://ecomfe.github.io/edp/doc/project-management/init-proj/"></div>
+<div class="ds-thread" data-thread-key="doc/build/cust-processor/" data-title="自定义 Processor" data-url="http://ecomfe.github.io/edp/doc/build/cust-processor/"></div>
 <script>
 var duoshuoQuery = {short_name:"edp"};
 (function() {

@@ -80,6 +80,37 @@
                     </ul>
                 </li>
                 <li><a href="/edp/doc/build/build-proc/">构建过程</a></li>
+                <li><a href="/edp/doc/build/builtin-processor/">内置 Processor</a>
+                    <ul>
+                        <li><a href="/edp/doc/build/builtin-processor/#公共属性">公共属性</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#LessCompiler">LessCompiler</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#StylusCompiler">StylusCompiler</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#CssCompressor">CssCompressor</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#JsCompressor">JsCompressor</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#ModuleCompiler">ModuleCompiler</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#PathMapper">PathMapper</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#TplMerge">TplMerge</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#AddCopyright">AddCopyright</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#VariableSubstitution">VariableSubstitution</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#MD5Renamer">MD5Renamer</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#OutputCleaner">OutputCleaner</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#BabelProcessor">BabelProcessor</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#BcsUploader">BcsUploader</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#CssSpriter">CssSpriter</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#HtmlMinifier">HtmlMinifier</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#Html2JsCompiler">Html2JsCompiler</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#ReplaceDebug">ReplaceDebug</a></li>
+                        <li><a href="/edp/doc/build/builtin-processor/#StringReplace">StringReplace</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/build/cust-processor/">自定义 Processor</a>
+                    <ul>
+                        <li><a href="/edp/doc/build/cust-processor/#Processor的运行过程">Processor的运行过程</a></li>
+                        <li><a href="/edp/doc/build/cust-processor/#通过Object自定义processor">通过Object自定义processor</a></li>
+                        <li><a href="/edp/doc/build/cust-processor/#从AbstractProcessor继承自定义processor">从AbstractProcessor继承自定义processor</a></li>
+                    </ul>
+                </li>
                 <li><a href="/edp/doc/build/cust-build/">通过配置进行自定义构建</a>
                     <ul>
                         <li><a href="/edp/doc/build/cust-build/#input">input</a></li>
@@ -257,9 +288,12 @@
 
     <p>EDP的构建过程分成3步：</p>
 <ol>
-<li>输入：读入指定的<code>input</code>目录下的所有文件，<code>input</code>通过配置文件指定。</li>
-<li>处理：使用配置的<code>processors</code>对所有读入的文件内容进行处理。</li>
-<li>输出：将处理结果输出到<code>output</code>目录中，<code>output</code>可以通过配置文件指定，也可以通过<code>--output</code>参数传入。</li>
+<li><p>输入：读入指定的<code>input</code>目录下的需要处理的文件，<code>input</code>通过配置文件指定。<code>edp build</code>会扫描<code>input</code>目录下的所有文件，然后根据<code>配置文件</code>中定义的<code>exports.exclude</code>过滤掉不需要的文件，剩下的文件集合我们称作<code>BUILD_FILES</code>。</p>
+</li>
+<li><p>处理：使用配置的<code>processors</code>对所有读入的文件内容进行处理。每个<code>Processor</code>在执行之前，需要从<code>BUILD_FILES</code>中选出它需要处理的文件。完成文件选择后，<code>Processor</code>将对<code>PROCESS_FILES</code>中的每个文件进行处理。</p>
+</li>
+<li><p>输出：将处理结果输出到<code>output</code>目录中，<code>output</code>可以通过配置文件指定，也可以通过<code>--output</code>参数传入。</p>
+</li>
 </ol>
 <p><img src="../../../img/build-process.png" alt="Build Process"></p>
 
@@ -270,7 +304,7 @@
     <a href="/edp/doc/build/build/" class="article-prev">前一篇: 构建一个项目</a>
     
     
-    <a href="/edp/doc/build/cust-build/" class="article-next">后一篇: 通过配置进行自定义构建</a>
+    <a href="/edp/doc/build/builtin-processor/" class="article-next">后一篇: 内置 Processor</a>
     
 </nav>
 
