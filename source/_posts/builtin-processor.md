@@ -579,17 +579,17 @@ new CssSpriter({
 `Array.<string>` 处理器要处理的文件 **默认值**是：`[]`
 
 
-## htmlMinifier
+## HtmlMinifier
 
 此处理器默认通过使用[html-minifier](https://github.com/kangax/html-minifier)工具分析html文档的内容，对html文档进行压缩，有效的减小项目内html文档的体积
 
 ```
-new htmlMinifier({
+new HtmlMinifier({
     files: [],
     minifyOptions: {}
 })
 ```
-下面是`htmlMinifier`的参数说明:
+下面是`HtmlMinifier`的参数说明:
 
 ### files
 
@@ -608,11 +608,11 @@ new htmlMinifier({
 ```
  更多配置参数请参考：[html-minifier](https://github.com/kangax/html-minifier)
 
-## html2js-compiler
+## Html2JsCompiler
 
 将html文档转换成js文档，在js中引用时可以解决跨域的问题
 
-下面是`htmlMinifier`的参数说明:
+下面是`Html2JsCompiler`的参数说明:
 
 ### files
 
@@ -650,11 +650,11 @@ new htmlMinifier({
 
 各参数具体效果请参考:[html2js](https://github.com/junmer/html2js)
 
-## replaceDebug
+## ReplaceDebug
 
 修正DEBUG变量，将window.DEBUG的值改为false
 
-下面是`replaceDebug`的参数说明:
+下面是`ReplaceDebug`的参数说明:
 
 ### files
 
@@ -666,11 +666,11 @@ new htmlMinifier({
 
 **需要注意的是**：如果没有配置`files`和`extnames`处理器会自动使用`extnames`的默认值作为要处理的文件，当配置了`files`时处理器会忽略`extnames`的配置
 
-## stringReplace
+## StringReplace
 
 此处理器用于字符串替换
 
-下面是`stringReplace`的参数说明:
+下面是`StringReplace`的参数说明:
 
 ### files
 
