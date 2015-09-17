@@ -6,7 +6,7 @@ tags:
 layout:
     layout
 date:
-    2015-01-20
+    2015-01-22
 ---
 
 通过edp的`update`命令：`edp update [package]`，可以对使用`import`命令导入过的包进行升级。
