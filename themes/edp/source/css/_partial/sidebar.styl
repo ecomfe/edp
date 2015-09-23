@@ -1,4 +1,5 @@
 #sidebar
+  position: fixed
   float: left
   width: 200px
   height: 80%
@@ -35,15 +36,28 @@
 
 
 .category
+  &> li
+    padding-left: 18px
+    background: url('./images/icon2.png') left 8px no-repeat
+
+  &> li > ul
+    display: none
   ul.show
     display: block
   .cat-title
     font-size: 14px
     color: #3F85BE
+    cursor: default
 
+  .current
+    font-weight: 700
+    &::before
+      content: '['
+    &::after
+      content: ']'
 
-.open
-  padding: 18px
-  background: url('./images/icon1.png') left center no-repeat
+  .open
+    padding-left: 18px
+    background: url('./images/icon1.png') left 8px no-repeat
 .single-title
   padding: 18px
