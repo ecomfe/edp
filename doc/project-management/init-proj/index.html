@@ -36,7 +36,7 @@
             <ul>
                 <li><a href="/edp/doc/initialization/install/">安装</a>
                     <ul>
-                        <li><a href="/edp/doc/initialization/install/#npm install">npm install</a></li>
+                        <li><a href="/edp/doc/initialization/install/#npm_install">npm install</a></li>
                         <li><a href="/edp/doc/initialization/install/#使用cnpm安装">使用cnpm安装</a></li>
                         <li><a href="/edp/doc/initialization/install/#使用内网npm镜像安装">使用内网npm镜像安装</a></li>
                     </ul>
@@ -101,7 +101,7 @@
                         <li><a href="/edp/doc/build/builtin-processor/#Html2JsCompiler">Html2JsCompiler</a></li>
                         <li><a href="/edp/doc/build/builtin-processor/#ReplaceDebug">ReplaceDebug</a></li>
                         <li><a href="/edp/doc/build/builtin-processor/#StringReplace">StringReplace</a></li>
-                        
+
                     </ul>
                 </li>
                 <li><a href="/edp/doc/build/cust-processor/">自定义 Processor</a>
@@ -195,6 +195,21 @@
                 <li><a href="/edp/doc/webserver/cust-resour-func/">自定义资源处理函数</a></li>
             </ul>
         </li>
+        <li><b class="cat-title">项目测试</b>
+            <ul>
+                <li><a href="/edp/doc/test/test/#初始化配置">初始化配置</a>
+                    <ul>
+                        <li><a href="/edp/doc/test/test/#注意事项">注意事项</a></li>
+                    </ul>
+                </li>
+                <li><a href="/edp/doc/test/test/#开始测试">开始测试</a>
+                    <ul>
+                        <li><a href="/edp/doc/test/test/#ES6_代码的测试">ES6 代码的测试</a></li>
+                        <li><a href="/edp/doc/test/test/#注意事项-1">注意事项</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
         <li><b class="cat-title">扩展自己的EDP命令</b>
             <ul>
                 <li><a href="/edp/doc/command-extension/builtin-comd/">Builtin Commands</a></li>
@@ -217,9 +232,93 @@
     </ul>
 </div>
 </aside>
-<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script>
+$(function () {
+    var pathname = location.pathname;
+    var hash = location.hash;
+    var showClass = 'open';
+    var currentClass = 'current';
+    var currentLinks;
+
+    var getTargetTop = function (a) {
+        var top = 0;
+        if (a.hash) {
+            var target = $(a.hash);
+            top = target[0] ? target.offset().top : 0;
+        }
+
+        return top;
+    }
+
+    $('.category')
+        .on('click', 'a', function (e) {
+            if (this.pathname === pathname) {
+                e.preventDefault();
+
+                $(document.body).animate({scrollTop: getTargetTop(this)});
+                $(e.delegateTarget).find('.' + currentClass).removeClass(currentClass);
+                $(this).addClass(currentClass);
+            }
+        })
+        .on('click', '.cat-title', function (e) {
+            $(this).next('ul')
+                .toggle('fast')
+            .parent('li')
+                .toggleClass(showClass)
+                .siblings().removeClass(showClass)
+                .find('>ul').hide('fast');
+        })
+        .find('>li').each(function (i, li) {
+            var links = $(li).find('a')
+                .filter(function (i, a) {
+                    if (a.pathname === pathname) {
+                        $(li).addClass(showClass).find('>ul').show('fast');
+                        if (!hash && !a.hash || hash && hash === a.hash) {
+                            $(a).addClass(currentClass);
+                        }
+                        return true;
+                    }
+                })
+                .each(function (i, a) {
+                    $(a).data('top', getTargetTop(a));
+                });
+
+            if (links.length) {
+                currentLinks = links;
+            }
+        });
+
+    var timer;
+    var scroll = function () {
+        if (!currentLinks) {
+            return;
+        }
+
+        var top = $(document).scrollTop();
+        var viewHeight = document.documentElement.clientHeight;
+        var span = 50;
+
+        var match = currentLinks.filter(function (i, a) {
+            var targetTop = $(a).data('top');
+            return targetTop === 0 && top < span
+                || targetTop >= top + span && targetTop - span <= top + viewHeight;
+        });
+
+        if (match.length) {
+            currentLinks.removeClass(currentClass);
+            $(match[0]).addClass(currentClass);
+            // location.hash = match[0].hash;
+        }
+    };
+
+    $(document).scroll(function (e) {
+        clearTimeout(timer);
+        timer = setTimeout(scroll, 100);
+    });
+});
 /*
+
     $(function() {
         $(".category a").on("click", function() {
             var $this = $(this);
@@ -242,6 +341,9 @@
         });
 
         var str = localStorage.getItem("show_index");
+        if (!str) {
+            return;
+        }
         str = str.substring(0, str.length - 1);
         var arr = str.split(" ");
         for(var i = 0; i < arr.length; i++) {
@@ -252,7 +354,6 @@
 
     });
 */
-
 //    var aa = document.getElementsByTagName('a');
 ////    alert(lis.length);
 ////    e.stopPropagation();
@@ -282,6 +383,7 @@
 ////        alert(typeof(e.srcElement.parentElement) );
 //    }
 </script>
+
     <section id="main">
         <article>
     <h1 class="article-title">初始化项目</h1>

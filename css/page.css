@@ -168,6 +168,7 @@ color
     font-size: 36px;
 }
 #sidebar {
+  position: fixed;
   float: left;
   width: 200px;
   height: 80%;
@@ -207,16 +208,33 @@ color
 .tree li {
   padding-left: 6px;
 }
+.category> li {
+  padding-left: 18px;
+  background: url("./images/icon2.png") left 8px no-repeat;
+}
+.category> li > ul {
+  display: none;
+}
 .category ul.show {
   display: block;
 }
 .category .cat-title {
   font-size: 14px;
   color: #3f85be;
+  cursor: default;
 }
-.open {
-  padding: 18px;
-  background: url("./images/icon1.png") left center no-repeat;
+.category .current {
+  font-weight: 700;
+}
+.category .current::before {
+  content: '[';
+}
+.category .current::after {
+  content: ']';
+}
+.category .open {
+  padding-left: 18px;
+  background: url("./images/icon1.png") left 8px no-repeat;
 }
 .single-title {
   padding: 18px;
@@ -240,6 +258,12 @@ article h2 {
   font-size: 26px;
   margin: 20px 0 10px;
 }
+article ul {
+  list-style: disc;
+}
+article ol {
+  list-style: decimal;
+}
 article .article-title {
   text-decoration: none;
   font-size: 28px;
@@ -256,34 +280,6 @@ article ul {
   line-height: 28px;
   margin: 0 0 22px 0;
 }
-article p h1,
-article table h1,
-article ol h1,
-article ul h1,
-article p h2,
-article table h2,
-article ol h2,
-article ul h2,
-article p h3,
-article table h3,
-article ol h3,
-article ul h3,
-article p h4,
-article table h4,
-article ol h4,
-article ul h4,
-article p h5,
-article table h5,
-article ol h5,
-article ul h5,
-article p h6,
-article table h6,
-article ol h6,
-article ul h6 {
-  font-weight: bold;
-  line-height: 1.5em;
-  margin: 20px 0 11px 0;
-}
 article p a,
 article table a,
 article ol a,
@@ -291,6 +287,16 @@ article ul a {
   margin: 0 3px;
   text-decoration: none;
   color: #529bd6;
+}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-weight: bold;
+  line-height: 1.5em;
+  margin: 20px 0 11px 0;
 }
 article figure,
 article blockquote {
