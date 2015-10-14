@@ -1,7 +1,7 @@
 EDP
 ==========
 
-[![Build Status](https://travis-ci.org/ecomfe/edp.png?branch=1.0.0-dev)](https://travis-ci.org/ecomfe/edp) [![Dependencies Status](https://david-dm.org/ecomfe/edp.png)](https://david-dm.org/ecomfe/edp)
+[![NPM version](https://img.shields.io/npm/v/edp.svg?style=flat-square)](https://npmjs.org/package/edp) [![edp docs](https://img.shields.io/badge/edp-docs-blue.svg?style=flat-square)](http://ecomfe.github.io/edp) [![Build Status](https://img.shields.io/travis/ecomfe/edp/master.svg?style=flat-square)](https://travis-ci.org/ecomfe/edp) [![Dependencies Status](https://img.shields.io/david/ecomfe/edp.svg?style=flat-square)](https://david-dm.org/ecomfe/edp)
 
 EDP是一个基于Node.JS与NPM的企业级前端应用的开发平台，主要通过命令行的方式使用。EDP提供了前端应用开发时常用的一系列工具：
 
