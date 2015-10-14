@@ -26,11 +26,13 @@
         "sprintf": "~0.1.3"
     },
     "devDependencies": {
+        "jasmine-node": "^1.14.5"
     },
     "repository": "git://github.com/ecomfe/edp",
     "bin": {
         "edp": "./bin/edp-cli"
     },
+    "license": "MIT",
     "edp": {
         "extensions": {
             "edp-core": [ "install", "outdated" ],
