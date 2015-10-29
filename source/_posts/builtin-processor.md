@@ -455,11 +455,29 @@ html里：
 ```javascript
 new MD5Renamer( {
     files: [ 
-        "src/common/css/main.less"
+        "src/common/css/main.less",
+        "*.html",
+        "*.css"
     ],
     replacements: {
         html: [
-            "index.html"
+        	tags: [
+                {tag: 'link', attribute: 'href'},
+                {tag: 'img', attribute: 'src'},
+                {tag: 'script', attribute: 'src'},
+                {tag: 'embed', attribute: 'src'},
+                {
+                    tag: 'param',
+                    attribute: 'value',
+                    condition: function (tagSource) {
+			            return /\sname=['"]movie['"]/.test(tagSource);
+                    }
+                }
+            ],
+            files: ['*.html', '*.htm', '*.phtml', '*.tpl', '*.vm']
+        ],
+        css: [
+            file: ['*.styl', '*.css', '*.less']
         ]
     }
 } )
@@ -469,14 +487,30 @@ new MD5Renamer( {
 
 ### replacements
 
-`Object`，要替换的资源配置。该对象只支持`html`和`css`两个属性，分别是`Array.<string>`。
+`Object`，要替换的资源配置。该对象只支持`html`和`css`两个属性，分别是`Array.<Object>`。
 
 不同类型的资源，将进行不同的替换：
 
-- 对于`html`，替换script的src、img的src、link的href
-- 对于`css`，只替换url()
+- 对于属性`html`，配置针对 html 类型文档的替换规则。
+  `tags` 配置要替换的 `标签` 以及 `属性` 替换 比如 `script` 的 `src`、`img` 的 `src`、`link` 的 `href` 等
+   `files` 指定`html`类型的文件。所有要处理的文件只有与`files`相匹配才会被认为是`html`, 从而被处理。
+   
+- 对于属性`css`，只替换url()。
+	`files` 指定`css`类型的文件。所有要处理的文件只有与`files`相匹配才会被认为是`css`类型, 从而被处理
 
 对非`files`中匹配的资源的引用，将不做替换。上面的例子中，只有对main.less的引用会被替换，ui.less的引用不会被替换。
+### resolve
+
+`function(string, string):string` 为了处理项目代码中一些特殊的路径，例如：
+```
+<link rel="stylesheet" href="{%$tplData.feRoot%}/asset/some/item/css/index.css">
+<script src="{%$tplData.feRoot%}/asset/some/item/js/index.js"></script>
+```
+
+它有两个参数：
+第一个参数：引用资源那个文件所在的目录，相对路径，相对于ProcessContext.baseDir
+第二个参数：资源的路径
+如果返回string，则认为已经自己处理过了，否则继续走原来的逻辑，如果返回false，则不处理，跳过.
 
 ## OutputCleaner
 
